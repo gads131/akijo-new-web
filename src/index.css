@@ -1,0 +1,93 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Palanquin:wght@100;200;300;400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html{
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+}
+
+*{
+  padding: 0;
+  margin: 0;
+}
+
+.homeimage {
+  transform: scaleX(-1);
+}
+
+@layer components{
+  .max-container {
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+
+}
+section{
+  height: 100vh;
+  scroll-snap-align: center;
+}
+
+@layer utilities{
+  .padding {
+    @apply sm:px-16 px-8 sm:py-24 py-12;
+  }
+}
+
+.hero{
+  position: relative;
+  padding-block: 120px;
+  min-height: 100vh;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.hero-btn{
+  display: grid;
+  position: absolute;
+  width: 45px;
+  height: 45px;
+  place-items: center;
+  top: 50%;
+  border: 1px solid yellow;
+}
+
+.home-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  user-select: none;
+  z-index: -1;
+  transform: scaleX(-1);
+  overflow: hidden;
+  animation: cresendo linear forwards;
+}
+
+.parentHero{
+  height: 100%;
+  overflow: hidden;
+}
+
+
+
+@keyframes cresendo {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+
+}
+
+.animate-scale {
+  animation:  cresendo 30s ease-in-out infinite;
+}
