@@ -36,6 +36,10 @@ section{
   }
 }
 
+.navParent{
+  gap: 43rem;
+}
+
 .hero{
   position: relative;
   padding-block: 120px;

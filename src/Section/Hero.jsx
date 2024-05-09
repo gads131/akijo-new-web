@@ -23,9 +23,9 @@ const Hero = () => {
             Enjoy your special moment with no worries. We provide the best quality of food and best experience for your event.
             </p>
         </div>
-        <button className='hero-btn justify-start items-start bg-yellow-300 flex-wrap w-full mt-10 pl-24'>
-          <div className='flex text-slate-100 '>
-            yes
+        <button className='hero-btn items-center justify-center whitespace-nowrap bg-yellow-300 w-full py-2 px-24 mt-48 max-h-screen mx-24 border-2 border-yellow-300 rounded-md hover:bg-yellow-700'>
+          <div className='uppercase text-slate-100 hover:text-'>
+            Order Now
           </div>
         </button>
     </div>
