@@ -3,19 +3,22 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     fontSize: {
-      xl: ['20px', '24,38px'],
-      '2xl': ['24px', '29.26px'],
-      '3xl': ['28px', '50px'],
-      '4xl': ['48px', '58px'],
-      '6xl': ['68px', '78px'],
-      '8xl': ['96px', '106px']
+      xs: ["12px", "16px"],
+      sm: ["14px", "20px"],
+      base: ["16px", "19.5px"],
+      lg: ["18px", "21.94px"],
+      xl: ["20px", "24.38px"],
+      "2xl": ["24px", "29.26px"],
+      "3xl": ["28px", "50px"],
+      "4xl": ["48px", "58px"],
+      "8xl": ["76px", "86px"],
     },
     extend: {
       padding: {
-        '34': '8rem',
+        34: "8rem",
       },
-      fontFamily:{
-        montserrat: ['Montserrat', 'sans-serif']
+      fontFamily: {
+        montserrat: ["Montserrat", "sans-serif"],
       },
     },
   },

@@ -1,38 +1,58 @@
-import React from 'react'
+import React from "react";
 import home from "../assets/home.png";
 
 const Hero = () => {
   return (
     <section className='hero id="home"'>
       <div className="parent">
-        <img src={home} alt=""
-        className='image-home absolute inset-0 object-cover object-center w-full max-w-full transform scale-x(-1) animate-scale'
-        style={{ objectPosition: "center", height: "100%", transform: "scale-x(-1)"}}
+        <img
+          src={home}
+          alt=""
+          className="image-home scale-x(-1) animate-scale absolute inset-0 w-full max-w-full transform object-cover object-center"
+          style={{
+            objectPosition: "center",
+            height: "100%",
+            transform: "scale-x(-1)",
+          }}
         />
-        <div>
-        <div className="absolute inset-0 bg-gradient-to-r from-black opacity-100 to to-transparent min-h-full"></div>
-        <div className="absolute inset-0 bg-gradient-to-r from-black opacity-100 to to-transparent min-h-full"></div>
+        <div className="hidden">
+          <div className="absolute inset-0 min-h-full bg-gradient-to-r from-black to-transparent opacity-100"></div>
+          <div className="absolute inset-0 min-h-full bg-gradient-to-r from-black to-transparent opacity-100"></div>
         </div>
-        <div className="wrapper relative flex flex-col items-start w-full pt-52 pl-24">
-            <p className='flex text-slate-100 text-xl'>Premium Quality Food Service</p>
-            
-            <h1 className='flex text-slate-200 text-6xl mb-4 uppercase'>
-              <p>your <span className='text-yellow-300'>special</span> event With AKIJO <br /> <span className='text-yellow-300'>unique</span> cart</p>
-            </h1>
-            <p className='flex text-slate-100 font-light w-80'>
-            Enjoy your special moment with no worries. We provide the best quality of food and best experience for your event.
+        <div className="">
+          <div className="absolute inset-0 min-h-full bg-gradient-to-r from-black to-transparent opacity-100"></div>
+          <div className="absolute inset-0 min-h-full bg-gradient-to-r from-black to-transparent opacity-100"></div>
+        </div>
+        {/* hero--------------- */}
+        <div className="relative flex min-h-screen w-full flex-col justify-center gap-4">
+          <p className="flex text-sm text-slate-100 lg:text-xl">
+            Premium Quality Food Service
+          </p>
+
+          <h1 className="mb-4 flex text-xl uppercase text-slate-200 md:text-3xl xl:text-8xl">
+            <p>
+              your <span className="text-yellow-300">special</span> event With
+              AKIJO <br /> <span className="text-yellow-300">unique</span> cart
             </p>
-        </div>
-        <button className='hero-btn items-center justify-center whitespace-nowrap bg-yellow-300 w-full py-2 px-24 mt-48 max-h-screen mx-24 border-2 border-yellow-300 rounded-md hover:bg-yellow-700'>
-          <div className='uppercase text-slate-100 hover:text-'>
-            Order Now
+          </h1>
+          <p className="flex w-1/2 text-xs font-light text-slate-100 md:text-base xl:text-xl">
+            Enjoy your special moment with no worries. We provide the best
+            quality of food and best experience for your event.
+          </p>
+          <div className="flex">
+            <button className="hover:text border-2 border-yellow-300 uppercase text-slate-100">
+              order Now
+            </button>
           </div>
-        </button>
-    </div>
-
+          {/* <button className="hero-btn flex flex-wrap gap-24">
+            <div className="hover:text- uppercase text-slate-100">
+              Order Now
+            </div>
+          </button> */}
+        </div>
+      </div>
     </section>
-    
-  )
-}
+  );
+};
 
-export default Hero
+export default Hero;
