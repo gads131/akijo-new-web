@@ -8,28 +8,27 @@ const Hero = () => {
         <img
           src={home}
           alt=""
-          className="image-home scale-x(-1) animate-scale absolute inset-0 w-full max-w-full transform object-cover object-center"
+          className="image-home left-52 scale-x(-1) animate-scale absolute inset-0 w-full max-w-full transform object-cover object-center"
           style={{
             objectPosition: "center",
             height: "100%",
             transform: "scale-x(-1)",
           }}
         />
-        <div className="hidden">
+        <div className="hidden md:block">
           <div className="absolute inset-0 min-h-full bg-gradient-to-r from-black to-transparent opacity-100"></div>
           <div className="absolute inset-0 min-h-full bg-gradient-to-r from-black to-transparent opacity-100"></div>
         </div>
-        <div className="">
-          <div className="absolute inset-0 min-h-full bg-gradient-to-r from-black to-transparent opacity-100"></div>
-          <div className="absolute inset-0 min-h-full bg-gradient-to-r from-black to-transparent opacity-100"></div>
+        <div className="sm:block md:hidden">
+          <div className="absolute inset-0 min-h-full bg-gradient-to-r from-black to-transparent opacity-80"></div>
         </div>
         {/* hero--------------- */}
-        <div className="relative flex min-h-screen w-full flex-col justify-center gap-4">
+        <div className="relative flex max-h-screen w-full flex-col justify-center gap-4 mx-6 mt-24 md:mx-20">
           <p className="flex text-sm text-slate-100 lg:text-xl">
             Premium Quality Food Service
           </p>
 
-          <h1 className="mb-4 flex text-xl uppercase text-slate-200 md:text-3xl xl:text-8xl">
+          <h1 className="flex text-xl uppercase text-slate-200 md:text-3xl xl:text-4xl">
             <p>
               your <span className="text-yellow-300">special</span> event With
               AKIJO <br /> <span className="text-yellow-300">unique</span> cart
@@ -39,8 +38,8 @@ const Hero = () => {
             Enjoy your special moment with no worries. We provide the best
             quality of food and best experience for your event.
           </p>
-          <div className="flex">
-            <button className="hover:text border-2 border-yellow-300 uppercase text-slate-100">
+          <div className="flex mt-4">
+            <button className="hover:text border-2 bg-transparent border-yellow-300 uppercase py-4 px-12 text-slate-100 rounded-md hover:bg-yellow-600 hover:text-slate-300 transition-all ease-in-out duration-500 hover:translate-x-4">
               order Now
             </button>
           </div>

@@ -43,25 +43,25 @@ const Navbar = () => {
         <div class="hidden items-center gap-4 space-x-4 md:flex md:px-12">
           <a
             href="#"
-            class="pointer-cursor text-white transition-all duration-300 ease-in-out hover:-translate-y-1 hover:text-gray-300"
+            class="pointer-cursor text-yellow-100 transition-all duration-300 ease-in-out hover:-translate-y-1 hover:text-gray-300"
           >
             Home
           </a>
           <a
             href="#"
-            class="pointer-cursor text-white transition-all duration-300 ease-in-out hover:-translate-y-1 hover:text-gray-300"
+            class="pointer-cursor text-yellow-100 transition-all duration-300 ease-in-out hover:-translate-y-1 hover:text-gray-300"
           >
             Product
           </a>
           <a
             href="#"
-            class="pointer-cursor text-white transition-all duration-300 ease-in-out hover:-translate-y-1 hover:text-gray-300"
+            class="pointer-cursor text-yellow-100 transition-all duration-300 ease-in-out hover:-translate-y-1 hover:text-gray-300"
           >
             About Us
           </a>
           <a
             href="#"
-            class="pointer-cursor text-white transition-all duration-300 ease-in-out hover:-translate-y-1 hover:text-gray-300"
+            class="pointer-cursor text-yellow-100 transition-all duration-300 ease-in-out hover:-translate-y-1 hover:text-gray-300"
           >
             Contact
           </a>
