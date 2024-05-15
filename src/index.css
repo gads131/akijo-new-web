@@ -18,6 +18,10 @@ html{
   transform: scaleX(-1);
 }
 
+.loader {
+  border-top-color: #3490dc;
+}
+
 @layer components{
   .max-container {
     max-width: 1440px;

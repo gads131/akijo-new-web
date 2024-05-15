@@ -1,18 +1,20 @@
 import React from 'react'
 import Navbar from './components/Navbar'
 import Hero from './Section/Hero'
-
+import AboutUs from './Section/AboutUs'
+import Layout from './components/Layout'
 
 const App = () => {
   return (
-    <div className="div">
+  <Layout>
       <Navbar />
       <section><Hero /></section>
+      <section><AboutUs /></section>
       <section>Test</section>
       <section>Test</section>
       <section>Test</section>
-      <section>Test</section>
-    </div>
+  </Layout>
+    
   )
 }
 
