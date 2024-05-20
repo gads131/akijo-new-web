@@ -1,15 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Palanquin:wght@100;200;300;400;500;600;700&display=swap");
+/* Example: Import modal styles in your main CSS file */
+@import url("../src/components/modal-styles.css");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-html{
-  scroll-snap-type: y mandatory;
+html {
+  /* scroll-snap-type: y mandatory; */
   scroll-behavior: smooth;
 }
 
-*{
+* {
   padding: 0;
   margin: 0;
 }
@@ -18,29 +20,37 @@ html{
   transform: scaleX(-1);
 }
 
-@layer components{
+.loader {
+  border-top-color: #3490dc;
+}
+
+@layer components {
   .max-container {
     max-width: 1440px;
     margin: 0 auto;
   }
-
 }
-section{
-  height: 100vh;
+
+section {
+  height: 100%;
   scroll-snap-align: center;
 }
 
-@layer utilities{
+@layer utilities {
   .padding {
-    @apply sm:px-16 px-8 sm:py-24 py-12;
+    @apply px-8 py-12 sm:px-16 sm:py-24;
   }
 }
 
-.navParent{
+.navParent {
   gap: 43rem;
 }
 
-.hero{
+.no-scroll {
+  overflow: hidden;
+}
+
+.hero-section {
   position: relative;
   padding-block: 120px;
   min-height: 100vh;
@@ -48,7 +58,7 @@ section{
   z-index: 1;
 }
 
-.hero-btn{
+.hero-btn {
   display: grid;
   position: absolute;
   width: 45px;
@@ -60,24 +70,64 @@ section{
 
 .home-image {
   position: absolute;
+  /* object-position: var(--object-position, left 50%); */
   top: 0;
-  left: 0;
+  left: 0%;
   width: 100%;
   height: 100%;
   pointer-events: none;
   user-select: none;
   z-index: -1;
-  transform: scaleX(-1);
+  /* transform: scaleX(-1); */
   overflow: hidden;
   animation: cresendo linear forwards;
 }
 
-.parentHero{
+@media (min-width: 1024px) {
+  .home-image {
+    object-position: center;
+  }
+}
+
+.parentHero {
   height: 100%;
   overflow: hidden;
 }
 
+/* .Modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  max-width: 600px;
+  background: white;
+  padding: 20px;
+  border: 1px solid #ccc;
+  transition: transform 1 ease-out;
+  z-index: 1050;
+}
 
+.Overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  z-index: 1040;
+  transition:
+    opacity 0,
+    3 ease-out;
+}
+
+.Modal--open {
+  opacity: 1;
+}
+
+.Overlay--open {
+  opacity: 1;
+} */
 
 @keyframes cresendo {
   0% {
@@ -89,9 +139,8 @@ section{
   100% {
     transform: scale(1);
   }
-
 }
 
 .animate-scale {
-  animation:  cresendo 30s ease-in-out infinite;
+  animation: cresendo 30s ease-in-out infinite;
 }

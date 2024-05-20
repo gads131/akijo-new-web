@@ -3,18 +3,19 @@ import home from "../assets/home.png";
 
 const Hero = () => {
   return (
-    <section className='hero id="home"'>
+    <div id="Main" className="hero-section">
+      {/* Home bg */}
       <div className="parent">
         <img
           src={home}
-          alt=""
-          className="image-home left-52 scale-x(-1) animate-scale absolute inset-0 w-full max-w-full transform object-cover object-center"
+          alt="HomeImg"
+          className="image-home animate-scale absolute inset-0  w-full max-w-full transform object-cover object-center lg:left-52"
           style={{
-            objectPosition: "center",
             height: "100%",
-            transform: "scale-x(-1)",
           }}
         />
+
+        {/* overlay for bg */}
         <div className="hidden md:block">
           <div className="absolute inset-0 min-h-full bg-gradient-to-r from-black to-transparent opacity-100"></div>
           <div className="absolute inset-0 min-h-full bg-gradient-to-r from-black to-transparent opacity-100"></div>
@@ -22,8 +23,9 @@ const Hero = () => {
         <div className="sm:block md:hidden">
           <div className="absolute inset-0 min-h-full bg-gradient-to-r from-black to-transparent opacity-80"></div>
         </div>
+
         {/* hero--------------- */}
-        <div className="relative flex max-h-screen w-full flex-col justify-center gap-4 mx-6 mt-24 md:mx-20">
+        <div className="relative mx-6 mt-24 flex max-h-screen w-full flex-col justify-center gap-4 md:mx-20">
           <p className="flex text-sm text-slate-100 lg:text-xl">
             Premium Quality Food Service
           </p>
@@ -38,10 +40,14 @@ const Hero = () => {
             Enjoy your special moment with no worries. We provide the best
             quality of food and best experience for your event.
           </p>
-          <div className="flex mt-4">
-            <button className="hover:text border-2 bg-transparent border-yellow-300 uppercase py-4 px-12 text-slate-100 rounded-md hover:bg-yellow-600 hover:text-slate-300 transition-all ease-in-out duration-500 hover:translate-x-4">
-              order Now
-            </button>
+
+          {/* ORDER NOW BUTTON */}
+          <div className="mt-4 flex">
+            <a href="#">
+              <button className="hover:text rounded-md border-2 border-yellow-300 bg-transparent px-12 py-4 uppercase text-slate-100 transition-all duration-500 ease-in-out hover:translate-x-4 hover:bg-yellow-600 hover:text-slate-300">
+                order Now
+              </button>
+            </a>
           </div>
           {/* <button className="hero-btn flex flex-wrap gap-24">
             <div className="hover:text- uppercase text-slate-100">
@@ -50,7 +56,7 @@ const Hero = () => {
           </button> */}
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 
