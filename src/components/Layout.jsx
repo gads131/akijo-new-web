@@ -1,13 +1,12 @@
-// src/components/Layout.jsx
-import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import Loader from './Loader';
+import React, { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import LoaderIcon from "./Loader"; // Ensure this path is correct
 
 const Layout = ({ children }) => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const timer = setTimeout(() => setLoading(false), 2000); // Simulate a 2-second loading time
+    const timer = setTimeout(() => setLoading(false), 5000); // Simulate a 5-second loading time
     return () => clearTimeout(timer);
   }, []);
 
@@ -19,9 +18,10 @@ const Layout = ({ children }) => {
             key="loader"
             initial={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.5 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1 }}
           >
-            <Loader />
+            <LoaderIcon loading={loading} />
           </motion.div>
         )}
       </AnimatePresence>
@@ -29,7 +29,7 @@ const Layout = ({ children }) => {
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 2 }}
         >
           {children}
         </motion.div>

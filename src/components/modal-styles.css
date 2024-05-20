@@ -1,0 +1,33 @@
+/* modal-styles.css */
+
+.Modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  max-width: 600px;
+  background: white;
+  padding: 20px;
+  border: 1px solid #ccc;
+  z-index: 1050;
+}
+
+.Overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  z-index: 1040;
+}
+
+/* Show modal and overlay when open */
+.Modal--open {
+  opacity: 1;
+}
+
+.Overlay--open {
+  opacity: 1;
+}
