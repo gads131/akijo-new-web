@@ -13,14 +13,14 @@ import {
 
 const OurCostumer = () => {
   return (
-    <div className="bg-neutral-100">
-      <div className="flex h-20 items-center justify-center">
+    <div className="">
+      <div className="flex h-20 items-center justify-center bg-neutral-100">
         <span className="font-semibold uppercase text-slate-900">
           Scroll down
         </span>
       </div>
       <HorizontalScrollCarousel />
-      <div className="flex h-20 items-center justify-center">
+      <div className="flex h-20 items-center justify-center bg-neutral-800">
         <span className="font-semibold uppercase text-neutral-500">
           Scroll up
         </span>
