@@ -8,6 +8,7 @@ import OurMenu from "./Section/OurMenu";
 import Carousel from "./Section/Carousel";
 import { BrowserRouter } from "react-router-dom";
 import OurCostumer from "./Section/OurCostumer";
+import OurProduct from "./Section/OurProduct";
 // import Layout from './components/Layout'
 
 const App = () => {
@@ -20,13 +21,15 @@ const App = () => {
       <section id="AboutUs" className="section">
         <AboutUs />
       </section>
-      <section id="OurMenu" className="section">
-        <OurMenu />
-      </section>
       <section id="OurCostumer" className="section">
         <OurCostumer />
       </section>
-      <section>Test</section>
+      <section id="OurMenu" className="section">
+        <OurMenu />
+      </section>
+      <section>
+        <OurProduct />
+      </section>
     </Layout>
   );
 };

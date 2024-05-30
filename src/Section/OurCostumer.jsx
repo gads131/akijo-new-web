@@ -13,9 +13,9 @@ import {
 
 const OurCostumer = () => {
   return (
-    <div className="bg-neutral-800">
+    <div className="bg-neutral-100">
       <div className="flex h-20 items-center justify-center">
-        <span className="font-semibold uppercase text-neutral-500">
+        <span className="font-semibold uppercase text-slate-900">
           Scroll down
         </span>
       </div>
