@@ -20,11 +20,11 @@ const OurCostumer = () => {
         </span>
       </div>
       <HorizontalScrollCarousel />
-      <div className="flex h-20 items-center justify-center bg-neutral-800">
+      {/* <div className="flex h-20 items-center justify-center bg-neutral-800">
         <span className="font-semibold uppercase text-neutral-500">
           Scroll up
         </span>
-      </div>
+      </div> */}
     </div>
   );
 };

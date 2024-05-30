@@ -11,12 +11,10 @@ const MenuItemDisplay = ({ item }) => {
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
     >
-      <div className="relative h-64">
-        <img
-          src={item.image}
-          alt={item.name}
-          className="h-64 w-full rounded-lg object-cover"
-        />
+      <div className="overflow-hidden rounded">
+        <div className="h-64 overflow-hidden">
+          <img src={item.image} alt={item.name} className="h-auto w-full" />
+        </div>
       </div>
 
       <div className="p-4">

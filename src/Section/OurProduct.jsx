@@ -40,7 +40,11 @@ const Product = ({ product }) => {
   return (
     <div className="m-4 max-w-sm overflow-hidden rounded shadow-lg">
       <div className="h-52 overflow-hidden">
-        <img className="h-auto w-full" src={product.image} alt={product.name} />
+        <img
+          className="h-auto w-full object-cover"
+          src={product.image}
+          alt={product.name}
+        />
       </div>
 
       <div className="px-6 py-4">
