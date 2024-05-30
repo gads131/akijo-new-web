@@ -1,5 +1,8 @@
 import React from "react";
+import { useEffect, useRef, useState } from "react";
 import home from "../assets/home.png";
+import { motion } from "framer-motion";
+motion;
 
 const Hero = () => {
   return (
@@ -21,29 +24,30 @@ const Hero = () => {
           <div className="absolute inset-0 min-h-full bg-gradient-to-r from-black to-transparent opacity-100"></div>
         </div>
         <div className="sm:block md:hidden">
-          <div className="absolute inset-0 min-h-full bg-gradient-to-r from-black to-transparent opacity-80"></div>
+          <div className="absolute inset-0 min-h-full bg-gradient-to-r from-black to-transparent to-80% opacity-100"></div>
         </div>
 
         {/* hero--------------- */}
-        <div className="relative mx-6 mt-24 flex max-h-screen w-full flex-col justify-center gap-4 md:mx-20">
+        <div className="relative m-8 my-40 flex flex-col gap-4 md:m-16 md:my-80">
           <p className="flex text-sm text-slate-100 lg:text-xl">
             Premium Quality Food Service
           </p>
 
-          <h1 className="flex text-xl uppercase text-slate-200 md:text-3xl xl:text-4xl">
+          <h1 className="flex text-xl uppercase text-neutral-200 md:text-3xl xl:text-4xl">
             <p>
               your <span className="text-yellow-300">special</span> event With
               AKIJO <br /> <span className="text-yellow-300">unique</span> cart
             </p>
           </h1>
-          <p className="flex w-1/2 text-xs font-light text-slate-100 md:text-base xl:text-xl">
+
+          <p className=" flex text-wrap text-xs font-light text-neutral-100 md:text-base xl:text-xl">
             Enjoy your special moment with no worries. We provide the best
             quality of food and best experience for your event.
           </p>
 
           {/* ORDER NOW BUTTON */}
           <div className="mt-4 flex">
-            <a href="#">
+            <a href="https://wa.me/+6281342709321">
               <button className="hover:text rounded-md border-2 border-yellow-300 bg-transparent px-12 py-4 uppercase text-slate-100 transition-all duration-500 ease-in-out hover:translate-x-4 hover:bg-yellow-600 hover:text-slate-300">
                 order Now
               </button>

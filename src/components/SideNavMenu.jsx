@@ -3,7 +3,7 @@ import React from "react";
 const SideNavMenu = ({ categories, selectedCategory, onSelectCategory }) => {
   return (
     <div className="h-3/4 w-1/3 rounded-lg bg-white p-2 shadow-md md:p-4 lg:w-1/6">
-      <h2 className="mb-4 text-lg font-bold">Our Menu</h2>
+      <h2 className="mb-4 text-center text-lg font-bold">Our Menu</h2>
       <ul>
         {categories.map((category, index) => (
           <li

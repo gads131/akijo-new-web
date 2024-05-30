@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Modal from "react-modal";
-import { akijo1, akijo2, akijokopi } from "../assets/images";
+import { akijo1, akijo2, order } from "../assets/images";
 
 // Make sure to bind modal to your appElement (http://reactcommunity.org/react-modal/accessibility/)
 Modal.setAppElement("#root");
@@ -21,7 +21,7 @@ const AboutUs = () => {
   return (
     <div id="AboutUs">
       <div className=" bg-neutral-100 p-8">
-        <h2 className="mb-4  text-center text-2xl font-bold text-red-500 md:mb-10 xl:mb-14">
+        <h2 className="mb-4 text-center text-2xl font-bold text-red-500 md:mb-10 xl:mb-14">
           Welcome to AKIJO
         </h2>
         <p className="mb-4 text-justify  text-lg leading-loose text-slate-800 md:mb-10 lg:text-center xl:mb-14">
@@ -38,66 +38,62 @@ const AboutUs = () => {
           will bring something new to your events
         </p>
 
+        {/* CARD */}
         <div className="mb-8 grid grid-cols-1 gap-4 md:grid-cols-3">
-          {/* Image 1 */}
-          <div className="rounded border p-4 shadow-lg">
-            <img
-              src={akijo1}
-              alt="Step 1"
-              className="mb-4 h-40 w-full cursor-pointer object-cover"
-              style={{
-                objectFit: "cover",
-              }}
-              onClick={() => openModal(akijo1)}
-            />
-
-            <h3 className="mb-2 text-xl font-semibold text-slate-800">
-              Frozen Food
-            </h3>
-            <p className="text-slate-600">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Non ipsa
-              omnis alias optio nihil temporibus iste voluptatum quam ipsum a
-              quis ea delectus rerum, saepe repellat. Deleniti obcaecati labore
-              harum.
-            </p>
+          {/* Card 1 */}
+          <div className="flex flex-col rounded border p-4 shadow-lg">
+            <div className="flex-grow">
+              <img
+                src={akijo1}
+                alt="Step 1"
+                className="mb-4 h-64 w-full cursor-pointer object-cover"
+                onClick={() => openModal(akijo1)}
+              />
+              <h3 className="mb-2 text-xl font-semibold text-slate-900">
+                Gerobak Bakso Ba' AKIJO
+              </h3>
+              <p className="text-wrap text-justify text-slate-800">
+                Paket untuk 50 sampai 60 porsi/orang. Peralatan dan perlengkapan
+                kami sediakan seperti gerobak, meja, mangkok, berserta pelengkap
+                lainnya.
+              </p>
+            </div>
           </div>
 
-          {/* Image 2 */}
-          <div className="rounded border p-4 shadow-lg">
-            <img
-              src={akijo2}
-              alt="Step 2"
-              className="mb-4 h-40 w-full cursor-pointer object-cover"
-              onClick={() => openModal(akijo2)}
-            />
-            <h3 className="mb-2 text-xl font-semibold text-slate-800">
-              Home Service Cooking
-            </h3>
-            <p className="text-slate-600">
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolores
-              nesciunt provident fuga est numquam maxime ad adipisci repellendus
-              cum harum repudiandae assumenda veritatis praesentium, ipsam
-              voluptatum non consectetur ab reprehenderit.
-            </p>
+          {/* Card 2 */}
+          <div className="flex flex-col rounded border p-4 shadow-lg">
+            <div className="flex-grow">
+              <img
+                src={akijo2}
+                alt="Step 2"
+                className="mb-4 h-64 w-full cursor-pointer object-cover"
+                onClick={() => openModal(akijo2)}
+              />
+              <h3 className="mb-2 text-xl font-semibold text-slate-800">
+                Booth Coffe AKIJO
+              </h3>
+              <p className="text-wrap text-justify text-slate-800">
+                Paket untuk 100 cups kopi. Berserta kue cucur
+              </p>
+            </div>
           </div>
 
-          {/* Image 3 */}
-          <div className="rounded border p-4 shadow-lg">
-            <img
-              src={akijokopi}
-              alt="Step 3"
-              className="mb-4 h-40 w-full cursor-pointer object-cover"
-              onClick={() => openModal(akijokopi)}
-            />
-            <h3 className="mb-2 text-xl font-semibold text-slate-800">
-              Restaurant
-            </h3>
-            <p className="text-slate-600">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Necessitatibus maxime at perspiciatis? Dignissimos quam tempora
-              error sed accusantium, nemo et iste. Aspernatur quibusdam neque
-              vero itaque eligendi aut dolor soluta?
-            </p>
+          {/* Card 3 */}
+          <div className="flex flex-col rounded border p-4 shadow-lg">
+            <div className="flex-grow">
+              <img
+                src={order}
+                alt="Step 3"
+                className="mb-4 h-64 w-full cursor-pointer object-cover"
+                onClick={() => openModal(order)}
+              />
+              <h3 className="mb-2 text-xl font-semibold text-slate-800">
+                Order By Request
+              </h3>
+              <p className="text-wrap text-justify text-slate-800">
+                Bisa Request pesanan
+              </p>
+            </div>
           </div>
         </div>
 
@@ -117,17 +113,18 @@ const AboutUs = () => {
           </button>
           <img src={selectedImage} alt="Fullscreen Modal" className="w-full" />
         </Modal>
-        <div className=" mb-4 text-center">
-          <h3 className="mb-4 text-2xl font-semibold">Join Us</h3>
-          <p className="mb-4 text-gray-700">
-            Interested to become our partner bussiness ? Get in touch!
+        <div className="mb-4 flex flex-col gap-4 text-center">
+          <p className="mb-4 text-lg text-gray-700">
+            For more information and order Contact us via the link below
           </p>
-          <a
-            href="/contact"
-            className="rounded-lg bg-rose-500 px-4 py-2 text-white"
-          >
-            Contact Us
-          </a>
+          <div>
+            <a
+              href="https://wa.me/+6281342709321"
+              className="rounded-lg bg-rose-600 px-4 py-2 text-white"
+            >
+              Contact Us (WA)
+            </a>
+          </div>
         </div>
       </div>
     </div>
