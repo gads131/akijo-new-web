@@ -239,7 +239,7 @@ const Navbar = () => {
                     initial="initial"
                     animate="open"
                     exit="initial"
-                    className="flex justify-center gap-8 space-x-4"
+                    className="mb-16 flex justify-center space-x-12"
                   >
                     {socialMedia.map((media) => (
                       <motion.div

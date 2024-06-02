@@ -1,6 +1,6 @@
 import React from "react";
 import { useEffect, useRef, useState } from "react";
-import home from "../assets/home.png";
+import home from "../assets/home.jpg";
 import { motion } from "framer-motion";
 motion;
 
