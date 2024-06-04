@@ -1,5 +1,5 @@
 import React from "react";
-import { bakso, ayamgoreng, porkslice, siomay } from "../assets/images";
+import { bakso, ayamgoreng, porkslice, siomay } from "../assets/images/product";
 
 const products = [
   {
@@ -72,8 +72,8 @@ const ProductList = ({ products }) => {
 
 const OurProduct = () => {
   return (
-    <div className="container mx-auto px-4">
-      <h1 className="my-8 text-center text-xl font-bold text-orange-600">
+    <div className="container mx-auto px-4 py-14">
+      <h1 className="py-8 text-center text-xl font-bold text-orange-600">
         Our Products
       </h1>
       <ProductList products={products} />

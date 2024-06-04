@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import MenuItemDisplay from "../components/MenuItemDisplay";
 import SideNavMenu from "../components/SideNavMenu";
-import { menu1, menu2, menu3, menu4, menu5 } from "../assets/images";
+import { menu1, menu2, menu3 } from "../assets/images/menu";
 import { motion } from "framer-motion";
 import MapComponent from "../components/MapComponent";
 
@@ -59,14 +59,14 @@ const menuItems = {
     {
       name: "Daging Slice",
       price: "5.000",
-      image: menu4,
+      image: menu1,
     },
   ],
   Minuman: [
     {
       name: "Nutri Sari",
       price: "5.000",
-      image: menu5,
+      image: menu1,
     },
   ],
 };

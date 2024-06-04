@@ -9,6 +9,7 @@ import Carousel from "./Section/Carousel";
 import { BrowserRouter } from "react-router-dom";
 import OurCostumer from "./Section/OurCostumer";
 import OurProduct from "./Section/OurProduct";
+import Footer from "./Section/Footer";
 // import Layout from './components/Layout'
 
 const App = () => {
@@ -30,6 +31,9 @@ const App = () => {
       <section>
         <OurProduct />
       </section>
+      <div>
+        <Footer />
+      </div>
     </Layout>
   );
 };
