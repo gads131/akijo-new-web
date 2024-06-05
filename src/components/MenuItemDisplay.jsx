@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 const MenuItemDisplay = ({ item }) => {
   return (
     <motion.div
-      className=" overflow-hidden rounded-lg bg-white p-4 shadow-md"
+      className="overflow-hidden rounded-lg bg-white p-4 shadow-md"
       initial={{ opacity: 0, scale: 0.8 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ ease: "easeIn", duration: 0.3, delay: 0.2 }}
@@ -13,7 +13,11 @@ const MenuItemDisplay = ({ item }) => {
     >
       <div className="overflow-hidden rounded">
         <div className="h-64 overflow-hidden">
-          <img src={item.image} alt={item.name} className="h-auto w-full" />
+          <img
+            src={item.image}
+            alt={item.name}
+            className="h-auto min-h-[250px] w-full min-w-[200px] object-cover"
+          />
         </div>
       </div>
 
