@@ -64,7 +64,7 @@ const Card = ({ card }) => {
         }}
         className="absolute inset-0 z-0 transition-transform duration-300 hover:scale-110"
       ></div>
-      <div className="absolute inset-0 z-10 grid place-content-end">
+      <div className="absolute inset-0 z-10 grid place-content-around">
         <p className="rounded-sm bg-gradient-to-br from-white/20 to-white/0 p-2 font-mono text-xs uppercase text-neutral-200 backdrop-blur-lg">
           {card.title}
         </p>

@@ -6,32 +6,37 @@ const products = [
     name: "Bakso Ba' Akijo",
     description: "Ready to cook boil or fry",
     price: "Rp. 28.000 /bks",
-    image: bakso,
+    image:
+      "https://d3gal648yor2nc.cloudfront.net/assets/images/photoshop/baksoba.png",
   },
   {
     name: "Pork Slice",
     description:
       "Pork slice marinated with our secret ingridient ready to grill",
     price: "Rp. 90.000 /bks",
-    image: porkslice,
+    image:
+      "https://d3gal648yor2nc.cloudfront.net/assets/images/photoshop/porkslice.png",
   },
   {
     name: "Ayam Goreng Frozen",
     description: "Fried Chicken with our special spice ready to fry",
     price: "Rp. 100.000 /bks",
-    image: ayamgoreng,
+    image:
+      "https://d3gal648yor2nc.cloudfront.net/assets/images/photoshop/ayamgoreng.png",
   },
   {
     name: "Ayam Bakar Frozen",
     description: "Fried Chicken with our special spice ready to grill",
     price: "Rp. 100.000 /bks",
-    image: ayamgoreng,
+    image:
+      "https://d3gal648yor2nc.cloudfront.net/assets/images/photoshop/ayamgoreng.png",
   },
   {
     name: "Siomay Frozen",
     description: "Steam and serve with peanut sauce",
     price: "Rp. 30.000 /bks",
-    image: siomay,
+    image:
+      "https://d3gal648yor2nc.cloudfront.net/assets/images/photoshop/siomay.png",
   },
   // Add more products here
 ];

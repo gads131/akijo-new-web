@@ -10,8 +10,9 @@ const Hero = () => {
       {/* Home bg */}
       <div className="parent">
         <img
-          src={home}
+          src="https://d3gal648yor2nc.cloudfront.net/assets/home.jpg"
           alt="HomeImg"
+          loading="lazy"
           className="image-home animate-scale absolute inset-0  w-full max-w-full transform object-cover object-center lg:left-52"
           style={{
             height: "100%",

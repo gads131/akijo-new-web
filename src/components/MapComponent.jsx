@@ -11,7 +11,6 @@ const center = {
 
   lng: 124.842014, // Example longitude, replace with your longitude
 };
-
 const MapComponent = () => {
   const handleDirectionsClick = () => {
     const url = `https://www.google.com/maps/dir/?api=1&destination=${center.lat},${center.lng}`;

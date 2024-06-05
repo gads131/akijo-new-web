@@ -13,60 +13,79 @@ const menuItems = {
     {
       name: "Bakso Komplit",
       price: "25.000",
-      image: menu1,
+      image: "https://d3gal648yor2nc.cloudfront.net/assets/images/menu4.png",
     },
     {
       name: "Bakso Special",
       price: "25.000",
-      image: menu1,
+      image: "https://d3gal648yor2nc.cloudfront.net/assets/images/menu4.png",
     },
     {
       name: "Bakso",
       price: "25.000",
-      image: menu1,
+      image: "https://d3gal648yor2nc.cloudfront.net/assets/images/menu4.png",
     },
   ],
   Ayam: [
     {
       name: "Ayam Goreng",
       price: "25.000",
-      image: menu2,
+      image:
+        "https://d3gal648yor2nc.cloudfront.net/assets/images/photoshop/ayamgorengjadi.png",
     },
     {
       name: "Ayam Bakar",
       price: "27.000",
-      image: menu2,
+      image:
+        "https://d3gal648yor2nc.cloudfront.net/assets/images/photoshop/ayambakarjadipng.png",
     },
   ],
   Gorengan: [
     {
       name: "Tahu Isi",
       price: "2.000",
-      image: menu3,
+      image:
+        "https://d3gal648yor2nc.cloudfront.net/assets/images/photoshop/tahugoreang.png",
     },
     {
       name: "Pangsit",
       price: "2.000",
-      image: menu3,
+      image:
+        "https://d3gal648yor2nc.cloudfront.net/assets/images/photoshop/pangsitgoreang.png",
+    },
+    {
+      name: "Riceball",
+      price: "2.000",
+      image:
+        "https://d3gal648yor2nc.cloudfront.net/assets/images/photoshop/riceball.png",
     },
     {
       name: "Tahu Biasa",
       price: "1.000",
-      image: menu3,
+      image:
+        "https://d3gal648yor2nc.cloudfront.net/assets/images/photoshop/tahugoreang.png",
     },
   ],
   Topping: [
     {
       name: "Daging Slice",
       price: "5.000",
-      image: menu1,
+      image:
+        "https://d3gal648yor2nc.cloudfront.net/assets/images/photoshop/porkslice.png",
     },
   ],
   Minuman: [
     {
+      name: "Kopi",
+      price: "8.000",
+      image:
+        "https://pixabay.com/photos/coffee-cappuccino-latte-drink-cafe-3727673/",
+    },
+    {
       name: "Nutri Sari",
       price: "5.000",
-      image: menu1,
+      image:
+        "https://pixabay.com/photos/coffee-cappuccino-latte-drink-cafe-3727673/",
     },
   ],
 };
@@ -86,7 +105,7 @@ const OurMenu = () => {
           onSelectCategory={setSelectedCategory}
         />
         <motion.div
-          className="lg-grid-cols-3 ml-8 grid h-3/4 w-3/4 grid-cols-1 gap-8 md:grid-cols-2"
+          className="lg-grid-cols-3 relative ml-8 grid h-3/4 w-3/4 grid-cols-1 gap-8 overflow-hidden md:grid-cols-2"
           key={selectedCategory}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
