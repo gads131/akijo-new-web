@@ -25,7 +25,7 @@ const App = () => {
       <section id="OurCostumer" className="section">
         <OurCostumer />
       </section>
-      <section id="OurMenu" className="section">
+      <section id="OurMenu" className="section px-4 py-2">
         <OurMenu />
       </section>
       <section>

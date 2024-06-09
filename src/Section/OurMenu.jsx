@@ -94,6 +94,7 @@ const OurMenu = () => {
   const [selectedCategory, setSelectedCategory] = useState(categories[0]);
 
   return (
+<<<<<<< Updated upstream
     <section id="AboutUs" className="bg-neutral-800 p-8">
       <div className="section-tittle items-center text-center text-2xl font-bold">
         <h2 className="m-4 text-amber-100 lg:m-12">Our Menu</h2>
@@ -123,6 +124,41 @@ const OurMenu = () => {
         </h1>
         <div className="mx-auto my-20 w-full max-w-4xl rounded border bg-slate-100 p-4 shadow-lg">
           <MapComponent />
+=======
+    <section id="AboutUs" className="">
+      <div className="rounded-[3rem] bg-neutral-800 p-4">
+        <div className="section-tittle items-center text-center text-2xl font-bold">
+          <h2 className="m-4 text-amber-100 lg:m-12">Our Menu</h2>
+        </div>
+        <div className="max relative flex flex-col items-center justify-center gap-4 lg:flex-row lg:items-start">
+          <SideNavMenu
+            categories={categories}
+            selectedCategory={selectedCategory}
+            onSelectCategory={setSelectedCategory}
+          />
+          <div className="flex flex-1 flex-col justify-start">
+            <motion.div
+              className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-3 xl:grid-rows-2 "
+              key={selectedCategory}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ ease: "easeOut", duration: 0.5, delay: 0.3 }}
+            >
+              {menuItems[selectedCategory].map((item, index) => (
+                <MenuItemDisplay key={index} item={item} />
+              ))}
+            </motion.div>
+          </div>
+        </div>
+        <div className="container mx-auto px-4 pb-14 pt-48">
+          <h1 className="my-8 text-center text-2xl font-bold text-amber-100">
+            Our Location
+          </h1>
+          <div className="mx-auto my-20 w-full max-w-4xl rounded border bg-slate-100 p-4 shadow-lg">
+            <MapComponent />
+          </div>
+>>>>>>> Stashed changes
         </div>
       </div>
     </section>
