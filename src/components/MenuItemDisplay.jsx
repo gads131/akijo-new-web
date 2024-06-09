@@ -12,17 +12,12 @@ const MenuItemDisplay = ({ item }) => {
       whileTap={{ scale: 0.95 }}
     >
       <div className="overflow-hidden rounded">
-<<<<<<< Updated upstream
-        <div className="h-64 overflow-hidden">
-          <img src={item.image} alt={item.name} className="h-auto w-full" />
-=======
         <div className="overflow-hidden">
           <img
             src={item.image}
             alt={item.name}
             className="h-auto w-full object-cover"
           />
->>>>>>> Stashed changes
         </div>
       </div>
 

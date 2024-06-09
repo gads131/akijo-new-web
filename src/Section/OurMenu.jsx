@@ -6,10 +6,10 @@ import { menu1, menu2, menu3 } from "../assets/images/menu";
 import { motion } from "framer-motion";
 import MapComponent from "../components/MapComponent";
 
-const categories = ["Bakso", "Ayam", "Gorengan", "Topping", "Minuman"];
+const categories = ["Makanan", "Gorengan", "Minuman"];
 
 const menuItems = {
-  Bakso: [
+  Makanan: [
     {
       name: "Bakso Komplit",
       price: "25.000",
@@ -25,8 +25,6 @@ const menuItems = {
       price: "25.000",
       image: "https://d3gal648yor2nc.cloudfront.net/assets/images/menu4.png",
     },
-  ],
-  Ayam: [
     {
       name: "Ayam Goreng",
       price: "25.000",
@@ -38,6 +36,12 @@ const menuItems = {
       price: "27.000",
       image:
         "https://d3gal648yor2nc.cloudfront.net/assets/images/photoshop/ayambakarjadipng.png",
+    },
+    {
+      name: "Daging Slice",
+      price: "5.000",
+      image:
+        "https://d3gal648yor2nc.cloudfront.net/assets/images/photoshop/porkslice.png",
     },
   ],
   Gorengan: [
@@ -66,14 +70,6 @@ const menuItems = {
         "https://d3gal648yor2nc.cloudfront.net/assets/images/photoshop/tahugoreang.png",
     },
   ],
-  Topping: [
-    {
-      name: "Daging Slice",
-      price: "5.000",
-      image:
-        "https://d3gal648yor2nc.cloudfront.net/assets/images/photoshop/porkslice.png",
-    },
-  ],
   Minuman: [
     {
       name: "Kopi",
@@ -94,37 +90,6 @@ const OurMenu = () => {
   const [selectedCategory, setSelectedCategory] = useState(categories[0]);
 
   return (
-<<<<<<< Updated upstream
-    <section id="AboutUs" className="bg-neutral-800 p-8">
-      <div className="section-tittle items-center text-center text-2xl font-bold">
-        <h2 className="m-4 text-amber-100 lg:m-12">Our Menu</h2>
-      </div>
-      <div className="flex min-h-full">
-        <SideNavMenu
-          categories={categories}
-          selectedCategory={selectedCategory}
-          onSelectCategory={setSelectedCategory}
-        />
-        <motion.div
-          className="lg-grid-cols-3 relative ml-8 grid h-3/4 w-3/4 grid-cols-1 gap-8 overflow-hidden md:grid-cols-2"
-          key={selectedCategory}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ ease: "easeOut", duration: 0.5, delay: 0.3 }}
-        >
-          {menuItems[selectedCategory].map((item, index) => (
-            <MenuItemDisplay key={index} item={item} />
-          ))}
-        </motion.div>
-      </div>
-      <div className="container mx-auto px-4 pb-14 pt-48">
-        <h1 className="my-8 text-center text-2xl font-bold text-amber-100">
-          Our Location
-        </h1>
-        <div className="mx-auto my-20 w-full max-w-4xl rounded border bg-slate-100 p-4 shadow-lg">
-          <MapComponent />
-=======
     <section id="AboutUs" className="">
       <div className="rounded-[3rem] bg-neutral-800 p-4">
         <div className="section-tittle items-center text-center text-2xl font-bold">
@@ -158,7 +123,6 @@ const OurMenu = () => {
           <div className="mx-auto my-20 w-full max-w-4xl rounded border bg-slate-100 p-4 shadow-lg">
             <MapComponent />
           </div>
->>>>>>> Stashed changes
         </div>
       </div>
     </section>
