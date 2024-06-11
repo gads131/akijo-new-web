@@ -144,3 +144,13 @@ section {
 .animate-scale {
   animation: cresendo 30s ease-in-out infinite;
 }
+
+/* .OurProduct {
+  background-color: transparent;
+  backdrop-filter: blur(80px);
+  background-image: linear-gradient(
+    120,
+    rgba (225, 225, 225, 0, 3),
+    rgba (0, 0, 0, 0.2)
+  );
+} */

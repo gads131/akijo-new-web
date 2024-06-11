@@ -2,16 +2,16 @@ import React from "react";
 
 const SideNavMenu = ({ categories, selectedCategory, onSelectCategory }) => {
   return (
-    <div className=" rounded-lg p-2 md:p-4 lg:w-1/6 lg:bg-white">
+    <div className=" rounded-full border-2 border-white  px-0 py-0 md:p-4 lg:w-1/6 lg:rounded-lg lg:bg-white">
       {/* <h2 className="mb-4 text-center text-lg font-bold">Menu</h2> */}
       <ul className="flex flex-row justify-center gap-4 lg:flex-col">
         {categories.map((category, index) => (
           <li
             key={index}
-            className={`cursor-pointer rounded-full p-2 max-lg:text-white lg:rounded-md ${
+            className={`cursor-pointer rounded-full p-2 transition-transform duration-500 ease-in max-lg:text-white lg:rounded-md ${
               selectedCategory === category
                 ? "bg-orange-500 text-white"
-                : "hover:bg-gray-100 "
+                : "hover:bg-neutral-900 "
             }`}
             onClick={() => onSelectCategory(category)}
           >
