@@ -8,10 +8,10 @@ const SideNavMenu = ({ categories, selectedCategory, onSelectCategory }) => {
         {categories.map((category, index) => (
           <li
             key={index}
-            className={`cursor-pointer rounded-full p-2 transition-transform duration-500 ease-in max-lg:text-white lg:rounded-md ${
+            className={`cursor-pointer rounded-full p-2 max-lg:text-white lg:rounded-md ${
               selectedCategory === category
                 ? "bg-orange-500 text-white"
-                : "hover:bg-neutral-900 "
+                : "hover:bg-neutral-900 lg:hover:bg-gray-200"
             }`}
             onClick={() => onSelectCategory(category)}
           >
