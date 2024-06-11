@@ -38,7 +38,6 @@ const products = [
     image:
       "https://d3gal648yor2nc.cloudfront.net/assets/images/photoshop/siomay.png",
   },
-  // Add more products here
 ];
 
 const Product = ({ product }) => {

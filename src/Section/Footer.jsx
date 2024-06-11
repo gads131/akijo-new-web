@@ -42,9 +42,7 @@ const Footer = () => {
             />
           </a>
         </div> */}
-      <div className="absolute mx-40">
-        <SvgComponent />
-      </div>
+      <div className="absolute mx-40">{/* <SvgComponent /> */}</div>
       <div className="container mx-auto p-8 text-center">
         {/* <div className="flex justify-center"></div> */}
         <div className=" mb-4 font-extrabold">
