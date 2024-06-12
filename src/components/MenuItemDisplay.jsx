@@ -23,7 +23,9 @@ const MenuItemDisplay = ({ item }) => {
       />
       {/* <div className="card-container"> */}
       <h3 className="mt-4 font-bold md:text-xl">{item.name}</h3>
-      <p className="font-light text-slate-700">{item.ket}</p>
+      <p className="text-xs font-light text-slate-700 md:text-base">
+        {item.ket}
+      </p>
       <p className="mt-auto flex items-end justify-end pt-4 font-semibold text-orange-500 md:text-base">
         Rp{item.price}
       </p>

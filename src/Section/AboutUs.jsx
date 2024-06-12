@@ -50,12 +50,12 @@ const AboutUs = () => {
                 onClick={() => openModal(akijo1)}
               />
               <h3 className="mb-2 text-xl font-semibold text-slate-900">
-                Gerobak Bakso Ba' AKIJO
+                AKIJO Pork Meatball Food Cart
               </h3>
-              <p className="text-wrap text-justify text-slate-800">
-                Paket untuk 50 sampai 60 porsi/orang. Peralatan dan perlengkapan
-                kami sediakan seperti gerobak, meja, mangkok, berserta pelengkap
-                lainnya.
+              <p className="text-wrap text-justify font-light text-slate-800">
+                Packages for 50 to 60 servings per person. We provide equipment
+                and supplies such as food carts, tables, bowls, and other
+                complements.
               </p>
             </div>
           </div>
@@ -69,11 +69,12 @@ const AboutUs = () => {
                 className="mb-4 h-64 w-full cursor-pointer object-cover"
                 onClick={() => openModal(akijo2)}
               />
-              <h3 className="mb-2 text-xl font-semibold text-slate-800">
+              <h3 className="mb-2 text-xl font-semibold text-slate-900">
                 Booth Coffe AKIJO
               </h3>
-              <p className="text-wrap text-justify text-slate-800">
-                Paket untuk 100 cups kopi. Berserta kue cucur
+              <p className="text-wrap text-justify font-light text-slate-800">
+                The package is for 100 cups of coffee. Along with "Cucur" or
+                "Onde-onde".
               </p>
             </div>
           </div>
@@ -90,8 +91,8 @@ const AboutUs = () => {
               <h3 className="mb-2 text-xl font-semibold text-slate-800">
                 Order By Request
               </h3>
-              <p className="text-wrap text-justify text-slate-800">
-                Bisa Request pesanan
+              <p className="text-wrap text-justify font-light text-slate-800">
+                ~
               </p>
             </div>
           </div>

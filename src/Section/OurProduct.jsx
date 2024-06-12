@@ -96,8 +96,10 @@ const Product = ({ product }) => {
       </div>
       {/* isi konten / card */}
       <div className="card-container text-balance">
-        <h3 className="text-xl font-bold">{product.name}</h3>
-        <p className="font-light text-slate-700">{product.description}</p>
+        <h3 className="font-bold md:text-xl">{product.name}</h3>
+        <p className="text-xs font-light text-slate-700 md:text-base">
+          {product.description}
+        </p>
       </div>
       <p className="flex items-end justify-end px-4 pb-4 font-semibold text-orange-500 md:text-base">
         {product.price}
@@ -134,9 +136,9 @@ const ProductList = () => {
 
 const OurProduct = () => {
   return (
-    <div className=" p-4">
+    <div className="bg-yellow-50 p-4">
       <div className="section-tittle items-center text-center text-2xl font-bold">
-        <h2 className="m-4 lg:m-12">Frozen Food Product</h2>
+        <h2 className="m-4 text-red-500 lg:m-12">Frozen Food Product</h2>
       </div>
       <div className="relative flex flex-wrap items-center justify-end">
         <ProductList />
