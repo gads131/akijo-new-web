@@ -94,6 +94,20 @@ section {
   overflow: hidden;
 }
 
+/* CARD ----------------------------------- */
+
+.card-container {
+  @apply flex flex-col py-2 pl-4;
+}
+
+.card-image {
+  @apply h-[300px] w-full;
+}
+
+.price-tag {
+  @apply flex items-end justify-end px-4 pb-4 font-semibold text-orange-500 md:text-base;
+}
+
 /* .Modal {
   position: fixed;
   top: 50%;

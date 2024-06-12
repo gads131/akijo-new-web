@@ -25,7 +25,7 @@ const menuItems = {
     {
       name: "Bakso Ba'",
       price: "20.000",
-      ket: "Bakso Ba'",
+      ket: "Bakso Ba' biasa",
       image: "https://d3gal648yor2nc.cloudfront.net/assets/images/menu4.png",
     },
     {
@@ -140,10 +140,10 @@ const OurMenu = () => {
             <motion.div
               className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-3 xl:grid-rows-2 "
               key={selectedCategory}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0 }}
-              transition={{ ease: "easeOut", duration: 0.5, delay: 0.3 }}
+              transition={{ ease: "easeIn", duration: 0.5, delay: 0.3 }}
             >
               {menuItems[selectedCategory].map((item, index) => (
                 <MenuItemDisplay key={index} item={item} />
