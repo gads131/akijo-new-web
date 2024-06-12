@@ -75,7 +75,7 @@ const Navbar = () => {
   const [open, setOpen] = useState(false);
   const toggleMenu = () => {
     setOpen((prevOpen) => !prevOpen);
-    document.body.classList.toggle("no-scroll", !open);
+    document.body.classList.toggle("no-scroll", !open); //disable scroll on menu open
   };
 
   useEffect(() => {
@@ -85,8 +85,8 @@ const Navbar = () => {
   }, []);
 
   const handleLinkClick = (href) => {
-    setOpen(false); // Close the menu if it is open
-    document.body.classList.remove("no-scroll"); // Enable scrolling
+    setOpen(false);
+    document.body.classList.remove("no-scroll"); // renable scroll
     const section = document.querySelector(href);
     if (section) {
       section.scrollIntoView({ behavior: "smooth" });
@@ -133,7 +133,7 @@ const Navbar = () => {
   const socialMediaVars = {
     initial: {
       opacity: 0,
-      y: 30, // Adjust the vertical offset as needed
+      y: 30, // vertical offset
     },
     open: {
       opacity: 1,
@@ -167,7 +167,7 @@ const Navbar = () => {
             </a>
           </div>
 
-          {/* Navbar */}
+          {/* Navbar List */}
           <div className="hidden items-center gap-4 space-x-4 md:flex md:px-12">
             {NavLinks.map((link) => (
               <a
