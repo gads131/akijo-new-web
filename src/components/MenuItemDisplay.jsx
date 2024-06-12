@@ -4,28 +4,30 @@ import { motion } from "framer-motion";
 const MenuItemDisplay = ({ item }) => {
   return (
     <motion.div
-      className="overflow-hidden rounded-lg bg-white shadow-md shadow-neutral-600"
+      className="flex flex-col overflow-hidden rounded-lg bg-yellow-50 p-2 shadow-md shadow-neutral-600 lg:p-4"
       initial={{ opacity: 0, scale: 0.8 }}
       animate={{ opacity: 1, scale: 1 }}
-      transition={{ ease: "easeIn", duration: 0.3, delay: 0.2 }}
-      whileHover={{ scale: 1.05 }}
+      transition={{
+        type: "spring",
+        stiffness: 100,
+        duration: 0.5,
+        delay: 0.2,
+      }}
+      whileHover={{ scale: 1.02 }}
       whileTap={{ scale: 0.95 }}
     >
-      <div className="flex flex-col p-5">
-        <img
-          src={item.image}
-          alt={item.name}
-          className="h-[200px] w-full object-cover md:h-[250px] lg:h-[300px]"
-        />
-      </div>
-      <div className="flex flex-col py-2 pl-4">
-        <h3 className="font-bold md:text-xl">{item.name}</h3>
-
-        <p className="font-light text-slate-700">{item.ket}</p>
-      </div>
-      <p className="flex items-end justify-end px-4 pb-4 font-semibold text-orange-500 md:text-base">
+      <img
+        src={item.image}
+        alt={item.name}
+        className="h-[200px] w-full object-cover md:h-[250px] lg:h-[300px]"
+      />
+      {/* <div className="card-container"> */}
+      <h3 className="mt-4 font-bold md:text-xl">{item.name}</h3>
+      <p className="font-light text-slate-700">{item.ket}</p>
+      <p className="mt-auto flex items-end justify-end pt-4 font-semibold text-orange-500 md:text-base">
         Rp{item.price}
       </p>
+      {/* </div> */}
     </motion.div>
   );
 };
