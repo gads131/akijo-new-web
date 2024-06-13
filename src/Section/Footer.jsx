@@ -13,17 +13,17 @@ import logoakijosvg from "../assets/logoakijosvg.svg";
 const footerLinks = [
   {
     title: "Whatsapp",
-    href: "#",
+    href: "https://wa.me/+6281342709321",
     icon: <FontAwesomeIcon icon={faWhatsapp} />,
   },
   {
     title: "Facebook",
-    href: "#",
+    href: "https://www.facebook.com/cherly.sampow.33",
     icon: <FontAwesomeIcon icon={faFacebookF} />,
   },
   {
     title: "Instagram",
-    href: "#",
+    href: "https://www.instagram.com/akijo_food/",
     icon: <FontAwesomeIcon icon={faInstagram} />,
   },
   {

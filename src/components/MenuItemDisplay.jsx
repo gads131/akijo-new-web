@@ -16,23 +16,6 @@ const MenuItemDisplay = ({ item }) => {
       whileHover={{ scale: 1.02 }}
       whileTap={{ scale: 0.95 }}
     >
-<<<<<<< HEAD
-      <div className="overflow-hidden rounded">
-        <div className="h-64 overflow-hidden">
-          <img src={item.image} alt={item.name} className="h-auto w-full" />
-        </div>
-      </div>
-
-      <div className="p-4">
-        <h3 className="text-2xl font-bold">{item.name}</h3>
-        <p className="mt-2 text-lg font-semibold text-orange-500">
-          Rp{item.price}
-        </p>
-        <button className="mt-4 rounded-lg bg-orange-500 px-4 py-2 text-white">
-          Order Now
-        </button>
-      </div>
-=======
       <img
         src={item.image}
         alt={item.name}
@@ -47,7 +30,6 @@ const MenuItemDisplay = ({ item }) => {
         Rp{item.price}
       </p>
       {/* </div> */}
->>>>>>> a5c06af4cb7b17d8aa7b93e9888d8c88f76e9c8a
     </motion.div>
   );
 };

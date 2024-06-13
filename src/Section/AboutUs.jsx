@@ -1,13 +1,69 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Modal from "react-modal";
+import { motion, useAnimation } from "framer-motion";
 import { akijo1, akijo2, order } from "../assets/images";
 
-// Make sure to bind modal to your appElement (http://reactcommunity.org/react-modal/accessibility/)
 Modal.setAppElement("#root");
+
+const cards = [
+  {
+    tittle: "Pork Hunter Food Cart",
+    image:
+      "https://d3gal648yor2nc.cloudfront.net/assets/images/card/akijo1.jpg",
+    description:
+      "Package for 50 to 60 servings/person. We provide equipment and supplies such as carts, tables, bowls, and other complements.",
+  },
+  {
+    tittle: "AKIJO Booth Coffe",
+    image:
+      "https://d3gal648yor2nc.cloudfront.net/assets/images/card/akijo2.jpg",
+    description:
+      'Package for 100 cups of coffe, along with "Cucur" or "Onde-onde".',
+  },
+  {
+    tittle: "Order by Request",
+    image: "https://d3gal648yor2nc.cloudfront.net/assets/images/card/order.jpg",
+    description: "~",
+  },
+];
+
+const useInView = (threshold = 0.1) => {
+  const controls = useAnimation();
+  const ref = useRef();
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          controls.start("visible");
+        }
+      },
+      { threshold },
+    );
+
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+
+    return () => {
+      if (ref.current) {
+        observer.unobserve(ref.current);
+      }
+    };
+  }, [controls, threshold]);
+
+  return [ref, controls];
+};
 
 const AboutUs = () => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [selectedImage, setSelectedImage] = useState(null);
+  const [expand, setExpand] = useState(false);
+  const [ref, controls] = useInView();
+
+  const toggleExpand = () => {
+    setExpand(!expand);
+  };
 
   const openModal = (imageSrc) => {
     setSelectedImage(imageSrc);
@@ -18,13 +74,20 @@ const AboutUs = () => {
     setModalIsOpen(false);
   };
 
+  const cardRefs = cards.map(() => useInView());
+
   return (
     <div id="AboutUs">
       <div className=" bg-neutral-100 p-8">
         <h2 className="mb-4 text-center text-2xl font-bold text-red-500 md:mb-10 xl:mb-14">
           Welcome to AKIJO
         </h2>
-        <p className="mb-4 text-justify  text-lg leading-loose text-slate-800 md:mb-10 lg:text-center xl:mb-14">
+        <p
+          onClick={toggleExpand}
+          className={`mb-4 text-justify text-lg leading-loose text-slate-800 md:mb-10 lg:text-center xl:mb-14 
+            ${expand ? "" : "line-clamp-3"}
+            cursor-pointer md:line-clamp-none md:cursor-default`}
+        >
           AKIJO started with a simple idea, to bring delicious pork meatballs to
           the people of Manado. While beef meatballs are a staple in Indonesian
           cuisine, pork meatballs were something new and exciting. Our love for
@@ -38,9 +101,50 @@ const AboutUs = () => {
           will bring something new to your events
         </p>
 
-        {/* CARD */}
+        {/* card */}
         <div className="mb-8 grid grid-cols-1 gap-4 md:grid-cols-3">
-          {/* Card 1 */}
+          {cards.map((card, index) => {
+            const [ref, controls] = cardRefs[index];
+            return (
+              <motion.div
+                ref={ref}
+                initial="hidden"
+                animate={controls}
+                whileHover={{ scale: 1.05 }}
+                variants={{
+                  hidden: { opacity: 0, y: 50 },
+                  visible: { opacity: 1, y: 0 },
+                }}
+                transition={{
+                  type: "spring",
+                  stiffness: 100,
+                  duration: 0.5,
+                }}
+                key={index}
+                className="flex flex-col rounded border p-4 shadow-lg"
+              >
+                <div className="flex-grow">
+                  <img
+                    src={card.image}
+                    alt={card.tittle}
+                    className="mb-4 h-64 w-full cursor-pointer object-cover"
+                    onClick={() => openModal(card.image)}
+                  />
+                  <h3 className="mb-2 text-xl font-semibold text-slate-900">
+                    {card.tittle}
+                  </h3>
+                  <p className="text-wrap text-justify text-slate-800">
+                    {card.description}
+                  </p>
+                </div>
+              </motion.div>
+            );
+          })}
+        </div>
+
+        {/* CARD
+        <div className="mb-8 grid grid-cols-1 gap-4 md:grid-cols-3">
+          Card 1
           <div className="flex flex-col rounded border p-4 shadow-lg">
             <div className="flex-grow">
               <img
@@ -50,17 +154,17 @@ const AboutUs = () => {
                 onClick={() => openModal(akijo1)}
               />
               <h3 className="mb-2 text-xl font-semibold text-slate-900">
-                AKIJO Pork Meatball Food Cart
+                Gerobak Bakso Ba' AKIJO
               </h3>
-              <p className="text-wrap text-justify font-light text-slate-800">
-                Packages for 50 to 60 servings per person. We provide equipment
-                and supplies such as food carts, tables, bowls, and other
-                complements.
+              <p className="text-wrap text-justify text-slate-800">
+                Paket untuk 50 sampai 60 porsi/orang. Peralatan dan perlengkapan
+                kami sediakan seperti gerobak, meja, mangkok, berserta pelengkap
+                lainnya.
               </p>
             </div>
           </div>
 
-          {/* Card 2 */}
+          Card 2
           <div className="flex flex-col rounded border p-4 shadow-lg">
             <div className="flex-grow">
               <img
@@ -69,17 +173,16 @@ const AboutUs = () => {
                 className="mb-4 h-64 w-full cursor-pointer object-cover"
                 onClick={() => openModal(akijo2)}
               />
-              <h3 className="mb-2 text-xl font-semibold text-slate-900">
+              <h3 className="mb-2 text-xl font-semibold text-slate-800">
                 Booth Coffe AKIJO
               </h3>
-              <p className="text-wrap text-justify font-light text-slate-800">
-                The package is for 100 cups of coffee. Along with "Cucur" or
-                "Onde-onde".
+              <p className="text-wrap text-justify text-slate-800">
+                Paket untuk 100 cups kopi. Berserta kue cucur
               </p>
             </div>
           </div>
 
-          {/* Card 3 */}
+          Card 3
           <div className="flex flex-col rounded border p-4 shadow-lg">
             <div className="flex-grow">
               <img
@@ -91,12 +194,12 @@ const AboutUs = () => {
               <h3 className="mb-2 text-xl font-semibold text-slate-800">
                 Order By Request
               </h3>
-              <p className="text-wrap text-justify font-light text-slate-800">
-                ~
+              <p className="text-wrap text-justify text-slate-800">
+                Bisa Request pesanan
               </p>
             </div>
           </div>
-        </div>
+        </div> */}
 
         {/* Image Modal */}
         <Modal
@@ -133,138 +236,3 @@ const AboutUs = () => {
 };
 
 export default AboutUs;
-
-{
-  /* <h2 className="mb-4 text-center text-2xl font-bold">
-        Krijg inzicht in de performance van horecapersoneel
-      </h2> */
-}
-{
-  /* <p className="mb-8 text-center">
-        Met Felix krijg je inzicht in de performance van uitzendbureaus. Hoeveel
-        diensten vullen ze? Hoe is de kwaliteit van de medewerkers? En zijn de
-        mensen van het uitzendbureau op tijd? Of zijn ze vaak ziek? Met Felix
-        monitoren we al die data en kunnen alle opdrachtgevers inzicht geven in
-        de feitelijke kwaliteit van het uitzendbureau. Je bent als klant hiermee
-        niet meer overgeleverd aan alle mooie woorden van de uitzendondernemers.
-      </p> */
-}
-{
-  /* <div className="flex justify-center">
-        <img
-          src="https://pixabay.com/photos/blue-tit-nuthatch-bird-animal-8024809/"
-          alt="Team"
-          className="w-full max-w-lg rounded shadow"
-        />
-      </div> */
-}
-
-// import React from "react";
-// import sign from "../assets/sign.png";
-
-// const AboutUs = () => {
-//   return (
-//     <section className="bg-gray-100 py-12">
-//       <div className="container mx-auto px-4">
-//         <h2 className="mb-8 text-center text-3xl font-bold">About Us</h2>
-
-//         <div className="mb-8">
-//           <h3 className="mb-4 text-2xl font-semibold">Our Story</h3>
-//           <div className="mx-auto flex">
-//             <p className="text-gray-700">
-//               AKIJO started with a simple idea: to bring delicious pork
-//               meatballs to the people of Manado. While beef meatballs are a
-//               staple in Indonesian cuisine, pork meatballs were something new
-//               and exciting. Our love for good food and a passion for innovation
-//               led us to create a unique product that quickly became popular
-//               among locals.
-//             </p>
-//             <img src={sign} alt="" width={300} height={300} />
-//           </div>
-//         </div>
-
-//         <div className="mb-8">
-//           <h3 className="mb-4 text-2xl font-semibold">Our Journey</h3>
-//           <p className="text-gray-700">
-//             From humble beginnings, we began promoting our products through home
-//             service cooking for various events such as weddings, birthday
-//             parties, worship events, and more. This personal touch allowed
-//             people to experience the quality and taste of AKIJO pork meatballs
-//             firsthand, and it wasn't long before our reputation grew. We also
-//             have our unique cart that will bring something new to your events
-//           </p>
-//         </div>
-
-//         <div className="mb-8">
-//           <h3 className="mb-4 text-2xl font-semibold">Our Goals</h3>
-//           <p className="text-gray-700">
-//             Our ultimate goal is to have AKIJO products available in
-//             supermarkets alongside other frozen food brands, making it easy for
-//             everyone to enjoy our delicious offerings. We are also excited to
-//             announce the upcoming opening of our restaurant, where customers can
-//             savor our products prepared with our unique cooking recipes.
-//           </p>
-//         </div>
-
-//         <div className="mb-8">
-//           <h3 className="mb-4 text-2xl font-semibold">Our Services</h3>
-//           <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-//             {/* Repeat this block for each service */}
-//             <div className="rounded-lg bg-white p-6 shadow-lg">
-//               <h4 className="mb-2 text-xl font-bold">Event Catering</h4>
-//               <p className="text-gray-700">
-//                 We provide home service cooking for events such as weddings,
-//                 birthday parties, worship events, and more, offering a unique
-//                 dining experience with our pork meatballs.
-//               </p>
-//             </div>
-
-//             <div className="rounded-lg bg-white p-6 shadow-lg">
-//               <h4 className="mb-2 text-xl font-bold">Event Catering</h4>
-//               <p className="text-gray-700">
-//                 We provide home service cooking for events such as weddings,
-//                 birthday parties, worship events, and more, offering a unique
-//                 dining experience with our pork meatballs.
-//               </p>
-//             </div>
-
-//             <div className="rounded-lg bg-white p-6 shadow-lg">
-//               <h4 className="mb-2 text-xl font-bold">Event Catering</h4>
-//               <p className="text-gray-700">
-//                 We provide home service cooking for events such as weddings,
-//                 birthday parties, worship events, and more, offering a unique
-//                 dining experience with our pork meatballs.
-//               </p>
-//             </div>
-
-//             <div className="rounded-lg bg-white p-6 shadow-lg">
-//               <h4 className="mb-2 text-xl font-bold">Event Catering</h4>
-//               <p className="text-gray-700">
-//                 We provide home service cooking for events such as weddings,
-//                 birthday parties, worship events, and more, offering a unique
-//                 dining experience with our pork meatballs.
-//               </p>
-//             </div>
-//             {/* End of service block */}
-//           </div>
-//         </div>
-
-//         <div className="text-center">
-//           <h3 className="mb-4 text-2xl font-semibold">Join Us</h3>
-//           <p className="mb-4 text-gray-700">
-//             Interested in joining our team or contributing to our project? Get
-//             in touch!
-//           </p>
-//           <a
-//             href="/contact"
-//             className="rounded-lg bg-blue-500 px-4 py-2 text-white"
-//           >
-//             Contact Us
-//           </a>
-//         </div>
-//       </div>
-//     </section>
-//   );
-// };
-
-// export default AboutUs;

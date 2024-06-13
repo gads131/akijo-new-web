@@ -6,14 +6,14 @@ import logoakijosvg from "../assets/logoakijosvg.svg";
 const NavLinks = [
   { title: "Home", href: "#Home" },
   { title: "About Us", href: "#AboutUs" },
-  { title: "Product", href: "#OurMenu" },
+  { title: "Product", href: "#OurProduct" },
   { title: "Contact", href: "#Contact" },
 ];
 
 const socialMedia = [
   {
     name: "Facebook",
-    href: "#Home",
+    href: "https://www.facebook.com/cherly.sampow.33",
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -43,7 +43,7 @@ const socialMedia = [
   },
   {
     name: "TikTok",
-    href: "#Home",
+    href: "#",
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -183,7 +183,7 @@ const Navbar = () => {
 
           {/* MenuToggle */}
           <div
-            className="text-md cursor-pointer font-bold text-rose-600 transition-all duration-300 ease-out hover:text-slate-100 lg:hidden"
+            className="text-md text-outline cursor-pointer font-bold text-rose-600 transition-all duration-300 ease-out hover:text-slate-100 lg:hidden"
             onClick={toggleMenu}
           >
             Menu
