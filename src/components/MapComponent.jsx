@@ -7,9 +7,9 @@ const containerStyle = {
 };
 
 const center = {
-  lat: 1.327016, // Example latitude, replace with your latitude 1.327016, 124.842014
+  lat: 1.327016, // 1.327016, 124.842014
 
-  lng: 124.842014, // Example longitude, replace with your longitude
+  lng: 124.842014,
 };
 const MapComponent = () => {
   const handleDirectionsClick = () => {

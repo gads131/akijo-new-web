@@ -6,7 +6,7 @@ const Layout = ({ children }) => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const timer = setTimeout(() => setLoading(false), 5000); // Simulate a 5-second loading time
+    const timer = setTimeout(() => setLoading(false), 3000); // Simulate a 5-second loading time
     return () => clearTimeout(timer);
   }, []);
 
