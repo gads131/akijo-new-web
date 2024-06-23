@@ -12,33 +12,33 @@ const menuItems = {
   Makanan: [
     {
       name: "Bakso Ba' Komplit",
-      price: "27.000",
+      price: "28.500",
       ket: "Bakso Ba' + Pangsit + Tahu isi + Pork Slice",
       image: "https://d3gal648yor2nc.cloudfront.net/assets/images/menu4.png",
     },
     {
       name: "Bakso Ba' Special",
-      price: "22.000",
+      price: "21.000",
       ket: "Bakso Ba' + Pangsit / Tahu isi",
       image: "https://d3gal648yor2nc.cloudfront.net/assets/images/menu4.png",
     },
     {
       name: "Bakso Ba'",
-      price: "20.000",
+      price: "18.000",
       ket: "Bakso Ba' biasa",
       image: "https://d3gal648yor2nc.cloudfront.net/assets/images/menu4.png",
     },
     {
       name: "Ayam Goreng",
-      price: "22.000",
-      ket: "Nasi + Ayam + Pangsit/Tahu Isi",
+      price: "25.000",
+      ket: "Nasi + Ayam + Sayur",
       image:
         "https://d3gal648yor2nc.cloudfront.net/assets/images/photoshop/ayamgorengjadi.png",
     },
     {
       name: "Ayam Bakar",
-      price: "25.000",
-      ket: "Nasi + Ayam + Pangsit/Tahu Isi",
+      price: "26.500",
+      ket: "Nasi + Ayam + Sayur **1 pcs/potong",
       image:
         "https://d3gal648yor2nc.cloudfront.net/assets/images/photoshop/ayambakarjadipng.png",
     },
@@ -53,21 +53,21 @@ const menuItems = {
   Gorengan: [
     {
       name: "Tahu Isi",
-      price: "2.000",
+      price: "3.000",
       ket: "Tahu isi sayur-sayuran",
       image:
         "https://d3gal648yor2nc.cloudfront.net/assets/images/photoshop/tahugoreang.png",
     },
     {
       name: "Pangsit",
-      price: "2.000",
+      price: "3.000",
       ket: "Pangsit",
       image:
         "https://d3gal648yor2nc.cloudfront.net/assets/images/photoshop/pangsitgoreang.png",
     },
     {
       name: "Riceball",
-      price: "2.000",
+      price: "3.000",
       ket: "Nasi bola-bola",
       image:
         "https://d3gal648yor2nc.cloudfront.net/assets/images/photoshop/riceball.png",
@@ -83,14 +83,14 @@ const menuItems = {
   Lainnya: [
     {
       name: "Kerupuk kulit Ba'",
-      price: "10.000",
-      ket: "~",
+      price: "15.000",
+      ket: "100 gram",
       image:
         "https://d3gal648yor2nc.cloudfront.net/assets/images/menu/kerupukba.jpg",
     },
     {
       name: "Nasi Putih",
-      price: "5.000",
+      price: "8.000",
       ket: "~",
       image:
         "https://d3gal648yor2nc.cloudfront.net/assets/images/menu/nasiputih.jpg",
@@ -99,21 +99,21 @@ const menuItems = {
   Minuman: [
     {
       name: "Kopi Susu",
-      price: "10.000",
+      price: "12.000",
       ket: "~",
       image:
         "https://d3gal648yor2nc.cloudfront.net/assets/images/menu/kopi.jpg",
     },
     {
       name: "Kopi Hitam",
-      price: "8.000",
+      price: "10.000",
       ket: "~",
       image:
         "https://d3gal648yor2nc.cloudfront.net/assets/images/menu/kopihitam.jpg",
     },
     {
       name: "Lemon Ice",
-      price: "8.000",
+      price: "15.000",
       ket: "~",
       image:
         "https://d3gal648yor2nc.cloudfront.net/assets/images/menu/lemonice.jpg",
@@ -128,8 +128,9 @@ const OurMenu = () => {
     <section id="AboutUs" className="">
       <div className="rounded-[3rem] bg-neutral-800 p-4">
         <div className="section-tittle items-center text-center text-2xl font-bold">
-          <h2 className="m-4 text-amber-100 lg:m-12">AkijoFood Menu</h2>
+          <h2 className="m-4 text-amber-100 lg:m-12">AkijoResto Menu</h2>
         </div>
+
         <div className="max relative flex flex-col items-center justify-center gap-4 lg:flex-row lg:items-start">
           <SideNavMenu
             categories={categories}

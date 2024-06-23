@@ -1,20 +1,22 @@
 import React, { useState, useEffect, useRef } from "react";
 import Modal from "react-modal";
 import { motion, useAnimation } from "framer-motion";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 import { akijo1, akijo2, order } from "../assets/images";
 
 Modal.setAppElement("#root");
 
 const cards = [
   {
-    tittle: "Pork Hunter Food Cart",
+    tittle: "Pork HunterJo Food Cart",
     image:
       "https://d3gal648yor2nc.cloudfront.net/assets/images/card/akijo1.jpg",
     description:
       "Package for 50 to 60 servings/person. We provide equipment and supplies such as carts, tables, bowls, and other complements.",
   },
   {
-    tittle: "AKIJO Booth Coffe",
+    tittle: "Kopi CantikJo",
     image:
       "https://d3gal648yor2nc.cloudfront.net/assets/images/card/akijo2.jpg",
     description:
@@ -100,6 +102,10 @@ const AboutUs = () => {
           long before our reputation grew. We also have our unique cart that
           will bring something new to your events
         </p>
+
+        <div className="items-center justify-center p-4 pb-8 text-center">
+          <h3 className=" text-xl font-semibold text-red-500">Home Service</h3>
+        </div>
 
         {/* card */}
         <div className="mb-8 grid grid-cols-1 gap-4 md:grid-cols-3">
@@ -217,16 +223,18 @@ const AboutUs = () => {
           </button>
           <img src={selectedImage} alt="Fullscreen Modal" className="w-full" />
         </Modal>
-        <div className="mb-4 flex flex-col gap-4 text-center">
-          <p className="mb-4 text-lg text-gray-700">
+        <div className="mb-4 flex flex-col text-center">
+          <p className="mb-4 font-mono text-lg text-gray-700">
             For more information and order Contact us via the link below
           </p>
-          <div>
+          <p className="mb-8 text-xl font-bold text-red-500">↓ ↓ ↓</p>
+          <div className="">
             <a
               href="https://wa.me/+6281342709321"
-              className="rounded-lg bg-rose-600 px-4 py-2 text-white"
+              className="space-x-2 rounded-lg bg-rose-600 px-4 py-2 text-white"
             >
-              Contact Us (WA)
+              Contact us <span></span>
+              <FontAwesomeIcon icon={faWhatsapp} />
             </a>
           </div>
         </div>

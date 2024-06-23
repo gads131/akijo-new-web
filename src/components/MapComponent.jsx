@@ -26,7 +26,7 @@ const MapComponent = () => {
       </LoadScript>
       <button
         onClick={handleDirectionsClick}
-        className="hover:bg-emerald-7=00 mt-12 rounded bg-emerald-500 px-4 py-2 text-white"
+        className="hover:bg-emerald-7=00 mt-12 rounded bg-orange-500 px-4 py-2 text-white"
       >
         Get Directions
       </button>

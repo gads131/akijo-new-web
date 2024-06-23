@@ -1,5 +1,4 @@
 {
-  "homepage": "https://gads131.github.io/akijo-new-web",
   "name": "akijo",
   "private": true,
   "version": "0.0.0",
@@ -10,7 +9,6 @@
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist",
     "start": "vite"
   },
   "dependencies": {

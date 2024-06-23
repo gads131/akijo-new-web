@@ -5,28 +5,28 @@ const products = [
   {
     name: "Bakso Ba' Akijo",
     description: "Isi 30 butir",
-    price: "Rp. 28.000 /bks",
+    price: "Rp. 31.500 /bks",
     image:
       "https://d3gal648yor2nc.cloudfront.net/assets/images/menu/baksobanew.png",
   },
   {
     name: "Pork Slice",
     description: "Berat 250gr",
-    price: "Rp. 90.000 /bks",
+    price: "Rp. 74.500 /bks",
     image:
       "https://d3gal648yor2nc.cloudfront.net/assets/images/menu/porkslice.png",
   },
   {
     name: "Ayam Goreng Frozen",
-    description: "Setengah Ekor Ayam",
-    price: "Rp. 100.000 /bks",
+    description: "Setengah ekor ayam",
+    price: "Rp. 62.500 /bks",
     image:
       "https://d3gal648yor2nc.cloudfront.net/assets/images/photoshop/ayamgoreng.png",
   },
   {
     name: "Ayam Bakar Frozen",
     description: "Setengah Ekor Ayam",
-    price: "Rp. 100.000 /bks",
+    price: "Rp. 62.500 /bks",
     image:
       "https://d3gal648yor2nc.cloudfront.net/assets/images/photoshop/ayamgoreng.png",
   },
