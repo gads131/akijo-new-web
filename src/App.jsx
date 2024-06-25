@@ -10,6 +10,7 @@ import { BrowserRouter } from "react-router-dom";
 import OurCostumer from "./Section/OurCostumer";
 import OurProduct from "./Section/OurProduct";
 import Footer from "./Section/Footer";
+import Pricing from "./Section/Pricing";
 // import Layout from './components/Layout'
 
 const App = () => {
@@ -21,6 +22,9 @@ const App = () => {
       </section>
       <section id="AboutUs" className="section">
         <AboutUs />
+      </section>
+      <section id="Pricing" className="section">
+        <Pricing />
       </section>
       <section id="OurCostumer" className="section">
         <OurCostumer />

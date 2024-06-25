@@ -223,7 +223,7 @@ const AboutUs = () => {
           </button>
           <img src={selectedImage} alt="Fullscreen Modal" className="w-full" />
         </Modal>
-        <div className="mb-4 flex flex-col text-center">
+        {/* <div className="mb-4 flex flex-col text-center">
           <p className="mb-4 font-mono text-lg text-gray-700">
             For more information and order Contact us via the link below
           </p>
@@ -237,7 +237,7 @@ const AboutUs = () => {
               <FontAwesomeIcon icon={faWhatsapp} />
             </a>
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );
