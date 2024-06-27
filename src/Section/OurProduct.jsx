@@ -81,8 +81,7 @@ const Product = ({ product }) => {
         visible: { opacity: 1, y: 0 },
       }}
       transition={{
-        type: "spring",
-        stiffness: 100,
+        type: "tween",
         duration: 0.5,
       }}
       className="m-4 max-w-md overflow-hidden rounded bg-white shadow-lg"
