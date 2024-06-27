@@ -1,7 +1,6 @@
 import { motion, useTransform, useScroll } from "framer-motion";
 import { useRef } from "react";
 import {
-  gerobak1,
   gerobak2,
   gerobak3,
   gerobak4,
@@ -10,13 +9,40 @@ import {
   gerobak7,
   gerobak8,
 } from "../assets/images";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowDown, faArrowUp } from "@fortawesome/free-solid-svg-icons";
 
 const OurCostumer = () => {
   return (
     <div className="">
       <div className="flex h-20 items-center justify-center bg-neutral-100">
-        <span className="font-semibold uppercase text-slate-900">
+        <span className="hidden font-semibold uppercase text-slate-900 md:block">
           Scroll down
+          <motion.div
+            initial={{ y: 0 }}
+            animate={{ y: 5 }}
+            transition={{
+              repeat: Infinity,
+              duration: 0.7,
+            }}
+            className="z-10 flex justify-center"
+          >
+            <FontAwesomeIcon icon={faArrowDown} style={{ color: "#0f172a" }} />
+          </motion.div>
+        </span>
+        <span className="font-semibold uppercase text-slate-900 md:hidden">
+          swipe up
+          <motion.div
+            initial={{ y: 5 }}
+            animate={{ y: 0 }}
+            transition={{
+              repeat: Infinity,
+              duration: 0.7,
+            }}
+            className="z-10 flex justify-center"
+          >
+            <FontAwesomeIcon icon={faArrowUp} style={{ color: "#0f172a" }} />
+          </motion.div>
         </span>
       </div>
       <HorizontalScrollCarousel />
@@ -35,12 +61,12 @@ const HorizontalScrollCarousel = () => {
     target: targetRef,
   });
 
-  const xOffset = useTransform(scrollYProgress, [0, 1], ["1%", "-95%"]);
+  const x = useTransform(scrollYProgress, [0, 1], ["1%", "-95%"]);
 
   return (
     <section ref={targetRef} className="relative h-[300vh] bg-yellow-50">
       <div className="sticky top-0 flex h-screen items-center overflow-hidden">
-        <motion.div style={{ xOffset }} className="flex gap-4">
+        <motion.div style={{ x }} className="flex gap-4">
           {cards.map((card) => {
             return <Card card={card} key={card.id} />;
           })}
@@ -76,11 +102,6 @@ const Card = ({ card }) => {
 export default OurCostumer;
 
 const cards = [
-  {
-    url: gerobak1,
-    title: "AKIJO Gerobak",
-    id: 1,
-  },
   {
     url: gerobak2,
     title: "AKIJO Gerobak",

@@ -9,21 +9,20 @@ Modal.setAppElement("#root");
 
 const cards = [
   {
-    tittle: "Pork HunterJo Food Cart",
+    tittle: "Paket Booth Bakso AKIJO",
     image:
       "https://d3gal648yor2nc.cloudfront.net/assets/images/card/akijo1.jpg",
     description:
-      "Package for 50 to 60 servings/person. We provide equipment and supplies such as carts, tables, bowls, and other complements.",
+      "Paket booth bakso untuk 50 s/d 60 orang, alat makan disediakan (mangkok, sendok dll)",
   },
   {
-    tittle: "Kopi CantikJo",
+    tittle: "Paket Booth Kopi AKIJO",
     image:
       "https://d3gal648yor2nc.cloudfront.net/assets/images/card/akijo2.jpg",
-    description:
-      'Package for 100 cups of coffe, along with "Cucur" or "Onde-onde".',
+    description: "Paket untuk 100 cup kopi plus 150 kue Onde-onde",
   },
   {
-    tittle: "Order by Request",
+    tittle: "Pesanan Sesuai Permintaan",
     image: "https://d3gal648yor2nc.cloudfront.net/assets/images/card/order.jpg",
     description: "~",
   },
@@ -77,11 +76,10 @@ const AboutUs = () => {
   };
 
   const cardRefs = cards.map(() => useInView());
-
   return (
     <div id="AboutUs">
       <div className=" bg-neutral-100 p-8">
-        <h2 className="mb-4 text-center text-2xl font-bold text-red-500 md:mb-10 xl:mb-14">
+        <h2 className="judul mb-4 bg-gradient-to-b from-red-400 to-rose-600 bg-clip-text text-center font-bold text-transparent md:mb-10 xl:mb-14">
           Welcome to AKIJO
         </h2>
         <p
@@ -104,7 +102,9 @@ const AboutUs = () => {
         </p>
 
         <div className="items-center justify-center p-4 pb-8 text-center">
-          <h3 className=" text-xl font-semibold text-red-500">Home Service</h3>
+          <h3 className=" text-xl font-semibold text-red-500">
+            Home Service Cooking
+          </h3>
         </div>
 
         {/* card */}

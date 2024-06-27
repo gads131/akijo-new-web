@@ -83,6 +83,11 @@ section {
   animation: cresendo linear forwards;
 }
 
+.judul {
+  font-size: 48px;
+  line-height: 58px;
+}
+
 @media (min-width: 1024px) {
   .home-image {
     object-position: center;

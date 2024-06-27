@@ -10,8 +10,8 @@ const Hero = () => {
       {/* Home bg */}
       <div className="parent">
         <img
-          src="https://d3gal648yor2nc.cloudfront.net/assets/home.jpg"
-          alt="HomeImg"
+          src={home}
+          alt="akijofood, porkhunterjo, bakso ba, bakso babi, acara, ibadah, pesta"
           className="image-home animate-scale absolute inset-0  w-full max-w-full transform object-cover object-center lg:left-52"
           style={{
             height: "100%",
@@ -48,18 +48,35 @@ const Hero = () => {
 
         {/* ORDER NOW BUTTON */}
         <div className="mt-4 flex">
-          <a href="https://wa.me/+6281342709321">
-            <button className="hover:text rounded-md border-2 border-yellow-300 bg-transparent px-12 py-4 uppercase text-slate-100 transition-all duration-500 ease-in-out hover:translate-x-4 hover:bg-yellow-600 hover:text-slate-300">
-              order Now
+          <a href="#Pricing">
+            <button className="hover:text rounded-md border-2 border-yellow-300 bg-transparent px-12 py-4 font-semibold uppercase tracking-wide text-slate-100 transition-all duration-500 ease-in-out hover:translate-x-4 hover:bg-yellow-600 hover:text-slate-300">
+              Cek Sekarang
             </button>
           </a>
         </div>
-        {/* <button className="hero-btn flex flex-wrap gap-24">
-            <div className="hover:text- uppercase text-slate-100">
-              Order Now
-            </div>
-          </button> */}
       </div>
+
+      {/* in case it needed */}
+      {/* <div className="z-10 flex -translate-y-[5px] translate-x-[340px] rotate-3">
+        <motion.div
+          initial={{
+            opacity: 0,
+          }}
+          animate={{
+            opacity: 1,
+          }}
+          transition={{
+            duration: 1,
+            repeat: Infinity,
+          }}
+          className=""
+        >
+          <p className="rounded-md border-2 border-slate-900 bg-red-600 p-2 text-xs font-bold text-slate-50 ">
+            Harga Mulai <br />
+            dari 700k !!
+          </p>
+        </motion.div>
+      </div> */}
     </div>
   );
 };

@@ -15,18 +15,21 @@ const menuItems = {
       price: "28.500",
       ket: "Bakso Ba' + Pangsit + Tahu isi + Pork Slice",
       image: "https://d3gal648yor2nc.cloudfront.net/assets/images/menu4.png",
+      comingSoon: true,
     },
     {
       name: "Bakso Ba' Special",
       price: "21.000",
       ket: "Bakso Ba' + Pangsit / Tahu isi",
       image: "https://d3gal648yor2nc.cloudfront.net/assets/images/menu4.png",
+      comingSoon: true,
     },
     {
       name: "Bakso Ba'",
       price: "18.000",
       ket: "Bakso Ba' biasa",
       image: "https://d3gal648yor2nc.cloudfront.net/assets/images/menu4.png",
+      comingSoon: true,
     },
     {
       name: "Ayam Goreng",
@@ -34,6 +37,7 @@ const menuItems = {
       ket: "Nasi + Ayam + Sayur",
       image:
         "https://d3gal648yor2nc.cloudfront.net/assets/images/photoshop/ayamgorengjadi.png",
+      comingSoon: true,
     },
     {
       name: "Ayam Bakar",
@@ -41,6 +45,7 @@ const menuItems = {
       ket: "Nasi + Ayam + Sayur **1 pcs/potong",
       image:
         "https://d3gal648yor2nc.cloudfront.net/assets/images/photoshop/ayambakarjadipng.png",
+      comingSoon: true,
     },
     {
       name: "Pork Slice",
@@ -48,6 +53,7 @@ const menuItems = {
       ket: "Daging Ba' slice",
       image:
         "https://d3gal648yor2nc.cloudfront.net/assets/images/photoshop/porkslice.png",
+      comingSoon: true,
     },
   ],
   Gorengan: [
@@ -57,6 +63,7 @@ const menuItems = {
       ket: "Tahu isi sayur-sayuran",
       image:
         "https://d3gal648yor2nc.cloudfront.net/assets/images/photoshop/tahugoreang.png",
+      comingSoon: true,
     },
     {
       name: "Pangsit",
@@ -64,6 +71,7 @@ const menuItems = {
       ket: "Pangsit",
       image:
         "https://d3gal648yor2nc.cloudfront.net/assets/images/photoshop/pangsitgoreang.png",
+      comingSoon: true,
     },
     {
       name: "Riceball",
@@ -71,6 +79,7 @@ const menuItems = {
       ket: "Nasi bola-bola",
       image:
         "https://d3gal648yor2nc.cloudfront.net/assets/images/photoshop/riceball.png",
+      comingSoon: true,
     },
     {
       name: "Tahu Biasa",
@@ -78,6 +87,7 @@ const menuItems = {
       ket: "Tahu",
       image:
         "https://d3gal648yor2nc.cloudfront.net/assets/images/photoshop/tahugoreang.png",
+      comingSoon: true,
     },
   ],
   Lainnya: [
@@ -87,6 +97,7 @@ const menuItems = {
       ket: "100 gram",
       image:
         "https://d3gal648yor2nc.cloudfront.net/assets/images/menu/kerupukba.jpg",
+      comingSoon: true,
     },
     {
       name: "Nasi Putih",
@@ -94,6 +105,7 @@ const menuItems = {
       ket: "~",
       image:
         "https://d3gal648yor2nc.cloudfront.net/assets/images/menu/nasiputih.jpg",
+      comingSoon: true,
     },
   ],
   Minuman: [
@@ -103,6 +115,7 @@ const menuItems = {
       ket: "~",
       image:
         "https://d3gal648yor2nc.cloudfront.net/assets/images/menu/kopi.jpg",
+      comingSoon: true,
     },
     {
       name: "Kopi Hitam",
@@ -110,6 +123,7 @@ const menuItems = {
       ket: "~",
       image:
         "https://d3gal648yor2nc.cloudfront.net/assets/images/menu/kopihitam.jpg",
+      comingSoon: true,
     },
     {
       name: "Lemon Ice",
@@ -117,6 +131,7 @@ const menuItems = {
       ket: "~",
       image:
         "https://d3gal648yor2nc.cloudfront.net/assets/images/menu/lemonice.jpg",
+      comingSoon: true,
     },
   ],
 };
