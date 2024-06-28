@@ -7,10 +7,10 @@ import Layout from "./components/Layout";
 import OurMenu from "./Section/OurMenu";
 // import Carousel from "./Section/Carousel";
 import { BrowserRouter } from "react-router-dom";
-import OurCostumer from "./Section/OurCostumer";
+// import OurCostumer from "./Section/OurCostumer";
 import OurProduct from "./Section/OurProduct";
 import Footer from "./Section/Footer";
-import Pricing from "./Section/Pricing";
+import PricingList from "./Section/Pricing";
 // import Layout from "./components/Layout";
 
 const App = () => {
@@ -24,11 +24,11 @@ const App = () => {
         <AboutUs />
       </section>
       <section id="Pricing" className="section">
-        <Pricing />
+        <PricingList />
       </section>
-      <section id="OurCostumer" className="section">
+      {/* <section id="OurCostumer" className="section">
         <OurCostumer />
-      </section>
+      </section> */}
       <section id="OurMenu" className="section px-4 py-2">
         <OurMenu />
       </section>

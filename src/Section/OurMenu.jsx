@@ -141,9 +141,9 @@ const OurMenu = () => {
 
   return (
     <section id="AboutUs" className="">
-      <div className="rounded-[3rem] bg-neutral-800 p-4">
+      <div className="rounded-[3rem] bg-neutral-900 p-4">
         <div className="section-tittle items-center text-center text-2xl font-bold">
-          <h2 className="m-4 text-amber-100 lg:m-12">AkijoResto Menu</h2>
+          <h2 className="m-4 text-slate-200 lg:m-12">AkijoResto Menu</h2>
         </div>
 
         <div className="max relative flex flex-col items-center justify-center gap-4 lg:flex-row lg:items-start">
@@ -168,7 +168,7 @@ const OurMenu = () => {
           </div>
         </div>
         <div className="container mx-auto px-4 pb-14 pt-14">
-          <h1 className="my-8 text-center text-2xl font-bold text-amber-100">
+          <h1 className="my-8 text-center text-2xl font-bold text-slate-200">
             Our Location
           </h1>
           <div className="mx-auto my-20 w-full max-w-4xl rounded border bg-slate-100 p-4 shadow-lg">

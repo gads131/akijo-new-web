@@ -135,9 +135,12 @@ const ProductList = () => {
 
 const OurProduct = () => {
   return (
-    <div className="bg-yellow-50 p-4">
-      <div className="section-tittle items-center text-center text-2xl font-bold">
-        <h2 className="m-4 text-red-500 lg:m-12">Frozen Food Product</h2>
+    <div className="flex flex-col gap-24 bg-neutral-100 p-8 pb-32">
+      <div className="flex flex-col items-center">
+        <h2 className="mt-32 flex justify-center text-3xl font-bold uppercase text-slate-900">
+          Produk Frozen Food
+        </h2>
+        <div className="h-1 w-1/6 max-w-xs items-center justify-center bg-red-400 object-center"></div>
       </div>
       <div className="relative flex flex-wrap items-center justify-end">
         <ProductList />

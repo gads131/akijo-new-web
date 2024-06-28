@@ -79,7 +79,7 @@ const pricingData = [
   },
 ];
 
-const Pricing = () => {
+const PricingList = () => {
   const [selectedCategory, setSelectedCategory] = useState("Booth AKIJO");
 
   const handleCategoryChange = (category) => {
@@ -238,4 +238,4 @@ const Pricing = () => {
   );
 };
 
-export default Pricing;
+export default PricingList;
