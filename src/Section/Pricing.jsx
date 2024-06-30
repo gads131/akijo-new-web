@@ -12,6 +12,7 @@ const pricingData = [
     category: "Booth AKIJO",
     tittle: "Paket Hemat",
     harga: "IDR 700k",
+    per: "paket",
     kelengkapan: [
       "30 - 40 orang",
       "Bakso Ba' AKIJO",
@@ -24,13 +25,14 @@ const pricingData = [
     category: "Booth AKIJO",
     tittle: "Paket Acara",
     harga: "IDR 1 JT",
+    per: "paket",
     kelengkapan: [
       "50 - 60 orang",
       "Bakso Ba' AKIJO",
       "Mie",
       "Gorengan Pangsit & Tahu",
-      "Gerobak PorkHunterJo",
-      "Home Service",
+      "Gerobak AKIJO",
+      "Home Service Cooking",
     ],
     noService: [],
   },
@@ -38,15 +40,16 @@ const pricingData = [
     category: "Booth AKIJO",
     tittle: "Paket Special",
     harga: "IDR 2 JT",
+    per: "paket",
     kelengkapan: [
       "50 - 60 orang",
       "Bakso Ba' AKIJO",
       "Mie",
       "Gorengan Pangsit & Tahu",
+      "Gerobak AKIJO",
+      "Home Service Cooking",
       "Pork Slice BBQ",
       "Panggangan BBQ + Service",
-      "Gerobak AKIJO",
-      "Home Service",
     ],
     noService: [],
   },
@@ -54,6 +57,7 @@ const pricingData = [
     category: "Coffee Booth",
     tittle: "Event Package",
     harga: "IDR 1 JT",
+    per: "paket",
     kelengkapan: [
       "100 cup kopi",
       "Coffee",
@@ -64,17 +68,65 @@ const pricingData = [
     noService: [],
   },
   {
-    category: "Cathering",
-    tittle: "Small Cathering",
-    harga: "IDR 800k",
-    kelengkapan: ["50 orang", "Menu1", "Menu2", "Menu3"],
+    category: "Catering",
+    tittle: "Paket 1",
+    harga: "40k",
+    per: "porsi",
+    kelengkapan: [
+      "Nasi",
+      "Soup jagung/brenebon",
+      "Ayam goreng / bakar",
+      "Cakalang goreng sous",
+      "Sambal goreng tempe",
+      "Sayur campur",
+      "Buah",
+      "Air Mineral",
+    ],
     noService: [],
   },
   {
-    category: "Cathering",
-    tittle: "Party Package",
-    harga: "IDR 1 JT",
-    kelengkapan: ["70 orang", "Menu1", "Menu2", "Menu3", "Menu4"],
+    category: "Catering",
+    tittle: "Paket 2",
+    harga: "55k",
+    per: "porsi",
+    kelengkapan: [
+      "Nasi",
+      "Sate babi",
+      "Perkedel babi",
+      "Babi Crispy / Tinoransak",
+      "Ayam goreng / bakar",
+      "Cakalang goreng sous",
+      "Ikan bakar mujair / mangail",
+      "Bihun jamur / mie goreng",
+      "Sayur campur",
+      "Soup brenebon / jagung",
+      "Buah segar",
+      "Air mineral",
+    ],
+    noService: [],
+  },
+  {
+    category: "Catering",
+    tittle: "Paket 3",
+    harga: "65k",
+    per: "porsi",
+    kelengkapan: [
+      "Nasi",
+      "Sate babi",
+      "Perkedel babi",
+      "Babi Crispy / Tinoransak",
+      "Ayam goreng / bakar",
+      "Ayam rica - rica",
+      "Cakalang goreng sous",
+      "Ikan bakar mujair / mangail",
+      "Bihun jamur / mie goreng",
+      "Sayur campur",
+      "Soup brenebon / jagung",
+      "Capcay",
+      "Puding",
+      "Buah segar",
+      "Air mineral",
+    ],
     noService: [],
   },
 ];
@@ -116,13 +168,13 @@ const PricingList = () => {
         </button>
         <button
           className={`rounded-full px-4 py-2 ${
-            selectedCategory === "Cathering"
+            selectedCategory === "Catering"
               ? "bg-yellow-500 text-white"
               : "border-b-2 border-white text-white"
           }`}
-          onClick={() => handleCategoryChange("Cathering")}
+          onClick={() => handleCategoryChange("Catering")}
         >
-          Cathering
+          Catering
         </button>
       </div>
       <div className="relative flex flex-wrap justify-center gap-8 pb-16">
@@ -150,7 +202,8 @@ const PricingList = () => {
               whileHover="hover"
               className="relative h-full w-full max-w-md rounded-lg bg-gradient-to-b from-red-300 via-amber-600 to-yellow-500 p-[2px] shadow-lg"
             >
-              {selectedCategory === "Cathering" && (
+              {/* ----------------------------- Coming soon overlay --------------------------- */}
+              {/* {selectedCategory === "Catering" && (
                 <motion.div
                   className="absolute inset-0 z-10 flex items-center justify-center bg-black bg-opacity-50 text-white"
                   initial={{ opacity: 0 }}
@@ -178,7 +231,7 @@ const PricingList = () => {
                     Coming Soon
                   </motion.p>
                 </motion.div>
-              )}
+              )} */}
               <div className="flex min-h-full max-w-md flex-col rounded-lg bg-gradient-to-br from-yellow-100 to-rose-100">
                 <h2 className="m-4 text-start text-3xl font-extrabold uppercase leading-tight tracking-tight text-slate-900">
                   {pricingCard.tittle}
@@ -186,7 +239,7 @@ const PricingList = () => {
                 <p className="text-center text-3xl font-light tracking-widest text-slate-900">
                   {pricingCard.harga}
                   <span className="text-base font-semibold tracking-tighter text-slate-500">
-                    /Paket
+                    /{pricingCard.per}
                   </span>
                 </p>
                 <div className="card-container">

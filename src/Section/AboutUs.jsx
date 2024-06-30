@@ -85,7 +85,7 @@ const AboutUs = () => {
             <h2 className="md:judul px-8 py-4 text-center text-3xl font-bold text-slate-200 xl:mb-2">
               Welcome to AKIJO
             </h2>
-            <p className="font-montserrat mb-16 items-center px-16 text-center text-xl leading-loose tracking-wider text-slate-200">
+            <p className="font-montserrat mb-16 items-center px-4 text-center text-xl tracking-wider text-slate-200 md:px-16 md:leading-loose lg:text-2xl">
               AkijoFood melayani pesanan untuk berbagai acara & pesta, dari
               Ibadah sampai pesta perkawinan, dan event atau kegiatan lainnya.
               Ramaikan acara/event anda dengan gerobak bakso AKIJO . <br />{" "}
@@ -93,6 +93,13 @@ const AboutUs = () => {
               Bakso babi, daging babi slice (pork slice), siomay, dan ayam
               goreng/bakar.
             </p>
+
+            {/* <p
+              onClick={toggleExpand}
+              className={`font-montserrat mb-16 items-center px-16 text-center text-xl leading-loose tracking-wider text-slate-200
+              ${expand ? "" : "line-clamp-3"}
+              cursor-pointer md:line-clamp-none md:cursor-default`}
+            ></p> */}
             {/* <p
               onClick={toggleExpand}
               className={`px-16  text-justify text-lg leading-loose text-slate-200 md:mb-10 lg:text-center xl:mb-14  

@@ -8,15 +8,6 @@ import order from "./order.jpg";
 // import menu4 from "./menu4.png";
 // import menu5 from "./menu5.jpg";
 
-import carousel1 from "./carousel1.jpg";
-import carousel2 from "./carousel2.jpg";
-import carousel3 from "./carousel3.jpg";
-import carousel4 from "./carousel4.jpg";
-import carousel5 from "./carousel5.jpg";
-import carousel6 from "./carousel6.jpg";
-import carousel7 from "./carousel7.jpg";
-import carousel8 from "./carousel8.jpg";
-
 import gerobak1 from "./gerobak1.png";
 import gerobak2 from "./gerobak2.jpeg";
 import gerobak3 from "./gerobak3.jpeg";
@@ -40,14 +31,6 @@ export {
   // menu3,
   // menu4,
   // menu5,
-  carousel1,
-  carousel2,
-  carousel3,
-  carousel4,
-  carousel5,
-  carousel6,
-  carousel7,
-  carousel8,
   gerobak1,
   gerobak2,
   gerobak3,
