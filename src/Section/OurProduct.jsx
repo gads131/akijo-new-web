@@ -5,28 +5,28 @@ const products = [
   {
     name: "Bakso Ba' Akijo",
     description: "Isi 30 butir",
-    price: "Rp. 28.000 /bks",
+    price: "Rp. 31.500 /bks",
     image:
       "https://d3gal648yor2nc.cloudfront.net/assets/images/menu/baksobanew.png",
   },
   {
     name: "Pork Slice",
     description: "Berat 250gr",
-    price: "Rp. 90.000 /bks",
+    price: "Rp. 74.500 /bks",
     image:
       "https://d3gal648yor2nc.cloudfront.net/assets/images/menu/porkslice.png",
   },
   {
     name: "Ayam Goreng Frozen",
-    description: "Setengah Ekor Ayam",
-    price: "Rp. 100.000 /bks",
+    description: "Setengah ekor ayam",
+    price: "Rp. 62.500 /bks",
     image:
       "https://d3gal648yor2nc.cloudfront.net/assets/images/photoshop/ayamgoreng.png",
   },
   {
     name: "Ayam Bakar Frozen",
     description: "Setengah Ekor Ayam",
-    price: "Rp. 100.000 /bks",
+    price: "Rp. 62.500 /bks",
     image:
       "https://d3gal648yor2nc.cloudfront.net/assets/images/photoshop/ayamgoreng.png",
   },
@@ -81,8 +81,7 @@ const Product = ({ product }) => {
         visible: { opacity: 1, y: 0 },
       }}
       transition={{
-        type: "spring",
-        stiffness: 100,
+        type: "tween",
         duration: 0.5,
       }}
       className="m-4 max-w-md overflow-hidden rounded bg-white shadow-lg"
@@ -136,9 +135,12 @@ const ProductList = () => {
 
 const OurProduct = () => {
   return (
-    <div className="bg-yellow-50 p-4">
-      <div className="section-tittle items-center text-center text-2xl font-bold">
-        <h2 className="m-4 text-red-500 lg:m-12">Frozen Food Product</h2>
+    <div className="flex flex-col gap-24 bg-neutral-100 p-8 pb-32">
+      <div className="flex flex-col items-center">
+        <h2 className="mt-32 flex justify-center text-3xl font-bold uppercase text-slate-900">
+          Produk Frozen Food
+        </h2>
+        <div className="h-1 w-1/6 max-w-xs items-center justify-center bg-red-400 object-center"></div>
       </div>
       <div className="relative flex flex-wrap items-center justify-end">
         <ProductList />

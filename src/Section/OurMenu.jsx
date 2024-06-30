@@ -12,35 +12,40 @@ const menuItems = {
   Makanan: [
     {
       name: "Bakso Ba' Komplit",
-      price: "27.000",
+      price: "28.500",
       ket: "Bakso Ba' + Pangsit + Tahu isi + Pork Slice",
       image: "https://d3gal648yor2nc.cloudfront.net/assets/images/menu4.png",
+      comingSoon: true,
     },
     {
       name: "Bakso Ba' Special",
-      price: "22.000",
+      price: "21.000",
       ket: "Bakso Ba' + Pangsit / Tahu isi",
       image: "https://d3gal648yor2nc.cloudfront.net/assets/images/menu4.png",
+      comingSoon: true,
     },
     {
       name: "Bakso Ba'",
-      price: "20.000",
+      price: "18.000",
       ket: "Bakso Ba' biasa",
       image: "https://d3gal648yor2nc.cloudfront.net/assets/images/menu4.png",
+      comingSoon: true,
     },
     {
       name: "Ayam Goreng",
-      price: "22.000",
-      ket: "Nasi + Ayam + Pangsit/Tahu Isi",
+      price: "25.000",
+      ket: "Nasi + Ayam + Sayur",
       image:
         "https://d3gal648yor2nc.cloudfront.net/assets/images/photoshop/ayamgorengjadi.png",
+      comingSoon: true,
     },
     {
       name: "Ayam Bakar",
-      price: "25.000",
-      ket: "Nasi + Ayam + Pangsit/Tahu Isi",
+      price: "26.500",
+      ket: "Nasi + Ayam + Sayur **1 pcs/potong",
       image:
         "https://d3gal648yor2nc.cloudfront.net/assets/images/photoshop/ayambakarjadipng.png",
+      comingSoon: true,
     },
     {
       name: "Pork Slice",
@@ -48,29 +53,33 @@ const menuItems = {
       ket: "Daging Ba' slice",
       image:
         "https://d3gal648yor2nc.cloudfront.net/assets/images/photoshop/porkslice.png",
+      comingSoon: true,
     },
   ],
   Gorengan: [
     {
       name: "Tahu Isi",
-      price: "2.000",
+      price: "3.000",
       ket: "Tahu isi sayur-sayuran",
       image:
         "https://d3gal648yor2nc.cloudfront.net/assets/images/photoshop/tahugoreang.png",
+      comingSoon: true,
     },
     {
       name: "Pangsit",
-      price: "2.000",
+      price: "3.000",
       ket: "Pangsit",
       image:
         "https://d3gal648yor2nc.cloudfront.net/assets/images/photoshop/pangsitgoreang.png",
+      comingSoon: true,
     },
     {
       name: "Riceball",
-      price: "2.000",
+      price: "3.000",
       ket: "Nasi bola-bola",
       image:
         "https://d3gal648yor2nc.cloudfront.net/assets/images/photoshop/riceball.png",
+      comingSoon: true,
     },
     {
       name: "Tahu Biasa",
@@ -78,45 +87,51 @@ const menuItems = {
       ket: "Tahu",
       image:
         "https://d3gal648yor2nc.cloudfront.net/assets/images/photoshop/tahugoreang.png",
+      comingSoon: true,
     },
   ],
   Lainnya: [
     {
       name: "Kerupuk kulit Ba'",
-      price: "10.000",
-      ket: "~",
+      price: "15.000",
+      ket: "100 gram",
       image:
         "https://d3gal648yor2nc.cloudfront.net/assets/images/menu/kerupukba.jpg",
+      comingSoon: true,
     },
     {
       name: "Nasi Putih",
-      price: "5.000",
+      price: "8.000",
       ket: "~",
       image:
         "https://d3gal648yor2nc.cloudfront.net/assets/images/menu/nasiputih.jpg",
+      comingSoon: true,
     },
   ],
   Minuman: [
     {
       name: "Kopi Susu",
-      price: "10.000",
+      price: "12.000",
       ket: "~",
       image:
         "https://d3gal648yor2nc.cloudfront.net/assets/images/menu/kopi.jpg",
+      comingSoon: true,
     },
     {
       name: "Kopi Hitam",
-      price: "8.000",
+      price: "10.000",
       ket: "~",
       image:
         "https://d3gal648yor2nc.cloudfront.net/assets/images/menu/kopihitam.jpg",
+      comingSoon: true,
     },
     {
       name: "Lemon Ice",
-      price: "8.000",
+      price: "15.000",
       ket: "~",
       image:
         "https://d3gal648yor2nc.cloudfront.net/assets/images/menu/lemonice.jpg",
+      comingSoon: true,
     },
   ],
 };
@@ -126,10 +141,11 @@ const OurMenu = () => {
 
   return (
     <section id="AboutUs" className="">
-      <div className="rounded-[3rem] bg-neutral-800 p-4">
+      <div className="rounded-[3rem] bg-neutral-900 p-4">
         <div className="section-tittle items-center text-center text-2xl font-bold">
-          <h2 className="m-4 text-amber-100 lg:m-12">AkijoFood Menu</h2>
+          <h2 className="m-4 text-slate-200 lg:m-12">AkijoResto Menu</h2>
         </div>
+
         <div className="max relative flex flex-col items-center justify-center gap-4 lg:flex-row lg:items-start">
           <SideNavMenu
             categories={categories}
@@ -152,7 +168,7 @@ const OurMenu = () => {
           </div>
         </div>
         <div className="container mx-auto px-4 pb-14 pt-14">
-          <h1 className="my-8 text-center text-2xl font-bold text-amber-100">
+          <h1 className="my-8 text-center text-2xl font-bold text-slate-200">
             Our Location
           </h1>
           <div className="mx-auto my-20 w-full max-w-4xl rounded border bg-slate-100 p-4 shadow-lg">

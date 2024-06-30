@@ -20,6 +20,9 @@ export default {
       fontFamily: {
         montserrat: ["Montserrat", "sans-serif"],
       },
+      colors: {
+        text: "#EAEAFD",
+      },
     },
   },
   plugins: [],
