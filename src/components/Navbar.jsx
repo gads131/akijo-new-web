@@ -4,8 +4,8 @@ import logoWeb from "../assets/logoWeb.svg";
 import logoakijosvg from "../assets/logoakijosvg.svg";
 
 const NavLinks = [
-  { title: "Home", href: "#Home" },
   { title: "About Us", href: "#AboutUs" },
+  { title: "Harga", href: "#Pricing" },
   { title: "Product", href: "#OurProduct" },
   { title: "Contact", href: "#Contact" },
 ];

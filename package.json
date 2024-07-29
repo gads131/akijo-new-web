@@ -1,5 +1,4 @@
 {
-  "homepage": "https://gads131.github.io/akijo-new-web",
   "name": "akijo",
   "private": true,
   "version": "0.0.0",
@@ -10,7 +9,6 @@
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist",
     "start": "vite"
   },
   "dependencies": {
@@ -19,12 +17,15 @@
     "@fortawesome/free-solid-svg-icons": "^6.5.2",
     "@fortawesome/react-fontawesome": "^0.2.2",
     "@react-google-maps/api": "^2.19.3",
+    "dotenv": "^16.4.5",
     "express-rate-limit": "^7.2.0",
     "framer-motion": "^11.2.0",
     "leaflet": "^1.9.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-google-recaptcha": "^3.1.0",
+    "react-helmet": "^6.1.0",
+    "react-helmet-async": "^2.0.5",
     "react-intersection-observer": "^9.10.3",
     "react-leaflet": "^4.2.1",
     "react-modal": "^3.16.1",

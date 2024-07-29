@@ -1,28 +1,32 @@
 import React, { useState, useEffect, useRef } from "react";
 import Modal from "react-modal";
 import { motion, useAnimation } from "framer-motion";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 import { akijo1, akijo2, order } from "../assets/images";
 
 Modal.setAppElement("#root");
 
 const cards = [
   {
-    tittle: "Pork Hunter Food Cart",
+    tittle: "Paket Booth Bakso AKIJO",
     image:
       "https://d3gal648yor2nc.cloudfront.net/assets/images/card/akijo1.jpg",
+    alt: "Paket Gerobak Bakso Babi, Tomohon Manado dan sekitarnya",
     description:
-      "Package for 50 to 60 servings/person. We provide equipment and supplies such as carts, tables, bowls, and other complements.",
+      "Paket booth bakso untuk 50 s/d 60 orang, alat makan disediakan (mangkok, sendok dll)",
   },
   {
-    tittle: "AKIJO Booth Coffe",
+    tittle: "Paket Booth Kopi AKIJO",
     image:
       "https://d3gal648yor2nc.cloudfront.net/assets/images/card/akijo2.jpg",
-    description:
-      'Package for 100 cups of coffe, along with "Cucur" or "Onde-onde".',
+    alt: "Paket Booth Kopi, Tomohon Manado dan sekitarnya",
+    description: "Paket untuk 100 cup kopi plus 150 kue Onde-onde",
   },
   {
-    tittle: "Order by Request",
+    tittle: "Pesanan Sesuai Permintaan",
     image: "https://d3gal648yor2nc.cloudfront.net/assets/images/card/order.jpg",
+    alt: "Order by request",
     description: "~",
   },
 ];
@@ -75,131 +79,100 @@ const AboutUs = () => {
   };
 
   const cardRefs = cards.map(() => useInView());
-
   return (
     <div id="AboutUs">
-      <div className=" bg-neutral-100 p-8">
-        <h2 className="mb-4 text-center text-2xl font-bold text-red-500 md:mb-10 xl:mb-14">
-          Welcome to AKIJO
-        </h2>
-        <p
-          onClick={toggleExpand}
-          className={`mb-4 text-justify text-lg leading-loose text-slate-800 md:mb-10 lg:text-center xl:mb-14 
+      <div className=" flex flex-col gap-24 bg-neutral-100 p-8 pb-32  ">
+        {/* --------------------------------------------------- */}
+        <div className=" flex items-center justify-center">
+          <div className=" rounded-md bg-zinc-700 md:w-3/4">
+            <h2 className="md:judul px-8 py-4 text-center text-3xl font-bold text-slate-200 xl:mb-2">
+              Welcome to AKIJO
+            </h2>
+            <p className="font-montserrat mb-16 items-center px-4 text-center text-xl tracking-wider text-slate-200 md:px-16 md:leading-loose lg:text-2xl">
+              AkijoFood melayani pesanan untuk berbagai acara & pesta, dari
+              Ibadah sampai pesta perkawinan, dan event atau kegiatan lainnya.
+              Ramaikan acara/event anda dengan gerobak bakso AKIJO . <br />{" "}
+              <br /> Kami juga menyediakan makanan frozen siap saji seperti
+              Bakso babi, daging babi slice (pork slice), siomay, dan ayam
+              goreng/bakar.
+            </p>
+
+            {/* <p
+              onClick={toggleExpand}
+              className={`font-montserrat mb-16 items-center px-16 text-center text-xl leading-loose tracking-wider text-slate-200
+              ${expand ? "" : "line-clamp-3"}
+              cursor-pointer md:line-clamp-none md:cursor-default`}
+            ></p> */}
+            {/* <p
+              onClick={toggleExpand}
+              className={`px-16  text-justify text-lg leading-loose text-slate-200 md:mb-10 lg:text-center xl:mb-14  
             ${expand ? "" : "line-clamp-3"}
             cursor-pointer md:line-clamp-none md:cursor-default`}
-        >
-          AKIJO started with a simple idea, to bring delicious pork meatballs to
-          the people of Manado. While beef meatballs are a staple in Indonesian
-          cuisine, pork meatballs were something new and exciting. Our love for
-          good food and a passion for innovation led us to create a unique
-          product that quickly became popular among locals. From humble
-          beginnings, we began promoting our products through home service
-          cooking for various events such as weddings, birthday parties, worship
-          events, and more. This personal touch allowed people to experience the
-          quality and taste of AKIJO pork meatballs firsthand, and it wasn't
-          long before our reputation grew. We also have our unique cart that
-          will bring something new to your events
-        </p>
-
-        {/* card */}
-        <div className="mb-8 grid grid-cols-1 gap-4 md:grid-cols-3">
-          {cards.map((card, index) => {
-            const [ref, controls] = cardRefs[index];
-            return (
-              <motion.div
-                ref={ref}
-                initial="hidden"
-                animate={controls}
-                whileHover={{ scale: 1.05 }}
-                variants={{
-                  hidden: { opacity: 0, y: 50 },
-                  visible: { opacity: 1, y: 0 },
-                }}
-                transition={{
-                  type: "spring",
-                  stiffness: 100,
-                  duration: 0.5,
-                }}
-                key={index}
-                className="flex flex-col rounded border p-4 shadow-lg"
-              >
-                <div className="flex-grow">
-                  <img
-                    src={card.image}
-                    alt={card.tittle}
-                    className="mb-4 h-64 w-full cursor-pointer object-cover"
-                    onClick={() => openModal(card.image)}
-                  />
-                  <h3 className="mb-2 text-xl font-semibold text-slate-900">
-                    {card.tittle}
-                  </h3>
-                  <p className="text-wrap text-justify text-slate-800">
-                    {card.description}
-                  </p>
-                </div>
-              </motion.div>
-            );
-          })}
+            >
+              AKIJO started with a simple idea, to bring delicious pork
+              meatballs to the people of Manado. While beef meatballs are a
+              staple in Indonesian cuisine, pork meatballs were something new
+              and exciting. Our love for good food and a passion for innovation
+              led us to create a unique product that quickly became popular
+              among locals. From humble beginnings, we began promoting our
+              products through home service cooking for various events such as
+              weddings, birthday parties, worship events, and more. This
+              personal touch allowed people to experience the quality and taste
+              of AKIJO pork meatballs firsthand, and it wasn't long before our
+              reputation grew. We also have our unique cart that will bring
+              something new to your events
+            </p> */}
+          </div>
         </div>
-
-        {/* CARD
-        <div className="mb-8 grid grid-cols-1 gap-4 md:grid-cols-3">
-          Card 1
-          <div className="flex flex-col rounded border p-4 shadow-lg">
-            <div className="flex-grow">
-              <img
-                src={akijo1}
-                alt="Step 1"
-                className="mb-4 h-64 w-full cursor-pointer object-cover"
-                onClick={() => openModal(akijo1)}
-              />
-              <h3 className="mb-2 text-xl font-semibold text-slate-900">
-                Gerobak Bakso Ba' AKIJO
-              </h3>
-              <p className="text-wrap text-justify text-slate-800">
-                Paket untuk 50 sampai 60 porsi/orang. Peralatan dan perlengkapan
-                kami sediakan seperti gerobak, meja, mangkok, berserta pelengkap
-                lainnya.
-              </p>
-            </div>
+        {/* ----------------------------------------- */}
+        <div className="flex flex-col gap-8">
+          <div className="flex flex-col items-center">
+            <h2 className="flex justify-center text-3xl font-bold uppercase text-slate-900">
+              layanan kami
+            </h2>
+            <div className="h-1 w-1/5 max-w-xs items-center justify-center bg-red-400 object-center"></div>
           </div>
 
-          Card 2
-          <div className="flex flex-col rounded border p-4 shadow-lg">
-            <div className="flex-grow">
-              <img
-                src={akijo2}
-                alt="Step 2"
-                className="mb-4 h-64 w-full cursor-pointer object-cover"
-                onClick={() => openModal(akijo2)}
-              />
-              <h3 className="mb-2 text-xl font-semibold text-slate-800">
-                Booth Coffe AKIJO
-              </h3>
-              <p className="text-wrap text-justify text-slate-800">
-                Paket untuk 100 cups kopi. Berserta kue cucur
-              </p>
-            </div>
+          <div className="mb-8 grid grid-cols-1 gap-16 md:grid-cols-3 md:gap-8">
+            {cards.map((card, index) => {
+              const [ref, controls] = cardRefs[index];
+              return (
+                <motion.div
+                  ref={ref}
+                  initial="hidden"
+                  animate={controls}
+                  whileHover={{ scale: 1.05 }}
+                  variants={{
+                    hidden: { opacity: 0, y: 50 },
+                    visible: { opacity: 1, y: 0 },
+                  }}
+                  transition={{
+                    type: "spring",
+                    stiffness: 100,
+                    duration: 0.5,
+                  }}
+                  key={index}
+                  className="flex flex-col rounded border p-4 shadow-lg"
+                >
+                  <div className="flex-grow">
+                    <img
+                      src={card.image}
+                      alt={card.tittle}
+                      className="mb-4 h-64 w-full cursor-pointer object-cover"
+                      onClick={() => openModal(card.image)}
+                    />
+                    <h3 className="mb-2 text-xl font-semibold text-slate-900">
+                      {card.tittle}
+                    </h3>
+                    <p className="text-wrap text-justify text-slate-800">
+                      {card.description}
+                    </p>
+                  </div>
+                </motion.div>
+              );
+            })}
           </div>
-
-          Card 3
-          <div className="flex flex-col rounded border p-4 shadow-lg">
-            <div className="flex-grow">
-              <img
-                src={order}
-                alt="Step 3"
-                className="mb-4 h-64 w-full cursor-pointer object-cover"
-                onClick={() => openModal(order)}
-              />
-              <h3 className="mb-2 text-xl font-semibold text-slate-800">
-                Order By Request
-              </h3>
-              <p className="text-wrap text-justify text-slate-800">
-                Bisa Request pesanan
-              </p>
-            </div>
-          </div>
-        </div> */}
+        </div>
 
         {/* Image Modal */}
         <Modal
@@ -217,22 +190,11 @@ const AboutUs = () => {
           </button>
           <img src={selectedImage} alt="Fullscreen Modal" className="w-full" />
         </Modal>
-        <div className="mb-4 flex flex-col gap-4 text-center">
-          <p className="mb-4 text-lg text-gray-700">
-            For more information and order Contact us via the link below
-          </p>
-          <div>
-            <a
-              href="https://wa.me/+6281342709321"
-              className="rounded-lg bg-rose-600 px-4 py-2 text-white"
-            >
-              Contact Us (WA)
-            </a>
-          </div>
-        </div>
       </div>
     </div>
   );
 };
 
 export default AboutUs;
+
+// AkijoFood melayani pesanan untuk berbagai acara & pesta, dari Ibadah sampai pesta perkawinan, dan event atau kegiatan lainnya. Ramaikan acara/event anda dengan gerobak bakso AKIJO . Kami juga menyediakan makanan frozen siap saji seperti Bakso babi, daging babi slice (pork slice), siomay, dan ayam goreng/bakar.
