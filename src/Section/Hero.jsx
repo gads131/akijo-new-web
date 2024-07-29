@@ -1,14 +1,39 @@
 import React from "react";
 import { useEffect, useRef, useState } from "react";
 import home from "../assets/home.jpg";
-import { motion } from "framer-motion";
-motion;
+import { delay, motion } from "framer-motion";
+import { text } from "@fortawesome/fontawesome-svg-core";
+
+const textContainer = {
+  hidden: {
+    opacity: 0,
+    y: "30vh",
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+  },
+};
+
+const buttonVariant = {
+  initial: {
+    boxShadow: "0px 0px 25px 10px rgba(255, 255, 255, 0)",
+  },
+  hover: {
+    boxShadow: ["0px 0px 10px 5px rgba(247, 243, 186, 0.3)"],
+    transition: {
+      delay: 0.3,
+      duration: 1,
+      ease: "easeInOut",
+    },
+  },
+};
 
 const Hero = () => {
   return (
     <div id="Main" className="hero-section">
       {/* Home bg */}
-      <div className="parent">
+      <div className="">
         <img
           src={home}
           alt="akijofood, porkhunterjo, bakso ba, bakso babi, acara, ibadah, pesta"
@@ -20,40 +45,56 @@ const Hero = () => {
 
         {/* overlay for bg */}
         <div className="hidden md:block">
-          <div className="absolute inset-0 min-h-full bg-gradient-to-r from-black to-transparent opacity-100"></div>
-          <div className="absolute inset-0 min-h-full bg-gradient-to-r from-black to-transparent opacity-100"></div>
+          <div className="absolute inset-0 min-h-full bg-gradient-to-r from-black from-10% to-transparent opacity-100"></div>
+          {/* <div className="absolute inset-0 min-h-full bg-gradient-to-r from-black to-transparent opacity-100"></div> */}
         </div>
         <div className="sm:block md:hidden">
           <div className="absolute inset-0 min-h-full bg-gradient-to-r from-black to-transparent to-80% opacity-100"></div>
         </div>
-
-        {/* hero--------------- */}
       </div>
-      <div className="relative m-8 my-40 flex flex-col gap-4 md:m-16 md:my-80">
-        <p className="flex text-sm text-slate-100 lg:text-xl">
-          Premium Quality Food Service
-        </p>
 
-        <h1 className="flex text-xl uppercase text-neutral-200 md:text-3xl xl:text-4xl">
-          <p>
-            your <span className="text-yellow-300">special</span> event With
-            AKIJO <br /> <span className="text-yellow-300">unique</span> cart
-          </p>
-        </h1>
+      {/* ------------------------HEro  */}
+      <div className="absolute inset-0 mb-4 flex items-end justify-center lg:mb-14">
+        <motion.div
+          variants={textContainer}
+          initial="hidden"
+          animate="visible"
+          transition={{ delay: 0.3, duration: 2, type: "tween" }}
+          className="w-[80%] rounded-3xl border border-slate-100 bg-black bg-opacity-30 px-10 pb-2 pt-4 backdrop-blur-xl backdrop-filter md:w-[70%] lg:w-[60%]"
+        >
+          <div className="flex flex-col items-center gap-4 text-center">
+            <p className="text-sm text-slate-100 lg:text-xl">
+              Premium Quality Food Product & Service
+            </p>
 
-        <p className=" flex text-wrap text-xs font-light text-neutral-100 md:text-base xl:text-xl">
-          Enjoy your special moment with no worries. We provide the best quality
-          of food and best experience for your event.
-        </p>
+            <h1 className="font-sans text-4xl font-semibold tracking-[0.3em] text-yellow-200 lg:text-8xl">
+              AKIJO
+            </h1>
+            <p className="space-y-2 text-xs font-light text-white md:text-base xl:text-xl">
+              Menerima pesanan untuk Tomohon, Manado, dan sekitarnya <br />
+              {/* <p>
+                Harga{" "}
+                <span className="font-semibold text-red-500">Bersahabat</span>,
+                Pelayanan
+                <span className="font-semibold text-red-500"> Memuaskan</span> !
+              </p> */}
+            </p>
 
-        {/* ORDER NOW BUTTON */}
-        <div className="mt-4 flex">
-          <a href="#Pricing">
-            <button className="hover:text rounded-md border-2 border-yellow-300 bg-transparent px-12 py-4 font-semibold uppercase tracking-wide text-slate-100 transition-all duration-500 ease-in-out hover:translate-x-4 hover:bg-yellow-600 hover:text-slate-300">
-              Cek Sekarang
-            </button>
-          </a>
-        </div>
+            {/* ORDER NOW BUTTON */}
+            <div className="mt-4 flex">
+              <a href="#Pricing">
+                <motion.button
+                  variants={buttonVariant}
+                  initial="initial"
+                  whileHover="hover"
+                  className="rounded-md border-2 border-yellow-300 bg-transparent px-12 py-4 font-semibold uppercase tracking-wide text-slate-300 transition-all duration-500 ease-in-out hover:bg-yellow-600 hover:text-white"
+                >
+                  Cek Sekarang
+                </motion.button>
+              </a>
+            </div>
+          </div>
+        </motion.div>
       </div>
 
       {/* in case it needed */}

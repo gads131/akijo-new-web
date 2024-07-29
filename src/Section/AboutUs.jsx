@@ -12,6 +12,7 @@ const cards = [
     tittle: "Paket Booth Bakso AKIJO",
     image:
       "https://d3gal648yor2nc.cloudfront.net/assets/images/card/akijo1.jpg",
+    alt: "Paket Gerobak Bakso Babi, Tomohon Manado dan sekitarnya",
     description:
       "Paket booth bakso untuk 50 s/d 60 orang, alat makan disediakan (mangkok, sendok dll)",
   },
@@ -19,11 +20,13 @@ const cards = [
     tittle: "Paket Booth Kopi AKIJO",
     image:
       "https://d3gal648yor2nc.cloudfront.net/assets/images/card/akijo2.jpg",
+    alt: "Paket Booth Kopi, Tomohon Manado dan sekitarnya",
     description: "Paket untuk 100 cup kopi plus 150 kue Onde-onde",
   },
   {
     tittle: "Pesanan Sesuai Permintaan",
     image: "https://d3gal648yor2nc.cloudfront.net/assets/images/card/order.jpg",
+    alt: "Order by request",
     description: "~",
   },
 ];

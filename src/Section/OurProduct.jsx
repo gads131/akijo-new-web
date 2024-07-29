@@ -8,6 +8,7 @@ const products = [
     price: "Rp. 31.500 /bks",
     image:
       "https://d3gal648yor2nc.cloudfront.net/assets/images/menu/baksobanew.png",
+    alt: "Bakso Babi AKIJO",
   },
   {
     name: "Pork Slice",
@@ -15,6 +16,7 @@ const products = [
     price: "Rp. 74.500 /bks",
     image:
       "https://d3gal648yor2nc.cloudfront.net/assets/images/menu/porkslice.png",
+    alt: "Pork Slice",
   },
   {
     name: "Ayam Goreng Frozen",
@@ -22,6 +24,7 @@ const products = [
     price: "Rp. 62.500 /bks",
     image:
       "https://d3gal648yor2nc.cloudfront.net/assets/images/photoshop/ayamgoreng.png",
+    alt: "Ayam Goreng",
   },
   {
     name: "Ayam Bakar Frozen",
@@ -29,6 +32,7 @@ const products = [
     price: "Rp. 62.500 /bks",
     image:
       "https://d3gal648yor2nc.cloudfront.net/assets/images/photoshop/ayamgoreng.png",
+    alt: "Ayam Bakar",
   },
   {
     name: "Siomay Frozen",
@@ -36,6 +40,7 @@ const products = [
     price: "Rp. 30.000 /bks",
     image:
       "https://d3gal648yor2nc.cloudfront.net/assets/images/photoshop/siomay.png",
+    alt: "Siomay, Siumay",
   },
 ];
 

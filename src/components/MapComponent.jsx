@@ -11,6 +11,9 @@ const center = {
 
   lng: 124.842014,
 };
+
+const apiKey = import.meta.env.VITE_REACT_APP_GOOGLE_MAPS_API_KEY;
+
 const MapComponent = () => {
   const handleDirectionsClick = () => {
     const url = `https://www.google.com/maps/dir/?api=1&destination=${center.lat},${center.lng}`;
@@ -19,7 +22,9 @@ const MapComponent = () => {
 
   return (
     <div className="flex flex-col items-center">
-      <LoadScript googleMapsApiKey="AIzaSyBSKPuyos3hx3EJkQgoZEOGFzY74aegUFs">
+      <LoadScript
+        googleMapsApiKey={import.meta.env.VITE_REACT_APP_GOOGLE_MAPS_API_KEY}
+      >
         <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={15}>
           <Marker position={center} />
         </GoogleMap>
