@@ -29,7 +29,7 @@ const buttonVariant = {
   },
 };
 
-const Hero = () => {
+const Home = () => {
   return (
     <div id="Main" className="hero-section relative">
       {/* Home bg */}
@@ -122,4 +122,4 @@ const Hero = () => {
   );
 };
 
-export default Hero;
+export default Home;

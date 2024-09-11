@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import logoWeb from "../assets/logoWeb.svg";
+import { Link } from "react-router-dom";
 import logoakijosvg from "../assets/logoakijosvg.svg";
 
 const NavLinks = [
@@ -73,6 +74,8 @@ const socialMedia = [
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
+  const [isSticky, setIsSticky] = useState(false);
+
   const toggleMenu = () => {
     setOpen((prevOpen) => !prevOpen);
     document.body.classList.toggle("no-scroll", !open); //disable scroll on menu open
@@ -82,6 +85,19 @@ const Navbar = () => {
     if (window.location.hash) {
       window.history.replaceState(null, null, window.location.pathname);
     }
+
+    const handleScroll = () => {
+      if (window.scrollY > 100) {
+        setIsSticky(true);
+      } else {
+        setIsSticky(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
   const handleLinkClick = (href) => {
@@ -154,117 +170,125 @@ const Navbar = () => {
   };
 
   return (
-    <header>
-      <nav className="absolute z-10 w-full p-4">
-        <div className="flex items-center justify-between md:m-4 md:text-xl">
-          <div className="flex items-center lg:max-w-xl">
-            <a href="#Home" onClick={(e) => handleLinkClick(e, "#Home")}>
-              <img
-                src={logoakijosvg}
-                alt="LogoNavbar"
-                className="h-[29px] w-[109px] md:mx-8 md:h-[49px]"
-              />
-            </a>
-          </div>
-
-          {/* Navbar List */}
-          <div className="hidden items-center gap-4 space-x-4 md:flex md:px-12">
-            {NavLinks.map((link) => (
-              <a
-                key={link.title}
-                href={link.href}
-                className="pointer-cursor text-yellow-100 transition-all duration-300 ease-in-out hover:-translate-y-1 hover:text-gray-300"
-                onClick={(e) => handleLinkClick(e, link.href)}
-              >
-                {link.title}
-              </a>
-            ))}
-          </div>
-
-          {/* MenuToggle */}
-          <div
-            className="text-md text-outline cursor-pointer font-bold text-rose-600 transition-all duration-300 ease-out hover:text-slate-100 lg:hidden"
-            onClick={toggleMenu}
-          >
-            Menu
-          </div>
-
-          {/* MobileNav */}
-          <AnimatePresence>
-            {open && (
-              <motion.div
-                variants={menuVars}
-                initial="initial"
-                animate="animate"
-                exit="exit"
-                className="fixed left-0 top-0 h-screen w-full origin-top bg-yellow-300 p-10 text-black"
-              >
-                {/* AKIJO TEXT */}
-                <div className="flex h-full flex-col justify-between">
-                  <div className="flex justify-between">
-                    <a
-                      href="Main"
-                      onClick={(e) => handleLinkClick(e, link.href)}
-                    >
-                      <h1 className="text-xl font-bold text-rose-600">AKIJO</h1>
-                    </a>
-                    <p
-                      className="text-md cursor-pointer text-slate-700"
-                      onClick={toggleMenu}
-                    >
-                      Close
-                    </p>
-                  </div>
-                  {/* MENU LIST FOR MOBILE */}
-                  <motion.div
-                    variants={containerVars}
-                    initial="initial"
-                    animate="open"
-                    exit="initial"
-                    className="flex flex-col items-center justify-center gap-10 text-xl text-slate-400 "
-                  >
-                    {NavLinks.map((link, index) => (
-                      <div className="overflow-hidden" key={index}>
-                        <MobileNavLink
-                          title={link.title}
-                          href={link.href}
-                          onClick={handleLinkClick}
-                        />
-                      </div>
-                    ))}
-                  </motion.div>
-                  {/* Social Media Icons */}
-                  <motion.div
-                    variants={containerVars}
-                    initial="initial"
-                    animate="open"
-                    exit="initial"
-                    className="mb-16 flex justify-center space-x-12"
-                  >
-                    {socialMedia.map((media) => (
-                      <motion.div
-                        key={media.name}
-                        variants={mobileLinkVars}
-                        className="overflow-hidden"
-                      >
-                        <a
-                          href={media.href}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-slate-800"
-                        >
-                          {media.icon}
-                        </a>
-                      </motion.div>
-                    ))}
-                  </motion.div>
-                </div>
-              </motion.div>
-            )}
-          </AnimatePresence>
+    <nav className={`navbar ${isSticky ? "sticky" : "w-full p-4"}`}>
+      <div className="flex items-center justify-between md:m-4 md:text-xl">
+        {/* NavLink Left */}
+        <div className="nav-lef hidden gap-4 space-x-4 text-slate-200 md:flex md:px-12">
+          <Link to={"/layanan"}>Layanan</Link>
+          <Link to={"/produk"}>Produk</Link>
         </div>
-      </nav>
-    </header>
+
+        {/* LOGO Center */}
+        <div className="logoCenter flex items-center lg:max-w-xl">
+          <a href="/" onClick={(e) => handleLinkClick(e, "#Home")}>
+            <img
+              src={logoakijosvg}
+              alt="LogoNavbar"
+              className="h-[29px] w-[109px] md:mx-8 md:h-[49px]"
+            />
+          </a>
+        </div>
+
+        {/* NavLink Right */}
+        <div className="nav-rigt hidden gap-4 space-x-4 text-slate-200 md:flex md:px-12">
+          <Link to={"/tentang-kami"}>Tentang Kami</Link>
+          <Link to={"/kontak"}>Kontak</Link>
+        </div>
+
+        {/* Navbar List */}
+        {/* <div className="hidden items-center gap-4 space-x-4 md:flex md:px-12">
+          {NavLinks.map((link) => (
+            <a
+              key={link.title}
+              href={link.href}
+              className="pointer-cursor text-yellow-100 transition-all duration-300 ease-in-out hover:-translate-y-1 hover:text-gray-300"
+              onClick={(e) => handleLinkClick(e, link.href)}
+            >
+              {link.title}
+            </a>
+          ))}
+        </div> */}
+
+        {/* MenuToggle */}
+        <div
+          className="text-md text-outline cursor-pointer font-bold text-rose-600 transition-all duration-300 ease-out hover:text-slate-100 lg:hidden"
+          onClick={toggleMenu}
+        >
+          Menu
+        </div>
+
+        {/* MobileNav */}
+        <AnimatePresence>
+          {open && (
+            <motion.div
+              variants={menuVars}
+              initial="initial"
+              animate="animate"
+              exit="exit"
+              className="fixed left-0 top-0 h-screen w-full origin-top bg-yellow-300 p-10 text-black"
+            >
+              {/* AKIJO TEXT */}
+              <div className="flex h-full flex-col justify-between">
+                <div className="flex justify-between">
+                  <a href="Main" onClick={(e) => handleLinkClick(e, link.href)}>
+                    <h1 className="text-xl font-bold text-rose-600">AKIJO</h1>
+                  </a>
+                  <p
+                    className="text-md cursor-pointer text-slate-700"
+                    onClick={toggleMenu}
+                  >
+                    Close
+                  </p>
+                </div>
+                {/* MENU LIST FOR MOBILE */}
+                <motion.div
+                  variants={containerVars}
+                  initial="initial"
+                  animate="open"
+                  exit="initial"
+                  className="flex flex-col items-center justify-center gap-10 text-xl text-slate-400 "
+                >
+                  {NavLinks.map((link, index) => (
+                    <div className="overflow-hidden" key={index}>
+                      <MobileNavLink
+                        title={link.title}
+                        href={link.href}
+                        onClick={handleLinkClick}
+                      />
+                    </div>
+                  ))}
+                </motion.div>
+                {/* Social Media Icons */}
+                <motion.div
+                  variants={containerVars}
+                  initial="initial"
+                  animate="open"
+                  exit="initial"
+                  className="mb-16 flex justify-center space-x-12"
+                >
+                  {socialMedia.map((media) => (
+                    <motion.div
+                      key={media.name}
+                      variants={mobileLinkVars}
+                      className="overflow-hidden"
+                    >
+                      <a
+                        href={media.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-slate-800"
+                      >
+                        {media.icon}
+                      </a>
+                    </motion.div>
+                  ))}
+                </motion.div>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
+    </nav>
   );
 };
 

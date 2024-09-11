@@ -24,6 +24,34 @@ html {
   border-top-color: #3490dc;
 }
 
+.navbar {
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(11, 11, 11, 0.9);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  transition: all 0.4s ease-in-out;
+  margin: auto;
+}
+
+.sticky {
+  padding: 0.5rem 2rem;
+  /* box-shadow: 0 2px 10px rgba(11, 11, 11, 0.8); */
+  background-color: rgba(54, 54, 54, 0.6);
+  margin: auto;
+  width: 50%;
+  position: fixed;
+  border-radius: 0 0 30px 30px;
+}
+
+.navbar a:hover {
+  color: #fffcb0;
+}
+
 @layer components {
   .max-container {
     max-width: 1440px;
@@ -209,4 +237,8 @@ section {
 
 .click-animation:active {
   animation: clickMove 1s ease-in-out;
+}
+
+.will-animate {
+  will-change: opacity, transform;
 }
