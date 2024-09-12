@@ -1,0 +1,20 @@
+{
+  "slides": [
+    {
+      "src": "/assets/images/home.webp",
+      "alt": "AkijoFood HomeImage"
+    },
+    {
+      "src": "/assets/images/carousel1.webp",
+      "alt": "AkijoFood HomeImage"
+    },
+    {
+      "src": "/assets/images/carousel2.webp",
+      "alt": "AkijoFood HomeImage"
+    },
+    {
+      "src": "/assets/images/carousel3.webp",
+      "alt": "AkijoFood HomeImage"
+    }
+  ]
+}

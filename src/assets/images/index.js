@@ -21,6 +21,10 @@ import gerobak5 from "./gerobak5.webp";
 // import porkslice from "./porkslice.jpeg";
 // import ayamgoreng from "./ayamgoreng.png";
 // import siomay from "./siomay.jpg";
+import home from "./home.webp";
+import carousel1 from "./carousel1.webp";
+import carousel2 from "./carousel2.webp";
+import carousel3 from "./carousel3.webp";
 
 export {
   akijo1,
@@ -44,4 +48,8 @@ export {
   // porkslice,
   // ayamgoreng,
   // siomay,
+  home,
+  carousel1,
+  carousel2,
+  carousel3,
 };

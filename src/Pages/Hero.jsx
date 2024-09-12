@@ -3,6 +3,8 @@ import { useEffect, useRef, useState } from "react";
 import home from "../assets/home.webp";
 import { delay, motion } from "framer-motion";
 import { text } from "@fortawesome/fontawesome-svg-core";
+import { Carousel } from "../components/Carousel";
+import CarouselData from "../imageCarousel.json";
 
 const textContainer = {
   hidden: {
@@ -96,28 +98,6 @@ const Hero = () => {
           </div>
         </motion.div>
       </div>
-
-      {/* in case it needed */}
-      {/* <div className="z-10 flex -translate-y-[5px] translate-x-[340px] rotate-3">
-        <motion.div
-          initial={{
-            opacity: 0,
-          }}
-          animate={{
-            opacity: 1,
-          }}
-          transition={{
-            duration: 1,
-            repeat: Infinity,
-          }}
-          className=""
-        >
-          <p className="rounded-md border-2 border-slate-900 bg-red-600 p-2 text-xs font-bold text-slate-50 ">
-            Harga Mulai <br />
-            dari 700k !!
-          </p>
-        </motion.div>
-      </div> */}
     </div>
   );
 };

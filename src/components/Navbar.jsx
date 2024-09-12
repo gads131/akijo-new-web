@@ -171,26 +171,35 @@ const Navbar = () => {
 
   return (
     <nav className={`navbar ${isSticky ? "sticky" : "w-full p-4"}`}>
-      <div className="flex items-center justify-between md:m-4 md:text-xl">
+      <div className="flex items-center justify-between gap-8 md:m-4 md:text-xl">
         {/* NavLink Left */}
-        <div className="nav-lef hidden gap-4 space-x-4 text-slate-200 md:flex md:px-12">
+        <div className="nav-lef hidden gap-4 font-bold text-yellow-200 md:flex md:px-12">
           <Link to={"/layanan"}>Layanan</Link>
           <Link to={"/produk"}>Produk</Link>
         </div>
 
         {/* LOGO Center */}
-        <div className="logoCenter flex items-center lg:max-w-xl">
-          <a href="/" onClick={(e) => handleLinkClick(e, "#Home")}>
-            <img
-              src={logoakijosvg}
-              alt="LogoNavbar"
-              className="h-[29px] w-[109px] md:mx-8 md:h-[49px]"
-            />
+        <div className="logoCenter relative flex items-center justify-center lg:max-w-xl">
+          {/* Logo selalu di tengah */}
+          <img
+            src={logoakijosvg}
+            alt="LogoNavbar"
+            className="block h-[29px] w-[109px] md:mx-8 md:h-[49px]"
+          />
+
+          {/* Link navigasi absolut */}
+          <a
+            className="absolute left-0 top-0 h-full w-full"
+            href="/"
+            onClick={(e) => handleLinkClick(e, "#Home")}
+            aria-label="Home"
+          >
+            <span className="sr-only">Home</span>
           </a>
         </div>
 
         {/* NavLink Right */}
-        <div className="nav-rigt hidden gap-4 space-x-4 text-slate-200 md:flex md:px-12">
+        <div className="nav-right hidden gap-4 text-nowrap font-bold text-yellow-200 md:flex md:px-12">
           <Link to={"/tentang-kami"}>Tentang Kami</Link>
           <Link to={"/kontak"}>Kontak</Link>
         </div>
@@ -230,7 +239,7 @@ const Navbar = () => {
               {/* AKIJO TEXT */}
               <div className="flex h-full flex-col justify-between">
                 <div className="flex justify-between">
-                  <a href="Main" onClick={(e) => handleLinkClick(e, link.href)}>
+                  <a href="/" onClick={(e) => handleLinkClick(e, Link.href)}>
                     <h1 className="text-xl font-bold text-rose-600">AKIJO</h1>
                   </a>
                   <p
