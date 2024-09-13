@@ -4,6 +4,7 @@ import home from "../assets/home.webp";
 import { delay, motion } from "framer-motion";
 import { text } from "@fortawesome/fontawesome-svg-core";
 import ImageCarousel from "../components/Carousel";
+import AboutUs from "../Section/AboutUs";
 
 const textContainer = {
   hidden: {
@@ -33,9 +34,12 @@ const buttonVariant = {
 const Home = () => {
   return (
     <>
-      <div className="">
+      <section>
         <ImageCarousel />
-      </div>
+      </section>
+      <section>
+        <AboutUs />
+      </section>
     </>
   );
 };

@@ -6,33 +6,51 @@ import carousel3 from "../assets/images/carousel3.webp";
 import home from "../assets/images/home.webp";
 import "./Carousel.css";
 import { delay, motion } from "framer-motion";
+import { stagger } from "framer-motion/dom";
 
 const images = [home, carousel3];
 
 const textContainer = {
   hidden: {
     opacity: 0,
-    y: "30vh",
+    y: "30dvh",
   },
   visible: {
     opacity: 1,
     y: 0,
-  },
-};
-
-const buttonVariant = {
-  initial: {
-    boxShadow: "0px 0px 25px 10px rgba(255, 255, 255, 0)",
-  },
-  hover: {
-    boxShadow: ["0px 0px 10px 5px rgba(247, 243, 186, 0.3)"],
     transition: {
-      delay: 0.3,
-      duration: 1,
-      ease: "easeInOut",
+      staggerChildren: 0.5,
+      duration: 0.7,
+      ease: "easeIn",
+      delayChildren: 0.5,
     },
   },
 };
+
+const textVariant = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.5 },
+  },
+};
+
+// const buttonVariant = {
+//   initial: {
+//     scale: 0.8,
+//   },
+//   hover: {
+//     scale: 1,
+//     transition: {
+//       delay: 0.1,
+//       delayChildren: 5,
+//       staggerChildren: 5,
+//       duration: 0.1,
+//       ease: "easeInOut",
+//     },
+//   },
+// };
 
 const ImageCarousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -86,11 +104,55 @@ const ImageCarousel = () => {
           <IoIosArrowForward />
         </button>
       </div>
-      <div className="wrapper absolute inset-0 flex w-[80%] items-center justify-center border border-slate-200">
-        <h1 className="headline absolute text-4xl text-slate-300">
+
+      {/* Text Box */}
+      <div className="absolute inset-0 mb-4 flex items-end justify-center lg:mb-14">
+        <motion.div
+          variants={textContainer}
+          initial="hidden"
+          animate="visible"
+          className="will-animate w-[80%] rounded-3xl border border-slate-100 bg-black bg-opacity-30 px-10 pb-2 pt-4 backdrop-blur-xl backdrop-filter md:w-[70%] lg:w-[60%]"
+        >
+          <div className="flex flex-col items-center gap-4 text-center">
+            <motion.p
+              variants={textVariant}
+              className="text-sm text-slate-100 lg:text-xl"
+            >
+              Premium Quality Food Product & Service
+            </motion.p>
+
+            <motion.h1
+              variants={textVariant}
+              className="font-mono text-4xl font-semibold tracking-[0.3em] text-yellow-200 lg:text-8xl"
+            >
+              AKIJO
+            </motion.h1>
+            <motion.p
+              variants={textVariant}
+              className="space-y-2 text-xs font-light text-white md:text-base xl:text-xl"
+            >
+              Menerima pesanan untuk Tomohon, Manado, dan sekitarnya <br />
+            </motion.p>
+
+            {/* ------------button */}
+            <motion.div variants={textVariant} className="flex justify-center">
+              <a href="#Pricing">
+                <button className="rounded-md border-2 border-slate-300 bg-transparent  px-12 py-4 font-semibold uppercase tracking-wide text-yellow-200 transition-all duration-500 ease-in-out hover:border-yellow-200 hover:bg-yellow-700 hover:text-slate-300">
+                  Cek Sekarang
+                </button>
+              </a>
+            </motion.div>
+          </div>
+        </motion.div>
+      </div>
+      {/* <div className="centered-content absolute inset-0 flex flex-col justify-center pb-32 pl-14 md:pl-20 ">
+        <h1 className="headline text-xl font-bold text-slate-300">
           Premium Quality Food & Service
         </h1>
-      </div>
+        <p className="subtext text-base text-slate-300">
+          Menerima pesanan untuk Tomohon, Manado dan sekitarnya
+        </p>
+      </div> */}
     </div>
   );
 };
