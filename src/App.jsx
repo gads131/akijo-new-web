@@ -1,12 +1,11 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Navbar from "./components/Navbar";
-import Hero from "./Section/Hero";
-import AboutUs from "./Section/AboutUs";
+// import Hero from "./Section/Hero";
 import OurMenu from "./Section/OurMenu";
 import OurProduct from "./Section/OurProduct";
 import Footer from "./Section/Footer";
-import PricingList from "./Section/Pricing";
+// import PricingList from "./Section/Pricing";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import priceDate from "./components/priceDate";
 

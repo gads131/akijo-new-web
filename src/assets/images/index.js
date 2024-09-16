@@ -1,4 +1,6 @@
-import akijo1 from "./akijo1.webp";
+import akijo from "./akijo.webp";
+import kopi from "./kopi.webp";
+import bubur from "./bubur.webp";
 // import akijo2 from "./akijo2.jpg";
 import order from "./order.webp";
 
@@ -27,7 +29,9 @@ import carousel2 from "./carousel2.webp";
 import carousel3 from "./carousel3.webp";
 
 export {
-  akijo1,
+  akijo,
+  kopi,
+  bubur,
   // akijo2,
   order,
   // menu1,

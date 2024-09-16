@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import logoWeb from "../assets/logoWeb.svg";
 import { Link } from "react-router-dom";
 import logoakijosvg from "../assets/logoakijosvg.svg";
 import { FaFacebook, FaInstagram, FaTiktok, FaWhatsapp } from "react-icons/fa";
 
+// Do not Touch it will break the code at least at this state
 const NavLinks = [
   { title: "About Us", href: "#AboutUs" },
   { title: "Harga", href: "#Pricing" },
@@ -133,42 +133,42 @@ const Navbar = () => {
   };
 
   return (
-    <nav className={`navbar ${isSticky ? "sticky" : "w-full p-4"}`}>
-      <div className="flex items-center justify-between gap-8 md:m-4 md:text-xl">
-        {/* NavLink Left */}
-        <div className="nav-lef hidden gap-4 font-bold text-yellow-200 md:flex md:px-12">
-          <Link to={"/layanan"}>Layanan</Link>
-          <Link to={"/produk"}>Produk</Link>
-        </div>
+    <nav className={`navbar ${isSticky ? "sticky" : "p-8 lg:p-0"}`}>
+      {/* <div className="flex items-center justify-between gap-0 md:m-4 md:text-xl"> */}
+      {/* NavLink Left */}
+      <div className="nav-lef hidden gap-4 font-bold text-yellow-200 md:flex md:px-12">
+        <Link to={"/layanan"}>Layanan</Link>
+        <Link to={"/produk"}>Produk</Link>
+      </div>
 
-        {/* LOGO Center */}
-        <div className="logoCenter relative flex items-center justify-center lg:max-w-xl">
-          {/* Logo selalu di tengah */}
-          <img
-            src={logoakijosvg}
-            alt="LogoNavbar"
-            className="block h-[29px] w-[109px] md:mx-8 md:h-[49px]"
-          />
+      {/* LOGO Center */}
+      <div className="logoCenter relative flex items-center justify-center lg:max-w-xl">
+        {/* Logo selalu di tengah */}
+        <img
+          src={logoakijosvg}
+          alt="LogoNavbar"
+          className="block h-[29px] w-[109px] md:mx-8 md:h-[49px]"
+        />
 
-          {/* Link navigasi absolut */}
-          <a
-            className="absolute left-0 top-0 h-full w-full"
-            href="/"
-            onClick={(e) => handleLinkClick(e, "#Home")}
-            aria-label="Home"
-          >
-            <span className="sr-only">Home</span>
-          </a>
-        </div>
+        {/* Link navigasi absolut */}
+        <a
+          className=""
+          href="/"
+          onClick={(e) => handleLinkClick(e, "#Home")}
+          aria-label="Home"
+        >
+          <span className="sr-only">Home</span>
+        </a>
+      </div>
 
-        {/* NavLink Right */}
-        <div className="nav-right hidden gap-4 text-nowrap font-bold text-yellow-200 md:flex md:px-12">
-          <Link to={"/tentang-kami"}>Tentang Kami</Link>
-          <Link to={"/kontak"}>Kontak</Link>
-        </div>
+      {/* NavLink Right */}
+      <div className="nav-right hidden gap-4 text-nowrap font-bold text-yellow-200 md:flex md:px-12">
+        <Link to={"/tentang-kami"}>Tentang Kami</Link>
+        <Link to={"/kontak"}>Kontak</Link>
+      </div>
 
-        {/* Navbar List */}
-        {/* <div className="hidden items-center gap-4 space-x-4 md:flex md:px-12">
+      {/* Navbar List */}
+      {/* <div className="hidden items-center gap-4 space-x-4 md:flex md:px-12">
           {NavLinks.map((link) => (
             <a
               key={link.title}
@@ -181,85 +181,85 @@ const Navbar = () => {
           ))}
         </div> */}
 
-        {/* MenuToggle */}
-        <div
-          className="text-md text-outline cursor-pointer font-bold text-rose-600 transition-all duration-300 ease-out hover:text-slate-100 lg:hidden"
-          onClick={toggleMenu}
-        >
-          Menu
-        </div>
-
-        {/* MobileNav */}
-        <AnimatePresence>
-          {open && (
-            <motion.div
-              variants={menuVars}
-              initial="initial"
-              animate="animate"
-              exit="exit"
-              className="mobile-nav fixed left-0 top-0 w-full origin-top bg-yellow-300 p-10 text-black"
-            >
-              {/* AKIJO TEXT */}
-              <div className="flex h-full flex-col justify-between">
-                <div className="flex justify-between">
-                  <a href="/" onClick={(e) => handleLinkClick(e, Link.href)}>
-                    <h1 className="text-xl font-bold text-rose-600">AKIJO</h1>
-                  </a>
-                  <p
-                    className="text-md cursor-pointer text-slate-700"
-                    onClick={toggleMenu}
-                  >
-                    Close
-                  </p>
-                </div>
-                {/* MENU LIST FOR MOBILE */}
-                <motion.div
-                  variants={containerVars}
-                  initial="initial"
-                  animate="open"
-                  exit="initial"
-                  className="flex flex-col items-center justify-center gap-10 text-xl text-slate-400 "
-                >
-                  {NavLinks.map((link, index) => (
-                    <div className="overflow-hidden" key={index}>
-                      <MobileNavLink
-                        title={link.title}
-                        href={link.href}
-                        onClick={handleLinkClick}
-                      />
-                    </div>
-                  ))}
-                </motion.div>
-                {/* Social Media Icons */}
-                <motion.div
-                  variants={containerVars}
-                  initial="initial"
-                  animate="open"
-                  exit="initial"
-                  className="mb-16 flex justify-center space-x-12"
-                >
-                  {socialMedia.map((media) => (
-                    <motion.div
-                      key={media.name}
-                      variants={mobileLinkVars}
-                      className="overflow-hidden"
-                    >
-                      <a
-                        href={media.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-slate-800"
-                      >
-                        {media.icon}
-                      </a>
-                    </motion.div>
-                  ))}
-                </motion.div>
-              </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
+      {/* MenuToggle */}
+      <div
+        className="text-md text-outline cursor-pointer font-bold text-rose-600 md:hidden"
+        onClick={toggleMenu}
+      >
+        Menu
       </div>
+
+      {/* MobileNav */}
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            variants={menuVars}
+            initial="initial"
+            animate="animate"
+            exit="exit"
+            className="mobile-nav fixed left-0 top-0 w-full origin-top bg-yellow-300 p-10 text-black"
+          >
+            {/* AKIJO TEXT */}
+            <div className="flex h-full flex-col justify-between">
+              <div className="flex justify-between">
+                <a href="/" onClick={(e) => handleLinkClick(e, Link.href)}>
+                  <h1 className="text-xl font-bold text-rose-600">AKIJO</h1>
+                </a>
+                <p
+                  className="text-md cursor-pointer text-slate-700"
+                  onClick={toggleMenu}
+                >
+                  Close
+                </p>
+              </div>
+              {/* MENU LIST FOR MOBILE */}
+              <motion.div
+                variants={containerVars}
+                initial="initial"
+                animate="open"
+                exit="initial"
+                className="flex flex-col items-center justify-center gap-10 text-xl text-slate-400 "
+              >
+                {NavLinks.map((link, index) => (
+                  <div className="overflow-hidden" key={index}>
+                    <MobileNavLink
+                      title={link.title}
+                      href={link.href}
+                      onClick={handleLinkClick}
+                    />
+                  </div>
+                ))}
+              </motion.div>
+              {/* Social Media Icons */}
+              <motion.div
+                variants={containerVars}
+                initial="initial"
+                animate="open"
+                exit="initial"
+                className="mb-16 flex justify-center space-x-12"
+              >
+                {socialMedia.map((media) => (
+                  <motion.div
+                    key={media.name}
+                    variants={mobileLinkVars}
+                    className="overflow-hidden"
+                  >
+                    <a
+                      href={media.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-slate-800"
+                    >
+                      {media.icon}
+                    </a>
+                  </motion.div>
+                ))}
+              </motion.div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+      {/* </div> */}
     </nav>
   );
 };
