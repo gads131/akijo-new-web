@@ -10,7 +10,7 @@ import { Helmet, HelmetProvider } from "react-helmet-async";
 import priceDate from "./components/priceDate";
 
 import Home from "./Pages/Home";
-import Layanan from "./Pages/Layanan";
+import Services from "./Pages/Services";
 import Produk from "./Pages/Produk";
 import Tentang from "./Pages/Tentang";
 import Kontak from "./Pages/Kontak";
@@ -52,7 +52,7 @@ const App = () => {
           <Navbar />
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/layanan" element={<Layanan />} />
+            <Route path="/Services" element={<Services />} />
             <Route path="/produk" element={<Produk />} />
             <Route path="/tentang" element={<Tentang />} />
             <Route path="/kontak" element={<Kontak />} />

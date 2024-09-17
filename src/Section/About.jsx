@@ -1,11 +1,15 @@
 import Layanan from "../components/Layanan";
 import WhyUs from "../components/WhyUs";
 import Gallery from "../components/Gallery";
+import FindUs from "../components/FindUs";
 
 function About() {
   return (
     <>
-      <div className=" flex flex-col gap-24 bg-neutral-100 p-8 pb-32  ">
+      <div
+        id="tentang-kami"
+        className=" flex flex-col gap-24 bg-neutral-100 p-8 pb-32"
+      >
         {/* --------------------------------------------------- */}
         <div className=" flex items-center justify-center">
           <div className=" rounded-md bg-zinc-700 md:w-3/4">
@@ -25,6 +29,7 @@ function About() {
         <Layanan />
         <WhyUs />
         <Gallery />
+        <FindUs />
       </div>
     </>
   );

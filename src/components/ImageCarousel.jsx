@@ -134,7 +134,7 @@ const ImageCarousel = () => {
 
             {/* ------------button */}
             <motion.div variants={textVariant} className="flex justify-center">
-              <a href="#Pricing">
+              <a href="#tentang-kami">
                 <button className="rounded-md border-2 border-slate-300 bg-transparent  px-12 py-4 font-semibold uppercase tracking-wide text-yellow-200 transition-all duration-500 ease-in-out hover:border-yellow-200 hover:bg-yellow-700 hover:text-slate-300">
                   Cek Sekarang
                 </button>

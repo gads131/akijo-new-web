@@ -81,29 +81,27 @@ const AboutUs = () => {
   const cardRefs = cards.map(() => useInView());
   return (
     <div id="AboutUs">
-      <div className=" flex flex-col gap-24 bg-neutral-100 p-8 pb-32  ">
-        {/* --------------------------------------------------- */}
-        <div className=" flex items-center justify-center">
-          <div className=" rounded-md bg-zinc-700 md:w-3/4">
-            <h2 className="md:judul px-8 py-4 text-center text-3xl font-bold text-slate-200 xl:mb-2">
-              Welcome to AKIJO
-            </h2>
-            <p className="font-montserrat mb-16 items-center px-4 text-center text-xl tracking-wider text-slate-200 md:px-16 md:leading-loose lg:text-2xl">
-              AkijoFood melayani pesanan untuk berbagai acara & pesta, dari
-              Ibadah sampai pesta perkawinan, dan event atau kegiatan lainnya.
-              Ramaikan acara/event anda dengan gerobak bakso AKIJO . <br />{" "}
-              <br /> Kami juga menyediakan makanan frozen siap saji seperti
-              Bakso babi, daging babi slice (pork slice), siomay, dan ayam
-              goreng/bakar.
-            </p>
+      {/* --------------------------------------------------- */}
+      <div className=" flex items-center justify-center">
+        <div className=" rounded-md bg-zinc-700 md:w-3/4">
+          <h2 className="md:judul px-8 py-4 text-center text-3xl font-bold text-slate-200 xl:mb-2">
+            Welcome to AKIJO
+          </h2>
+          <p className="font-montserrat mb-16 items-center px-4 text-center text-xl tracking-wider text-slate-200 md:px-16 md:leading-loose lg:text-2xl">
+            AkijoFood melayani pesanan untuk berbagai acara & pesta, dari Ibadah
+            sampai pesta perkawinan, dan event atau kegiatan lainnya. Ramaikan
+            acara/event anda dengan gerobak bakso AKIJO . <br /> <br /> Kami
+            juga menyediakan makanan frozen siap saji seperti Bakso babi, daging
+            babi slice (pork slice), siomay, dan ayam goreng/bakar.
+          </p>
 
-            {/* <p
+          {/* <p
               onClick={toggleExpand}
               className={`font-montserrat mb-16 items-center px-16 text-center text-xl leading-loose tracking-wider text-slate-200
               ${expand ? "" : "line-clamp-3"}
               cursor-pointer md:line-clamp-none md:cursor-default`}
             ></p> */}
-            {/* <p
+          {/* <p
               onClick={toggleExpand}
               className={`px-16  text-justify text-lg leading-loose text-slate-200 md:mb-10 lg:text-center xl:mb-14  
             ${expand ? "" : "line-clamp-3"}
@@ -122,75 +120,74 @@ const AboutUs = () => {
               reputation grew. We also have our unique cart that will bring
               something new to your events
             </p> */}
-          </div>
         </div>
-        {/* ----------------------------------------- */}
-        <div className="flex flex-col gap-8">
-          <div className="flex flex-col items-center">
-            <h2 className="flex justify-center text-3xl font-bold uppercase text-slate-900">
-              layanan kami
-            </h2>
-            <div className="h-1 w-1/5 max-w-xs items-center justify-center bg-red-400 object-center"></div>
-          </div>
-
-          <div className="mb-8 grid grid-cols-1 gap-16 md:grid-cols-3 md:gap-8">
-            {cards.map((card, index) => {
-              const [ref, controls] = cardRefs[index];
-              return (
-                <motion.div
-                  ref={ref}
-                  initial="hidden"
-                  animate={controls}
-                  whileHover={{ scale: 1.05 }}
-                  variants={{
-                    hidden: { opacity: 0, y: 50 },
-                    visible: { opacity: 1, y: 0 },
-                  }}
-                  transition={{
-                    type: "spring",
-                    stiffness: 100,
-                    duration: 0.5,
-                  }}
-                  key={index}
-                  className="flex flex-col rounded border p-4 shadow-lg"
-                >
-                  <div className="flex-grow">
-                    <img
-                      src={card.image}
-                      alt={card.tittle}
-                      className="mb-4 h-64 w-full cursor-pointer object-cover"
-                      onClick={() => openModal(card.image)}
-                    />
-                    <h3 className="mb-2 text-xl font-semibold text-slate-900">
-                      {card.tittle}
-                    </h3>
-                    <p className="text-wrap text-justify text-slate-800">
-                      {card.description}
-                    </p>
-                  </div>
-                </motion.div>
-              );
-            })}
-          </div>
-        </div>
-
-        {/* Image Modal */}
-        <Modal
-          isOpen={modalIsOpen}
-          onRequestClose={closeModal}
-          contentLabel="Image Modal"
-          className="Modal Modal--open"
-          overlayClassName="Overlay Overlay--open"
-        >
-          <button
-            className="absolute right-4 top-4 text-slate-600"
-            onClick={closeModal}
-          >
-            Close
-          </button>
-          <img src={selectedImage} alt="Fullscreen Modal" className="w-full" />
-        </Modal>
       </div>
+      {/* ----------------------------------------- */}
+      <div className="flex flex-col gap-8">
+        <div className="flex flex-col items-center">
+          <h2 className="flex justify-center text-3xl font-bold uppercase text-slate-900">
+            layanan kami
+          </h2>
+          <div className="h-1 w-1/5 max-w-xs items-center justify-center bg-red-400 object-center"></div>
+        </div>
+
+        <div className="mb-8 grid grid-cols-1 gap-16 md:grid-cols-3 md:gap-8">
+          {cards.map((card, index) => {
+            const [ref, controls] = cardRefs[index];
+            return (
+              <motion.div
+                ref={ref}
+                initial="hidden"
+                animate={controls}
+                whileHover={{ scale: 1.05 }}
+                variants={{
+                  hidden: { opacity: 0, y: 50 },
+                  visible: { opacity: 1, y: 0 },
+                }}
+                transition={{
+                  type: "spring",
+                  stiffness: 100,
+                  duration: 0.5,
+                }}
+                key={index}
+                className="flex flex-col rounded border p-4 shadow-lg"
+              >
+                <div className="flex-grow">
+                  <img
+                    src={card.image}
+                    alt={card.tittle}
+                    className="mb-4 h-64 w-full cursor-pointer object-cover"
+                    onClick={() => openModal(card.image)}
+                  />
+                  <h3 className="mb-2 text-xl font-semibold text-slate-900">
+                    {card.tittle}
+                  </h3>
+                  <p className="text-wrap text-justify text-slate-800">
+                    {card.description}
+                  </p>
+                </div>
+              </motion.div>
+            );
+          })}
+        </div>
+      </div>
+
+      {/* Image Modal */}
+      <Modal
+        isOpen={modalIsOpen}
+        onRequestClose={closeModal}
+        contentLabel="Image Modal"
+        className="Modal Modal--open"
+        overlayClassName="Overlay Overlay--open"
+      >
+        <button
+          className="absolute right-4 top-4 text-slate-600"
+          onClick={closeModal}
+        >
+          Close
+        </button>
+        <img src={selectedImage} alt="Fullscreen Modal" className="w-full" />
+      </Modal>
     </div>
   );
 };
