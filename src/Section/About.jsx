@@ -1,5 +1,6 @@
 import Layanan from "../components/Layanan";
 import WhyUs from "../components/WhyUs";
+import Gallery from "../components/Gallery";
 
 function About() {
   return (
@@ -23,6 +24,7 @@ function About() {
         </div>
         <Layanan />
         <WhyUs />
+        <Gallery />
       </div>
     </>
   );

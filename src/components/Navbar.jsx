@@ -144,21 +144,23 @@ const Navbar = () => {
       {/* LOGO Center */}
       <div className="logoCenter relative flex items-center justify-center lg:max-w-xl">
         {/* Logo selalu di tengah */}
-        <img
-          src={logoakijosvg}
-          alt="LogoNavbar"
-          className="block h-[29px] w-[109px] md:mx-8 md:h-[49px]"
-        />
+        <Link to={"/"}>
+          <img
+            src={logoakijosvg}
+            alt="LogoNavbar"
+            className="block h-[29px] w-[109px] md:mx-8 md:h-[49px]"
+          />
+        </Link>
 
         {/* Link navigasi absolut */}
-        <a
+        {/* <a
           className=""
           href="/"
           onClick={(e) => handleLinkClick(e, "#Home")}
           aria-label="Home"
         >
           <span className="sr-only">Home</span>
-        </a>
+        </a> */}
       </div>
 
       {/* NavLink Right */}

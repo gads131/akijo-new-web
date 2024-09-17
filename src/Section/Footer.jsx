@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import logoakijosvg from "../assets/logoakijosvg.svg";
+import { Link } from "react-router-dom";
 
 const footerLinks = [
   {
@@ -100,13 +101,15 @@ const Footer = () => {
         className="container mx-auto text-center"
       >
         <div className="mb-4">
-          <a href="#Home" onClick={handleLogoClick}>
+          <Link to={"/"}>
             <img
               src={logoakijosvg}
               alt="AKIJO Logo"
               className="mx-auto h-20 w-32"
             />
-          </a>
+          </Link>
+          {/* <a href="#Home" onClick={handleLogoClick}>
+          </a> */}
         </div>
         <div className="mb-4 text-lg">
           Paslaten Satu Lingkungan VI. <br />

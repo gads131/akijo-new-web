@@ -27,6 +27,10 @@ import home from "./home.webp";
 import carousel1 from "./carousel1.webp";
 import carousel2 from "./carousel2.webp";
 import carousel3 from "./carousel3.webp";
+import carousel4 from "./carousel4.webp";
+import carousel5 from "./carousel5.webp";
+import carousel6 from "./carousel6.webp";
+import carousel7 from "./carousel7.webp";
 
 export {
   akijo,
@@ -56,4 +60,8 @@ export {
   carousel1,
   carousel2,
   carousel3,
+  carousel4,
+  carousel5,
+  carousel6,
+  carousel7,
 };
