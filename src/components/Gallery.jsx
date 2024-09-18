@@ -99,6 +99,7 @@ const ImageCarousel = () => {
       <div className="relative mt-8 flex h-[300px] w-[300px] flex-col rounded-lg border p-24 md:h-[500px] md:w-[500px]">
         {images.map((img, index) => (
           <img
+            loading="lazy"
             key={index}
             src={img}
             alt={`Slide ${index + 1}`}

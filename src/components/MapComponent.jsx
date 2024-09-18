@@ -1,5 +1,5 @@
 import React from "react";
-import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
+import { GoogleMap, useJsApiLoader, Marker } from "@react-google-maps/api";
 
 const containerStyle = {
   width: "100%",
@@ -22,13 +22,14 @@ const MapComponent = () => {
 
   return (
     <div className="flex flex-col items-center">
-      <LoadScript
+      <useJsApiLoader
+        loadingElement="async"
         googleMapsApiKey={import.meta.env.VITE_REACT_APP_GOOGLE_MAPS_API_KEY}
       >
         <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={15}>
           <Marker position={center} />
         </GoogleMap>
-      </LoadScript>
+      </useJsApiLoader>
       <button
         onClick={handleDirectionsClick}
         className="hover:bg-emerald-7=00 mt-12 rounded bg-orange-500 px-4 py-2 text-white"

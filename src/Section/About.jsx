@@ -1,7 +1,16 @@
-import Layanan from "../components/Layanan";
-import WhyUs from "../components/WhyUs";
-import Gallery from "../components/Gallery";
-import FindUs from "../components/FindUs";
+// import Layanan from "../components/Layanan";
+// import WhyUs from "../components/WhyUs";
+// import Gallery from "../components/Gallery";
+import React, { lazy, Suspense } from "react";
+// import FindUs from "../components/FindUs";
+// import GoogleMapComponent from "../components/GoogleMapComponent";
+
+const Gallery = lazy(() => import("../components/Gallery"));
+const Layanan = lazy(() => import("../components/Layanan"));
+const WhyUs = lazy(() => import("../components/WhyUs"));
+const GoogleMapComponent = lazy(
+  () => import("../components/GoogleMapComponent"),
+);
 
 function About() {
   return (
@@ -26,10 +35,18 @@ function About() {
             </p>
           </div>
         </div>
-        <Layanan />
-        <WhyUs />
-        <Gallery />
-        <FindUs />
+        <Suspense fallback={<div>Loading...</div>}>
+          <Layanan />
+        </Suspense>
+        <Suspense fallback={<div>Loading...</div>}>
+          <WhyUs />
+        </Suspense>
+        <Suspense fallback={<div>Loading...</div>}>
+          <Gallery />
+        </Suspense>
+        <Suspense fallback={<div>Loading...</div>}>
+          <GoogleMapComponent />
+        </Suspense>
       </div>
     </>
   );

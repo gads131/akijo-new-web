@@ -1,5 +1,5 @@
-import React from "react";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import React, { Suspense, lazy } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 // import Hero from "./Section/Hero";
 import OurMenu from "./Section/OurMenu";
@@ -8,12 +8,13 @@ import Footer from "./Section/Footer";
 // import PricingList from "./Section/Pricing";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import priceDate from "./components/priceDate";
+import DotLoader from "./components/DotLoader";
 
-import Home from "./Pages/Home";
-import Services from "./Pages/Services";
-import Produk from "./Pages/Produk";
-import Tentang from "./Pages/Tentang";
-import Kontak from "./Pages/Kontak";
+// import Home from "./Pages/Home";
+// import Services from "./Pages/Services";
+// import Produk from "./Pages/Produk";
+// import Tentang from "./Pages/Tentang";
+// import Kontak from "./Pages/Kontak";
 
 // --------UNUSED
 // import Layout from "./components/Layout";
@@ -22,6 +23,12 @@ import Kontak from "./Pages/Kontak";
 // import Loader from "./components/Loader";
 // import Layout from "./components/Layout";
 // import { BrowserRouter } from "react-router-dom";
+
+const Home = lazy(() => import("./Pages/Home"));
+const Services = lazy(() => import("./Pages/Services"));
+const Produk = lazy(() => import("./Pages/Produk"));
+const Tentang = lazy(() => import("./Pages/Tentang"));
+const Kontak = lazy(() => import("./Pages/Kontak"));
 
 const App = () => {
   return (
@@ -50,16 +57,16 @@ const App = () => {
             <meta property="og:type" content="website" />
           </Helmet>
           <Navbar />
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/Services" element={<Services />} />
-            <Route path="/produk" element={<Produk />} />
-            <Route path="/tentang" element={<Tentang />} />
-            <Route path="/kontak" element={<Kontak />} />
-          </Routes>
-          <div id="Contact">
+          <Suspense fallback={<DotLoader />}>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/Services" element={<Services />} />
+              <Route path="/produk" element={<Produk />} />
+              <Route path="/tentang" element={<Tentang />} />
+              <Route path="/kontak" element={<Kontak />} />
+            </Routes>
             <Footer />
-          </div>
+          </Suspense>
         </div>
       </HelmetProvider>
     </Router>
