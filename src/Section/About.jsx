@@ -17,7 +17,7 @@ function About() {
     <>
       <div
         id="tentang-kami"
-        className=" flex flex-col gap-24 bg-neutral-100 p-8 pb-32"
+        className=" flex flex-col items-center justify-center gap-24 bg-neutral-100 p-8 pb-32"
       >
         {/* --------------------------------------------------- */}
         <div className=" flex items-center justify-center">

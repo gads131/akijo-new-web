@@ -90,7 +90,6 @@ const ImageCarousel = () => {
         <div className="image-slider">
           {images.map((img, index) => (
             <img
-              loading="lazy"
               key={index}
               src={img}
               alt={`Slide ${index + 1}`}

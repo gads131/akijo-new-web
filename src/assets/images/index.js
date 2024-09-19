@@ -32,11 +32,16 @@ import carousel5 from "./carousel5.webp";
 import carousel6 from "./carousel6.webp";
 import carousel7 from "./carousel7.webp";
 
+// Produk
+import ayamgoreng from "./ayamgoreng.webp";
+import baksoba from "./baksoba.webp";
+import porkslice from "./porkslice.webp";
+import siomay from "./siomay.webp";
+
 export {
   akijo,
   kopi,
   bubur,
-  // akijo2,
   order,
   // menu1,
   // menu2,
@@ -64,4 +69,10 @@ export {
   carousel5,
   carousel6,
   carousel7,
+
+  // produk
+  ayamgoreng,
+  baksoba,
+  porkslice,
+  siomay,
 };

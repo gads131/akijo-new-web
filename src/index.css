@@ -71,7 +71,7 @@ body,
 }
 
 .navbar a:hover {
-  color: #fffcb0;
+  color: rgb(254 249 195);
 }
 
 /* @layer components {
@@ -80,6 +80,15 @@ body,
     margin: 0 auto;
   }
 } */
+
+.page-container {
+  position: relative;
+  display: flex;
+  min-height: 100dvh;
+  flex-direction: column;
+  padding: 3rem;
+  background-color: rgb(240, 253, 244);
+}
 
 @layer utilities {
   .padding {

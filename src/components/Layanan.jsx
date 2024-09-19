@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import Modal from "react-modal";
 import { motion, useAnimation } from "framer-motion";
+import { Link } from "react-router-dom";
 import { akijo, kopi, bubur } from "../assets/images";
 import "./Layanan.css";
 
@@ -11,6 +12,7 @@ const cards = [
     tittle: "Booth Bakso",
     image: akijo,
     alt: "Paket Gerobak Bakso Babi, Untuk acara Pernikahan, Ulang tahun, Ibadah, Event",
+    id: "boothBakso",
     description:
       "Paket booth bakso untuk 50 s/d 60 orang, alat makan disediakan (mangkok, sendok dll)",
   },
@@ -18,12 +20,14 @@ const cards = [
     tittle: "Booth Kopi & Kue Cucur Onde-onde",
     image: kopi,
     alt: "Paket Booth Kopi, Tomohon Manado dan sekitarnya",
+    id: "Kopi",
     description: "Paket untuk 100 cup kopi + 150 kue Cucur atau Onde-onde",
   },
   {
     tittle: "Bubur Ayam Akijo",
     image: bubur,
     alt: "Bubur Ayam Akijo",
+    id: "buburAyam",
     description: "Per porsi hanya Rp. 15.000 !",
     terbaru: true,
   },
@@ -91,6 +95,7 @@ const Layanan = () => {
         <div className="mb-8 grid grid-cols-1 gap-16 md:grid-cols-3 md:gap-8">
           {cards.map((card, index) => {
             const [ref, controls] = cardRefs[index];
+            const walink = card.id === "buburAyam";
             return (
               <motion.div
                 ref={ref}
@@ -112,7 +117,7 @@ const Layanan = () => {
                     src={card.image}
                     alt={card.tittle}
                     className="mb-4 h-64 w-full cursor-pointer object-cover"
-                    onClick={() => openModal(card.image)}
+                    // onClick={() => openModal(card.image)}
                   />
                   {card.terbaru && (
                     <div className="ribbon">
@@ -125,9 +130,27 @@ const Layanan = () => {
                   <p className="mb-2 text-wrap text-justify text-slate-800">
                     {card.description}
                   </p>
-                  <button className="mt-auto justify-center rounded-lg bg-lime-400 py-2 font-semibold uppercase tracking-widest text-slate-700 hover:bg-lime-700 hover:text-slate-100">
-                    Cek Selengkapnya
-                  </button>
+                  {walink ? (
+                    <a
+                      href="https://wa.me/6281342709321"
+                      className="mt-auto flex items-center justify-center"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <button className="mt-auto w-full justify-center rounded-lg bg-lime-400 py-2 font-semibold uppercase tracking-widest text-slate-700 hover:bg-lime-700 hover:text-slate-100">
+                        Cek Selengkapnya
+                      </button>
+                    </a>
+                  ) : (
+                    <Link
+                      to={`/Services#${card.id}`} // Use Link to navigate
+                      className="mt-auto flex items-center justify-center"
+                    >
+                      <button className="mt-auto w-full justify-center rounded-lg bg-lime-400 py-2 font-semibold uppercase tracking-widest text-slate-700 hover:bg-lime-700 hover:text-slate-100">
+                        Cek Selengkapnya
+                      </button>
+                    </Link>
+                  )}
                 </div>
               </motion.div>
             );
@@ -136,7 +159,7 @@ const Layanan = () => {
       </div>
 
       {/* Image Modal */}
-      <Modal
+      {/* <Modal
         isOpen={modalIsOpen}
         onRequestClose={closeModal}
         contentLabel="Image Modal"
@@ -150,7 +173,7 @@ const Layanan = () => {
           Close
         </button>
         <img src={selectedImage} alt="Fullscreen Modal" className="w-full" />
-      </Modal>
+      </Modal> */}
     </>
   );
 };

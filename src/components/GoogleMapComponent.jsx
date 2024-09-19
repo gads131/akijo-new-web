@@ -38,11 +38,11 @@ function GoogleMapComponent() {
   };
 
   return isLoaded ? (
-    <div className="flex flex-col items-center">
+    <div className="flex w-full max-w-full flex-col items-center justify-center rounded-lg border-2 border-slate-900 p-2 shadow-lg md:max-w-[600px] lg:max-w-[800px]">
       <GoogleMap
         mapContainerStyle={containerStyle}
         center={center}
-        zoom={15}
+        zoom={16}
         onLoad={onLoad}
         onUnmount={onUnmount}
       >
@@ -50,7 +50,7 @@ function GoogleMapComponent() {
       </GoogleMap>
       <button
         onClick={handleDirectionsClick}
-        className="mt-12 rounded bg-orange-500 px-4 py-2 text-white hover:bg-emerald-700"
+        className="mt-4 rounded bg-orange-500 px-4 py-2 text-white hover:bg-emerald-700"
       >
         Get Directions
       </button>
