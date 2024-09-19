@@ -4,7 +4,7 @@ import carousel3 from "../assets/images/carousel3.webp";
 import home from "../assets/images/home.webp";
 import "./Carousel.css";
 import { LazyMotion, domAnimation, motion } from "framer-motion";
-import { stagger } from "framer-motion/dom";
+// import { stagger } from "framer-motion/dom";
 
 const images = [home, carousel3];
 

@@ -280,3 +280,7 @@ body,
 .will-animate {
   will-change: opacity, transform;
 }
+
+.price-text {
+  color: rgb(71 85 105);
+}

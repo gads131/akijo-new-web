@@ -133,10 +133,10 @@ const Navbar = () => {
   };
 
   return (
-    <nav className={`navbar ${isSticky ? "sticky" : "p-8 lg:p-0"}`}>
+    <nav className={`navbar "" ${isSticky ? "sticky" : "p-8 lg:p-0"}`}>
       {/* <div className="flex items-center justify-between gap-0 md:m-4 md:text-xl"> */}
       {/* NavLink Left */}
-      <div className="nav-lef hidden gap-4 font-bold uppercase text-yellow-100 md:flex md:px-12">
+      <div className="nav-lef relative hidden gap-4 font-bold uppercase text-yellow-100 md:flex md:px-12">
         <Link to={"/Services"}>Layanan</Link>
         <Link to={"/produk"}>Produk</Link>
       </div>
@@ -164,7 +164,7 @@ const Navbar = () => {
       </div>
 
       {/* NavLink Right */}
-      <div className="nav-right hidden gap-4 text-nowrap font-bold uppercase text-yellow-100 md:flex md:px-12">
+      <div className="nav-right relative hidden gap-4 text-nowrap font-bold uppercase text-yellow-100 md:flex md:px-12">
         <Link to={"#tentang-kami"}>Tentang Kami</Link>
         <Link to={"/kontak"}>Kontak</Link>
       </div>
