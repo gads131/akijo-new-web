@@ -46,7 +46,6 @@ body,
 
 .sticky {
   padding: 1rem;
-  box-shadow: 0 2px 5px rgba(247, 255, 107, 0.5);
   background-color: rgba(54, 54, 54, 0.6);
   margin: auto;
   width: 70%;
