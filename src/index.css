@@ -53,10 +53,6 @@ body,
   border-radius: 0 0 30px 30px;
 }
 
-.sticky a {
-  color: rgba(225, 225, 225, 1);
-}
-
 .sr-only {
   position: absolute;
   width: 1px;
