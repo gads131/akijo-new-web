@@ -1,28 +1,9 @@
 import React, { Suspense, lazy } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
-// import Hero from "./Section/Hero";
-import OurMenu from "./Section/OurMenu";
-import OurProduct from "./Section/OurProduct";
 import Footer from "./Section/Footer";
-// import PricingList from "./Section/Pricing";
 import { Helmet, HelmetProvider } from "react-helmet-async";
-import priceDate from "./components/priceDate";
 import DotLoader from "./components/DotLoader";
-
-// import Home from "./Pages/Home";
-// import Services from "./Pages/Services";
-// import Produk from "./Pages/Produk";
-// import Tentang from "./Pages/Tentang";
-// import Kontak from "./Pages/Kontak";
-
-// --------UNUSED
-// import Layout from "./components/Layout";
-// import OurCostumer from "./Section/OurCostumer";
-// import Carousel from "./Section/Carousel";
-// import Loader from "./components/Loader";
-// import Layout from "./components/Layout";
-// import { BrowserRouter } from "react-router-dom";
 
 const Home = lazy(() => import("./Pages/Home"));
 const Services = lazy(() => import("./Pages/Services"));
@@ -65,8 +46,8 @@ const App = () => {
               <Route path="/tentang" element={<Tentang />} />
               <Route path="/kontak" element={<Kontak />} />
             </Routes>
-            <Footer />
           </Suspense>
+          <Footer />
         </div>
       </HelmetProvider>
     </Router>
@@ -74,30 +55,3 @@ const App = () => {
 };
 
 export default App;
-
-{
-  /* <section id="OurCostumer" className="section">
-<OurCostumer />
-</section> */
-}
-
-{
-  /* <section id="Main" className="section">
-  <Hero />
-</section>
-<section id="AboutUs" className="section">
-  <AboutUs />
-</section>
-<section id="Pricing" className="section">
-  <PricingList />
-</section>
-<section id="OurMenu" className="section px-4 py-2">
-  <OurMenu />
-</section>
-<section id="OurProduct" className="section">
-  <OurProduct />
-</section>
-<section id="priceDate" className="section">
-  <priceDate />
-</section> */
-}

@@ -1,6 +1,6 @@
 import React from "react";
 import { akijo, carousel1 } from "../assets/images";
-import { FaCheckCircle } from "react-icons/fa";
+import { FaCheckCircle, FaWhatsapp } from "react-icons/fa";
 
 const boothBakso = [
   {
@@ -67,8 +67,9 @@ function Service() {
                     {item}
                   </li>
                 ))}
-                <button className="mt-4 rounded-lg bg-lime-400 px-4 py-2 text-slate-700 hover:bg-lime-700 hover:text-slate-100">
+                <button className="mt-4 flex items-center justify-center rounded-lg bg-lime-400 px-4 py-2 font-bold uppercase text-slate-700 hover:bg-lime-700 hover:text-slate-100">
                   Order
+                  <FaWhatsapp className="ml-2 h-[20px] w-[20px]" />
                 </button>
               </ul>
             </div>
@@ -108,8 +109,9 @@ function Service() {
                     {item}
                   </li>
                 ))}
-                <button className="mt-4 w-full rounded-lg bg-lime-400 px-4 py-2 text-slate-700 hover:bg-lime-700 hover:text-slate-100">
+                <button className="mt-4 flex w-full items-center justify-center rounded-lg bg-lime-400 px-4 py-2 font-bold uppercase text-slate-700 hover:bg-lime-700 hover:text-slate-100">
                   Order
+                  <FaWhatsapp className="ml-2 h-[20px] w-[20px]" />
                 </button>
               </ul>
             </div>
