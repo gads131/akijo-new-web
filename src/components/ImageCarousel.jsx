@@ -90,6 +90,7 @@ const ImageCarousel = () => {
         <div className="image-slider">
           {images.map((img, index) => (
             <img
+              fetchpriority="high"
               key={index}
               src={img}
               alt={`Slide ${index + 1}`}

@@ -1,6 +1,5 @@
 import React from "react";
 import { motion } from "framer-motion";
-import sign from "../assets/sign.png";
 
 // Style for the loading container
 const loadingContainer = {

@@ -1,9 +1,4 @@
-// import Layanan from "../components/Layanan";
-// import WhyUs from "../components/WhyUs";
-// import Gallery from "../components/Gallery";
 import React, { lazy, Suspense } from "react";
-// import FindUs from "../components/FindUs";
-// import GoogleMapComponent from "../components/GoogleMapComponent";
 
 const Gallery = lazy(() => import("../components/Gallery"));
 const Layanan = lazy(() => import("../components/Layanan"));
