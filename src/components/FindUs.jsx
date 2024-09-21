@@ -1,4 +1,5 @@
 import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
+import GoogleMapComponent from "./GoogleMapComponent";
 
 const containerStyle = {
   width: "100%",
@@ -23,32 +24,14 @@ const FindUs = () => {
     <>
       <div
         id="find-us"
-        className="relative flex flex-col items-center justify-center "
+        className="flex w-full flex-col items-center justify-center"
       >
         <h2 className="flex justify-center text-base font-bold uppercase tracking-wider text-slate-900 lg:text-3xl">
           Temukan kami
         </h2>
         <div className="mt-1 h-1 w-1/5 max-w-xs items-center justify-center bg-red-400 object-center"></div>
-        <div className="mx-auto mt-8 flex w-full max-w-4xl flex-col items-center rounded border  p-1 shadow-lg">
-          <LoadScript
-            googleMapsApiKey={
-              import.meta.env.VITE_REACT_APP_GOOGLE_MAPS_API_KEY
-            }
-          >
-            <GoogleMap
-              mapContainerStyle={containerStyle}
-              center={center}
-              zoom={15}
-            >
-              <Marker position={center} />
-            </GoogleMap>
-          </LoadScript>
-          <button
-            onClick={handleDirectionsClick}
-            className="hover:bg-emerald-7=00 my-4 rounded bg-lime-400 px-4 py-2 text-slate-700 hover:bg-lime-700 hover:text-slate-100"
-          >
-            Get Directions
-          </button>
+        <div className="min-w-[400px] rounded-md object-cover pt-12 md:min-w-[600px] lg:min-w-[800px]">
+          <GoogleMapComponent />
         </div>
       </div>
     </>

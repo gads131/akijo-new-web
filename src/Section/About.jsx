@@ -3,9 +3,7 @@ import React, { lazy, Suspense } from "react";
 const Gallery = lazy(() => import("../components/Gallery"));
 const Layanan = lazy(() => import("../components/Layanan"));
 const WhyUs = lazy(() => import("../components/WhyUs"));
-const GoogleMapComponent = lazy(
-  () => import("../components/GoogleMapComponent"),
-);
+const FindUs = lazy(() => import("../components/FindUs"));
 
 function About() {
   return (
@@ -40,7 +38,7 @@ function About() {
           <Gallery />
         </Suspense>
         <Suspense fallback={<div>Loading...</div>}>
-          <GoogleMapComponent />
+          <FindUs />
         </Suspense>
       </div>
     </>
