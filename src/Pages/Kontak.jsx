@@ -16,7 +16,7 @@ const Kontak = () => {
           </li>
           <li>
             <span className="mr-2">📧</span>
-            <a href="mailto:info@patriosabogagrup.com" className="text-red-500">
+            <a href="mailto:business@akijofood.com" className="text-red-500">
               business@akijofood.com
             </a>
           </li>
