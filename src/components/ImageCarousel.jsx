@@ -1,10 +1,27 @@
 import React, { useState, useEffect, useCallback, useRef } from "react";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
-import { home, carousel3, carousel4, carousel5 } from "../assets/images";
+// import { home, carousel3, carousel4, carousel5 } from "../assets/images";
 import "./Carousel.css";
 import { LazyMotion, domAnimation, motion } from "framer-motion";
 
-const images = [home, carousel3, carousel4, carousel5];
+const pic = [
+  {
+    image: "https://dkobvniutxuch.cloudfront.net/assets/images/home.webp",
+    alt: "Akijo Bakso Babi, bakso babi tomohon, frozen food tomohon",
+  },
+  {
+    image: "https://dkobvniutxuch.cloudfront.net/assets/images/carousel3.webp",
+    alt: "Akijo Bakso Babi, bakso babi tomohon, frozen food tomohon",
+  },
+  {
+    image: "https://dkobvniutxuch.cloudfront.net/assets/images/carousel4.webp",
+    alt: "Akijo Bakso Babi, bakso babi tomohon, frozen food tomohon",
+  },
+  {
+    image: "https://dkobvniutxuch.cloudfront.net/assets/images/carousel5.webp",
+    alt: "Akijo Bakso Babi, bakso babi tomohon, frozen food tomohon",
+  },
+];
 
 const textContainer = {
   hidden: {
@@ -68,7 +85,7 @@ const ImageCarousel = () => {
       clearInterval(intervalRef.current);
     }
     intervalRef.current = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % pic.length);
     }, 8000);
   }, []);
 
@@ -82,14 +99,12 @@ const ImageCarousel = () => {
   }, [resetInterval]);
 
   const goToPrevious = debounce(() => {
-    setCurrentIndex(
-      (prevIndex) => (prevIndex - 1 + images.length) % images.length,
-    );
+    setCurrentIndex((prevIndex) => (prevIndex - 1 + pic.length) % pic.length);
     resetInterval();
   }, 300);
 
   const goToNext = debounce(() => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % pic.length);
     resetInterval();
   }, 300);
 
@@ -97,12 +112,12 @@ const ImageCarousel = () => {
     <LazyMotion features={domAnimation}>
       <div className="hero-section">
         <div className="image-slider">
-          {images.map((img, index) => (
+          {pic.map((pic, index) => (
             <img
               loading="lazy"
               key={index}
-              src={img}
-              alt={`Slide ${index + 1}`}
+              src={pic.image}
+              alt={pic.alt}
               className={`slide ${index === currentIndex ? "active" : ""}`}
               fetchpriority={index === currentIndex ? "high" : "low"}
             />
@@ -121,7 +136,7 @@ const ImageCarousel = () => {
             variants={textContainer}
             initial="hidden"
             animate="visible"
-            className="will-animate w-[80%] rounded-3xl border border-slate-100 bg-black bg-opacity-30 px-10 pb-2 pt-4 backdrop-blur-xl backdrop-filter md:w-[70%] lg:w-[60%]"
+            className="will-animate w-[70%] rounded-3xl border border-slate-100 bg-black bg-opacity-50 px-10 pb-2 pt-4 backdrop-blur-xl backdrop-filter md:w-[70%] lg:w-[60%]"
           >
             <div className="flex flex-col items-center gap-4 text-center">
               <motion.p
@@ -133,7 +148,7 @@ const ImageCarousel = () => {
 
               <motion.h1
                 variants={textVariant}
-                className="font-mono text-4xl font-semibold tracking-[0.3em] text-yellow-200 lg:text-8xl"
+                className="font-mono text-xl font-semibold tracking-[0.3em] text-yellow-200 md:text-2xl lg:text-4xl"
               >
                 AKIJO
               </motion.h1>
@@ -149,8 +164,8 @@ const ImageCarousel = () => {
                 variants={textVariant}
                 className="flex justify-center"
               >
-                <a href="/Services">
-                  <button className="rounded-md border-2 border-slate-300 bg-transparent  px-12 py-4 font-semibold uppercase tracking-wide text-yellow-200 transition-all duration-500 ease-in-out hover:border-yellow-200 hover:bg-yellow-700 hover:text-slate-300">
+                <a href="/Services#">
+                  <button className="rounded-md border-2 border-slate-300 bg-transparent  px-8 py-4 font-semibold uppercase tracking-wide text-yellow-200 transition-all duration-500 ease-in-out hover:border-yellow-200 hover:bg-yellow-700 hover:text-slate-300">
                     Cek Sekarang
                   </button>
                 </a>

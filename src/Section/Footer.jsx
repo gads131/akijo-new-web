@@ -67,6 +67,7 @@ const footerLinks = [
 ];
 
 const Footer = () => {
+  const getYear = new Date().getFullYear();
   const footerAnimation = useAnimation();
   const contentAnimation = useAnimation();
   const [footerRef, inView] = useInView({
@@ -129,7 +130,7 @@ const Footer = () => {
           ))}
         </div>
         <div className="border-t-2 border-slate-200 pt-2">
-          <p className="pb-4">© AKIJO 2024. Hak Cipta Dilindungi</p>
+          <p className="pb-4">© AKIJO {getYear}. Hak Cipta Dilindungi</p>
         </div>
       </motion.div>
     </motion.footer>

@@ -1,17 +1,38 @@
 import React, { useState, useEffect, useCallback, useRef } from "react";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
-import {
-  carousel4,
-  carousel3,
-  carousel5,
-  carousel6,
-  carousel7,
-} from "../assets/images";
+// import {
+//   carousel4,
+//   carousel3,
+//   carousel5,
+//   carousel6,
+//   carousel7,
+// } from "../assets/images";
 import "./Carousel.css";
-import { delay, motion } from "framer-motion";
-import { stagger } from "framer-motion/dom";
+// import { delay, motion } from "framer-motion";
+// import { stagger } from "framer-motion/dom";
 
-const images = [carousel4, carousel3, carousel5, carousel6, carousel7];
+const pic = [
+  {
+    image: "https://dkobvniutxuch.cloudfront.net/assets/images/carousel7.webp",
+    alt: "Akijo Bakso Babi, bakso babi tomohon, frozen food tomohon",
+  },
+  {
+    image: "https://dkobvniutxuch.cloudfront.net/assets/images/carousel3.webp",
+    alt: "Akijo Bakso Babi, bakso babi tomohon, frozen food tomohon",
+  },
+  {
+    image: "https://dkobvniutxuch.cloudfront.net/assets/images/carousel4.webp",
+    alt: "Akijo Bakso Babi, bakso babi tomohon, frozen food tomohon",
+  },
+  {
+    image: "https://dkobvniutxuch.cloudfront.net/assets/images/carousel6.webp",
+    alt: "Akijo Bakso Babi, bakso babi tomohon, frozen food tomohon",
+  },
+  {
+    image: "https://dkobvniutxuch.cloudfront.net/assets/images/carousel5.webp",
+    alt: "Akijo Bakso Babi, bakso babi tomohon, frozen food tomohon",
+  },
+];
 
 const textContainer = {
   hidden: {
@@ -64,7 +85,7 @@ const ImageCarousel = () => {
       clearInterval(intervalRef.current);
     }
     intervalRef.current = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % pic.length);
     }, 3000);
   }, []);
 
@@ -78,14 +99,12 @@ const ImageCarousel = () => {
   }, [resetInterval]);
 
   const goToPrevious = () => {
-    setCurrentIndex(
-      (prevIndex) => (prevIndex - 1 + images.length) % images.length,
-    );
+    setCurrentIndex((prevIndex) => (prevIndex - 1 + pic.length) % pic.length);
     resetInterval();
   };
 
   const goToNext = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % pic.length);
     resetInterval();
   };
 
@@ -97,11 +116,11 @@ const ImageCarousel = () => {
       <div className="mt-1 h-1 w-1/5 max-w-xs items-center justify-center bg-red-400 object-center"></div>
 
       <div className="relative mt-8 flex h-[300px] w-[300px] flex-col rounded-lg border p-24 md:h-[500px] md:w-[500px]">
-        {images.map((img, index) => (
+        {pic.map((pic, index) => (
           <img
             loading="lazy"
             key={index}
-            src={img}
+            src={pic.image}
             alt={`Slide ${index + 1}`}
             className={`slide rounded-lg bg-yellow-200 p-1 shadow-lg ${index === currentIndex ? "active" : ""}`}
           />

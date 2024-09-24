@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import Modal from "react-modal";
 import { motion, useAnimation } from "framer-motion";
 import { Link } from "react-router-dom";
-import { akijo, kopi, bubur } from "../assets/images";
+// import { akijo, kopi, bubur } from "../assets/images";
 import "./Layanan.css";
 
 Modal.setAppElement("#root");
@@ -10,7 +10,7 @@ Modal.setAppElement("#root");
 const cards = [
   {
     tittle: "Booth Bakso",
-    image: akijo,
+    image: "https://dkobvniutxuch.cloudfront.net/assets/images/akijo.webp",
     alt: "Paket Gerobak Bakso Babi, Untuk acara Pernikahan, Ulang tahun, Ibadah, Event",
     id: "boothBakso",
     description:
@@ -18,14 +18,14 @@ const cards = [
   },
   {
     tittle: "Booth Kopi & Kue Cucur Onde-onde",
-    image: kopi,
+    image: "https://dkobvniutxuch.cloudfront.net/assets/images/kopi.webp",
     alt: "Paket Booth Kopi, Tomohon Manado dan sekitarnya",
     id: "Kopi",
     description: "Paket untuk 100 cup kopi + 150 kue Cucur atau Onde-onde",
   },
   {
     tittle: "Bubur Ayam Akijo",
-    image: bubur,
+    image: "https://dkobvniutxuch.cloudfront.net/assets/images/bubur.webp",
     alt: "Bubur Ayam Akijo",
     id: "buburAyam",
     description: "Per porsi hanya Rp. 15.000 !",
