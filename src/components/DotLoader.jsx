@@ -7,6 +7,7 @@ const loadingWrapper = {
   alignItems: "center",
   minHeight: "100dvh", // This ensures the loader stays in a smaller area
   width: "100%", // Make sure it takes the full width of the parent
+  backgroundColor: "rgba(0, 0, 0, 0.8)",
 };
 
 const loadingContainer = {

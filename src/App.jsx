@@ -20,11 +20,11 @@ const App = () => {
             <title>AKIJO - Premium Frozen Food & Catering Services</title>
             <meta
               name="description"
-              content="AKIJO menyediakan produk-produk frozen food, seperti bakso babi, ayam goreng/bakar, pork slice, siomay. Kami juga melayanani jasa home serivce cooking dan catering untuk acara, pesta, dan event atau kegiatan lainnya"
+              content="AKIJO menyediakan produk-produk frozen food seperti bakso babi, ayam goreng/bakar, pork slice, siomay. Kami juga melayanani jasa home serivce cooking dan catering untuk acara, pesta, dan event atau kegiatan lainnya"
             />
             <meta
               name="keywords"
-              content="akijo food, frozen food, bakso babi, siomay, ayam goreng frozen, ayam bakar frozen, catering, event catering, booth kopi,"
+              content="akijo food, frozen food, bakso babi tomohon, siomay babi, ayam goreng frozen, ayam bakar frozen, catering, event catering, booth kopi, gerobak bakso babi, bakso babi, pork slice"
             />
             <meta
               property="og:title"

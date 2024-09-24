@@ -1,12 +1,10 @@
 import React, { useState, useEffect, useCallback, useRef } from "react";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
-import carousel3 from "../assets/images/carousel3.webp";
-import home from "../assets/images/home.webp";
+import { home, carousel3, carousel4, carousel5 } from "../assets/images";
 import "./Carousel.css";
 import { LazyMotion, domAnimation, motion } from "framer-motion";
-// import { stagger } from "framer-motion/dom";
 
-const images = [home, carousel3];
+const images = [home, carousel3, carousel4, carousel5];
 
 const textContainer = {
   hidden: {
@@ -54,6 +52,17 @@ const ImageCarousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const intervalRef = useRef(null);
 
+  // Debounce function
+  const debounce = (func, delay) => {
+    let timer;
+    return (...args) => {
+      if (timer) clearTimeout(timer);
+      timer = setTimeout(() => {
+        func.apply(this, args);
+      }, delay);
+    };
+  };
+
   const resetInterval = useCallback(() => {
     if (intervalRef.current) {
       clearInterval(intervalRef.current);
@@ -72,17 +81,17 @@ const ImageCarousel = () => {
     };
   }, [resetInterval]);
 
-  const goToPrevious = () => {
+  const goToPrevious = debounce(() => {
     setCurrentIndex(
       (prevIndex) => (prevIndex - 1 + images.length) % images.length,
     );
     resetInterval();
-  };
+  }, 300);
 
-  const goToNext = () => {
+  const goToNext = debounce(() => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
     resetInterval();
-  };
+  }, 300);
 
   return (
     <LazyMotion features={domAnimation}>
@@ -90,11 +99,12 @@ const ImageCarousel = () => {
         <div className="image-slider">
           {images.map((img, index) => (
             <img
-              fetchpriority="high"
+              loading="lazy"
               key={index}
               src={img}
               alt={`Slide ${index + 1}`}
               className={`slide ${index === currentIndex ? "active" : ""}`}
+              fetchpriority={index === currentIndex ? "high" : "low"}
             />
           ))}
           <button className="arrow left" onClick={goToPrevious}>
